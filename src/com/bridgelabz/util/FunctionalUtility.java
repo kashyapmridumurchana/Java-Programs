@@ -1,9 +1,9 @@
 package com.bridgelabz.util;
 import java.util.*;
 import com.bridgelabz.functionalprograms.*;
-public class FunctionalUtility 
+public class FunctionalUtility<E> 
 {
-
+ 
 //Replace a string
 	
 	public void replaceString(String str1)
@@ -164,9 +164,15 @@ public void couponNumber(int n)
 	}
 
 //2D array
-public void displayArray(E[] garray)
+public void displayArray(E[][] garray,int m,int n)
 {
-	
+for(int i=0;i<m;i++)
+{
+	for(int j=0;j<n;j++)
+	{
+		System.out.println(garray[i][j]+" ");
+	}
+}
 	
 }
 	

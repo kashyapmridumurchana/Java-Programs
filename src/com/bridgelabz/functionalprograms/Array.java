@@ -1,8 +1,6 @@
 package com.bridgelabz.functionalprograms;
 import java.util.Scanner;
 import com.bridgelabz.util.*;
-
-
 public class Array
 {
 
@@ -27,7 +25,7 @@ public class Array
 			array[i][j]=s.nextInt();
 			}
 		}
-		fu.dispayArray(array);
+		fu.displayArray(array,m,n);
 		break;
 	case 2:
 		Double darray[][]=new Double[m][n];
@@ -38,10 +36,10 @@ public class Array
 			darray[i][j]=s.nextDouble();
 			}
 		}
-		fu.dispayArray(darray);
+		fu.displayArray(darray,m,n);
 		break;
 	case 3:
-		boolean barray[][]=new boolean[m][n];
+		Boolean barray[][]=new Boolean[m][n];
 		for(int i=0;i<m;i++)
 		{
 			for(int j=0;j<n;j++)
@@ -49,7 +47,7 @@ public class Array
 			barray[i][j]=s.nextBoolean();
 			}
 		}
-		fu.dispayArray(barray);
+		fu.displayArray(barray,m,n);
 		break;
 		
 	default: System.out.println("Please choose among the choices");
