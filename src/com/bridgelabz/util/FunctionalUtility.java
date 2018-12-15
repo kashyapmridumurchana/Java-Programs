@@ -63,7 +63,7 @@ public class FunctionalUtility
 	public void powerOf2(int n)
 	{   
 		int count=0;
-		if(n<31)
+		if(n>=0 && n<31)
 		{   
 			for(int i=0;i<=n;i++)
 			{
@@ -164,9 +164,9 @@ public void couponNumber(int n)
 	}
 
 //2D array
-
-public void array(int M,int N)
+public void displayArray(E[] garray)
 {
+	
 	
 }
 	
