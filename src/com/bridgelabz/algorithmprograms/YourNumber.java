@@ -13,7 +13,7 @@ public class YourNumber
 	n=(int) Math.pow(2, n);
 	System.out.println("Now think of a number between 0 and"+ (n-1));
 	AlgorithmUtility ax=new AlgorithmUtility();
-	ax.yourNumber(low,high);
+	int searax.yourNumber(low,high);
 
 	}
 
