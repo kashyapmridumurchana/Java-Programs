@@ -8,12 +8,10 @@ public class YourNumber
 	public static void main(String[] args)
 	{
 	Scanner sc=new Scanner(System.in);
-	System.out.println("Enter a number");
-	int n=sc.nextInt();
-	n=(int) Math.pow(2, n);
-	System.out.println("Now think of a number between 0 and"+ (n-1));
+	
 	AlgorithmUtility ax=new AlgorithmUtility();
-	int searax.yourNumber(low,high);
+	ax.yourNumber();
+	
 
 	}
 

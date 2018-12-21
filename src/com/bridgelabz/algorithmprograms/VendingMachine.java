@@ -10,7 +10,7 @@ public class VendingMachine {
 	Scanner sc=new Scanner(System.in);
 	System.out.println("enter the money");
 	int money=sc.nextInt();
-	int notes[]= {1000,500,100,50,10,5,2,1};
+	int notes[]= {2000,500,200,100,50,10,5,2,1};
 	AlgorithmUtility auu=new AlgorithmUtility();
 	auu.vendingMachine(money, notes);
 	
