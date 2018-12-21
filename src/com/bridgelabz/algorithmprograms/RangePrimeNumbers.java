@@ -1,5 +1,5 @@
 package com.bridgelabz.algorithmprograms;
-import com.bridgelabz.util.FunctionalUtility;
+import com.bridgelabz.util.*;
 
 public class RangePrimeNumbers 
 {
@@ -7,8 +7,8 @@ public class RangePrimeNumbers
 	public static void main(String[] args)
 	{
 	
-		FunctionalUtility funtionalUtility=new FunctionalUtility();
-		funtionalUtility.rangePrime();
+		AlgorithmUtility au=new AlgorithmUtility();
+		au.rangePrime();
 		
 	}
 

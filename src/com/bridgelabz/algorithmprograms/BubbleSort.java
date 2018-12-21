@@ -1,15 +1,14 @@
 package com.bridgelabz.algorithmprograms;
+import java.util.*;
+
 import com.bridgelabz.util.AlgorithmUtility;
-public class Anagram
+public class BubbleSort 
 {
 
 	public static void main(String[] args) 
 	{
-	String s1="abcd";
-	String s2="dcba";
-	AlgorithmUtility au=new AlgorithmUtility();
-	au.anagrams(s1,s2);
-	
+		AlgorithmUtility au1=new AlgorithmUtility();
+		au1.bubbleSort();
 
 	}
 
