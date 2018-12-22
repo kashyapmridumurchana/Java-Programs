@@ -115,28 +115,10 @@ public class AlgorithmUtility
 
 
 	//Merge Sort
-	public static void mergeSort()
+	public static void mergeSort(String array[],int lower,int higher)
 	{
 
-		Scanner sc=new Scanner(System.in);
-		System.out.println("Enter the size of your array");
-		int n=sc.nextInt();
-		String arr[]=new String[n];
-		System.out.println("Enter the elements");
-
-		for(int i=0;i<n;i++)
-		{	
-			arr[i]=sc.next();
-		}
-		String temparr[]=new String[n];
-		int lower=0;
-		int higher=arr.length-1;
-		for(int i = lower; i <= higher; i++) 
-		{
-			temparr[i]=arr[i];
-		}
-		int middle = lower + (higher - lower) / 2;
-
+		
 
 	}
 
@@ -144,38 +126,7 @@ public class AlgorithmUtility
 
 
 
-
-
-	//Vending Machine
-//	public int vendingMachine(int money,int[] notes)
-//	{
-//		 int i=0;
-//		 int total=0;
-//		
-//		
-//		
-//			int rem;
-//			if(money==0)
-//			{
-//				return -1 ;
-//			}
-//			else
-//			{
-//				if(money>=notes[i])
-//				{
-//					int calNotes =money/notes[i];
-//					rem = money%notes[i];
-//					money =rem;
-//					total += calNotes;
-//					System.out.println(notes[i]+   "Rs Notes are  " +calNotes );
-//				}
-//				i++;
-//				return vendingMachine(money, notes);
-//
-//			}
-//		
-//	}
-
+//vending machine
 		public void vendingMachine(int money,int[] notes)
 	{
 		int rem;
