@@ -4,6 +4,7 @@ import com.bridgelabz.functionalprograms.*;
 public class FunctionalUtility<E> 
 {
 
+	
 	//Replace a string
 
 	public void replaceString(String str1)
@@ -21,6 +22,11 @@ public class FunctionalUtility<E>
 		} 
 	}
 
+	
+	
+	
+	
+	
 	//FlipCoin
 
 	public void flipCoin(int n)
@@ -42,12 +48,18 @@ public class FunctionalUtility<E>
 		System.out.println("tail percentage is" + tail*100/n);
 	}
 
+	
+	
+	
+	
+	
+	
 	//Leap Year?
 
 	public void leapYear(int year)
 	{
 		Scanner s=new Scanner(System.in);
-		//int year=s.nextInt();
+		
 		if(String.valueOf(year).length()==4)
 			if((year%4==0)&&(year%100!=0)||(year%400==0))
 				System.out.println("year "+ year + " is a leap year");
@@ -58,6 +70,10 @@ public class FunctionalUtility<E>
 	}
 
 
+	
+	
+	
+	
 	//Power of 2
 
 	public void powerOf2(int n)
@@ -74,6 +90,12 @@ public class FunctionalUtility<E>
 			}
 		}
 	}
+	
+	
+	
+	
+	
+	
 	//Harmonic Number
 	public void harmonicNo(int n)
 	{
@@ -86,7 +108,11 @@ public class FunctionalUtility<E>
 	}
 
 
-	//Factors
+	
+	
+	
+	
+	// Prime Factors
 
 	public void factors(int n)
 	{
@@ -105,6 +131,10 @@ public class FunctionalUtility<E>
 		}
 	}
 
+	
+	
+	
+	
 
 	//Gambler
 
@@ -139,6 +169,10 @@ public class FunctionalUtility<E>
 		System.out.println("bet is" +bets);	
 	}
 
+	
+	
+	
+	
 
 	//Coupon Number
 
@@ -163,6 +197,10 @@ public class FunctionalUtility<E>
 
 	}
 
+	
+	
+	
+	
 	//2D array
 	public void displayArray(E[][] garray,int m,int n)
 	{
@@ -180,6 +218,9 @@ public class FunctionalUtility<E>
 
 
 
+	
+	
+	
 
 	//Sum of three Integers is Zero?
 
@@ -216,6 +257,11 @@ public class FunctionalUtility<E>
 		}
 	}
 
+	
+	
+	
+	
+	
 	//Euclidean Distance
 	public void distance(int x,int y)
 	{
@@ -225,6 +271,11 @@ public class FunctionalUtility<E>
 
 	}
 
+	
+	
+	
+	
+	
 	//Quadratic equation
 
 	public void quadratic(int a,int b,int c)
@@ -253,6 +304,10 @@ public class FunctionalUtility<E>
 
 	}
 
+	
+	
+	
+	
 	//Stopwatch code
 
 	public double startTimer=0;
@@ -263,14 +318,14 @@ public class FunctionalUtility<E>
 	public void start()
 	{
 		startTimer=System.currentTimeMillis();
-		//System.out.println("Start time is: " + startTimer);
+		
 	}
 
 	//to stop the timer
 	public void stop()
 	{
 		stopTimer=System.currentTimeMillis();
-		//System.out.println("Stop time is: " + stopTimer);
+		
 	}
 
 	//Calculates the time elapsed
@@ -280,6 +335,12 @@ public class FunctionalUtility<E>
 		System.out.println("time elapsed is" + timeElapsed);
 	}
 
+	
+	
+	
+	
+	
+	
 	//WindChill
 
 	public void windChill(int t,int v)
@@ -295,6 +356,10 @@ public class FunctionalUtility<E>
 
 		}
 	}
+	
+	
+	
+	
 //String permutation
 	public void sPermut(String str1)
 	{

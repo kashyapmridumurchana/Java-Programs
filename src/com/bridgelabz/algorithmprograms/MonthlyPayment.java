@@ -1,8 +1,8 @@
 /*******************************************************************************
- *   Compilation:  javac -d bin RangePrimeNumbers.java							*
- *  Execution:    java -cp bin com.bridgelabz.algorithmprograms.RangePrimeNumbers*
+ *   Compilation:  javac -d bin MonthlyPayment.java								*
+ *  Execution:    java -cp bin com.bridgelabz.algorithmprograms.MonthlyPayment	*
  *                                                                  			*
- *  Purpose: to find prime numbers within the range 1-1000						*
+ *  Purpose: to calculate monthly payment.									*
  *																				*
  *  @author  Mridumurchana Kashyap												*
  *  @version 1.0																*
@@ -11,16 +11,15 @@
 package com.bridgelabz.algorithmprograms;
 
 import com.bridgelabz.util.*;
-
-public class RangePrimeNumbers 
+import java.util.*;
+public class MonthlyPayment 
 {
-  //main method calls the method
+   //main method performs method call
 	public static void main(String[] args)
 	{
 	
-		AlgorithmUtility au=new AlgorithmUtility();
-		au.rangePrime();//method call
-		
+	 AlgorithmUtility aa=new AlgorithmUtility();
+	 aa.monthlyPayment();//method is called
 	}
 
 }

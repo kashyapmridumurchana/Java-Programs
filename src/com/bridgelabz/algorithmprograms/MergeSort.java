@@ -1,16 +1,19 @@
 package com.bridgelabz.algorithmprograms;
-import com.bridgelabz.util.*;
 import java.util.*;
 
+import com.bridgelabz.util.AlgorithmUtility;
 public class MergeSort 
 {
 
 	public static void main(String[] args) 
 	{
-		AlgorithmUtility auu=new AlgorithmUtility();
-		auu.mergeSort();
+	
+		AlgorithmUtility as=new AlgorithmUtility();
+		as.mergeSort(); 
 		
-
+		
+		
+		
 	}
 
 }
