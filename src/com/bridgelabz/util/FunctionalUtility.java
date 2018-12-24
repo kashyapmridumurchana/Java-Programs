@@ -39,10 +39,12 @@ public class FunctionalUtility<E>
 			int nr=r.nextInt(2);
 			if(nr==0)
 				tail++;
-			else
+			else if(nr==1)
 				head++;
 			num--;
 		}
+		System.out.println("head " + head);
+		System.out.println("tail " + tail);
 
 		System.out.println("head percentage is" + head*100/n);
 		System.out.println("tail percentage is" + tail*100/n);
@@ -56,10 +58,11 @@ public class FunctionalUtility<E>
 	
 	//Leap Year?
 
+	/**
+	 * @param year
+	 */
 	public void leapYear(int year)
 	{
-		Scanner s=new Scanner(System.in);
-		
 		if(String.valueOf(year).length()==4)
 			if((year%4==0)&&(year%100!=0)||(year%400==0))
 				System.out.println("year "+ year + " is a leap year");
