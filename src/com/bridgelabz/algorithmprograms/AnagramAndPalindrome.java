@@ -11,6 +11,11 @@
  *  *********************************************************************************/
 
 package com.bridgelabz.algorithmprograms;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import com.bridgelabz.util.AlgorithmUtility;
 
 public class AnagramAndPalindrome
@@ -18,9 +23,37 @@ public class AnagramAndPalindrome
 //main method calls a function
 	public static void main(String[] args) 
 	{
+		System.out.println("The prime numbers between 0-1000 are");
+		List<String> primeList=new ArrayList<>();//declaration
+		primeList=AlgorithmUtility.rangePrime();
 		
-		AlgorithmUtility au=new AlgorithmUtility();
-		au.anagramAndPalindrome();//method call
+	
+		
+		Set<String> primeAnagramSet=new HashSet<>();//declaration
+		System.out.println("The prime numbers which are anagrams are");
+		//System.out.println(primeList.get(i)+"    "+primeList.get(j) );
+		
+		primeAnagramSet=AlgorithmUtility.primeAnagram(primeList);//method call
+		System.out.println("Anagram list"+primeAnagramSet);
+		
+		
+		
+		
+		Set<String> primePalindromeSet=new HashSet<>();
+		System.out.println("The prime numbers which are anagram and palindrome are");
+		primePalindromeSet=AlgorithmUtility.primePalindrome(primeAnagramSet);
+        System.out.println(primePalindromeSet);
+		//AlgorithmUtility.reverse();
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+
 	}
 
-}
+

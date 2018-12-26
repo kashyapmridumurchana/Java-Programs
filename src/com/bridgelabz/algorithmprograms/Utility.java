@@ -1,5 +1,5 @@
 /********************************************************************** *********
- *   Compilation:  javac -d bin Utility.java						        	*
+  *   Compilation:  javac -d bin Utility.java						        	*
  *  Execution:    java -cp bin com.bridgelabz.algorithmprograms.Utility         *
  *                                                                  			*
  *  Purpose:  to perform searching and sorting               					*

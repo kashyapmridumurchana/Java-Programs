@@ -20,13 +20,13 @@ public class DayOfWeek {
 	//main method gives the month,date and year as input and calls method
 	public static void main(String[] args)
 	{
-		Scanner sc=new Scanner(System.in);
+		//Scanner sc=new Scanner(System.in);
 		System.out.println("Enter the M (month)");
-		int m=sc.nextInt();
+		int m=AlgorithmUtility.userInteger();
 		System.out.println("Enter the D (date)");
-		int d=sc.nextInt();
+		int d=AlgorithmUtility.userInteger();
 		System.out.println("Enter the Y (year)");
-		int y=sc.nextInt();
+		int y=AlgorithmUtility.userInteger();
 		
 		
 		AlgorithmUtility auu=new AlgorithmUtility();

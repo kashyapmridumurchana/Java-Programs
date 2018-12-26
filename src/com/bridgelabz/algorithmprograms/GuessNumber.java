@@ -20,7 +20,7 @@ public class GuessNumber
 		System.out.println("Enter any number");
 		int n=sc.nextInt();
 
-		int range=(int) (Math.pow(2,n-1));  //range is calculated using pre-defined function 'poower'
+		int range=(int) (Math.pow(2,n-1));  //range is calculated using pre-defined function 'power'
 		System.out.println("take number between '0' to "+range);
 		int count=0;
 		String input=null;

@@ -16,29 +16,95 @@ import com.bridgelabz.algorithmprograms.BubbleSort;
 
 public class AlgorithmUtility
 {
+	static int i;//global variables
+    static  String l,m;//global variables
+	static Scanner sc=new Scanner(System.in);
+	public static int userInteger()
+	{
+		try {
+			return sc.nextInt();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return 0;
+	}
+	public static double userDouble()
+	{
+		try {
+			return sc.nextDouble();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return 0.0;
+	}
+	public static boolean userBoolean()
+	{
+		try {
+			return sc.nextBoolean();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return false ;
+	}
+	public static String userString()
+	{
+		try {
+			return sc.next();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return null;
+	}
+	public static long userLong()
+	{
+		try {
+			return sc.nextLong();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return 0;
+	}
+
+
+
+
 	//String Anagrams	
 	public static  boolean anagrams(String s1,String s2)
 	{
 
-		char[] str1=s1.toLowerCase().toCharArray();
-		char[] str2=s2.toLowerCase().toCharArray();
-		int len1=str1.length;
-		int len2=str2.length;
+		char[] ch1=s1.toLowerCase().toCharArray();
+		char[] ch2=s2.toLowerCase().toCharArray();
+		int len1=ch1.length;
+		int len2=ch2.length;
 		if(len1!=len2)
 		{
 			return false;
 		}
 		else 
 		{
-			Arrays.sort(str1);
-			Arrays.sort(str2);
+			Arrays.sort(ch1);
+			Arrays.sort(ch2);
 			for(int i=0;i<len1;i++)
 			{
-				if(str1[i]==str2[i])
+				String str1=String.valueOf(ch1);
+				String str2=String.valueOf(ch2);
+				
+				boolean b=str1.contentEquals(str2);
 				{
-					return true;
+					if(b==true)
+						return true;
 				}
-			}	
+			}
 			return false;
 		}
 	}
@@ -51,30 +117,120 @@ public class AlgorithmUtility
 
 	//Range of prime numbers 
 
-	public void rangePrime()
+	public static List<String> rangePrime()
 	{
-		System.out.println("Prime numners in between the range 0 and 1000 are:");
-		for(int i=1;i<=1000;i++)
+		int flag=1;
+		List<String> primeList=new ArrayList<>();
+		for(int i=2;i<=1000;i++)
 		{
-			int n=2;
-			if(i%1==0 && i%i==0)
+			for(int j=2;j<i;j++)
 			{
-				if(i%n!=0)
+				if(i%j==0)
 				{
-					System.out.println(i);
-
-					n++;
+					flag=0;
+					break;
 				}
-			}		
+				else
+					flag=1;
+			}
+			if(flag==1)
+			{
+				primeList.add(Integer.toString(i));
+				
 
+			}
 		}
+		System.out.println(primeList);
+		return primeList;
 	}
 
 
+	
+	
+	
+	
+	
+	
+	
 
 
+	//Anagram and Palindrome	
 
+	public static Set<String> primeAnagram(List<String> primeList)
+	{	
+		
+		
+		
+		Set<String> primeAnagramSet=new HashSet<>();
+		for(int i=0;i<primeList.size();i++)
+		{
+			
+			for(int j=i+1;j<primeList.size();j++)
+			{
+				if(AlgorithmUtility.anagrams(primeList.get(i), primeList.get(j)))
+				{
+//					primeAnagramList.add(Integer.toString(i));
+					primeAnagramSet.add(primeList.get(i));
+					primeAnagramSet.add(primeList.get(j));
+					System.out.println(primeList.get(i)+"    "+primeList.get(j) );
+				}
+			}
+		}
+		
+		return primeAnagramSet;
+	}
+		
+	
+	
+	
+	public static Set<String> primePalindrome(Set<String> primeAnagramSet)
+	{
+		
+		Set<String> resultList=new HashSet<>();
+	
+		for(int i=0;i<primeAnagramSet.size();i++)
+		{
+			int k=Integer.parseInt(primeAnagramSet.get(i);
+			int lk=AlgorithmUtility.reverse(i);
+			System.out.println("reverse"+lk);
+			if(primeAnagramSet.contains(Integer.toString(lk)))
+			{
+				System.out.println(""+primeAnagramSet.get(i));
+			resultSet.add(primeAnagramSet.get(i));
+				
+		}
+		
+		
+	}
+		return resultSet;
+	}
+	
+	
+	
 
+	
+	
+	
+	public static int reverse(int n)
+	{
+		//System.out.println("enter the number");
+		//int n=AlgorithmUtility.userInteger();
+		int reverse=0;
+		while(n!=0)
+			{
+			reverse = reverse * 10;
+		      reverse = reverse + n%10;
+		      n       = n/10;
+			}
+		return reverse;
+	}
+	
+
+	
+	
+	
+	
+	
 	//bubble sorting for integers
 
 	public void bubbleSort()
@@ -397,7 +553,7 @@ public class AlgorithmUtility
 
 
 
-	//Binary search
+	//Binary search 
 
 	public static void bSearch(int lower,int upper,int middle,int count,String input,int n)
 	{
@@ -481,83 +637,70 @@ public class AlgorithmUtility
 
 
 
-	//Anagram and Palindrome	
 
-	public static void anagramAndPalindrome()
+
+
+
+
+
+
+
+
+
+
+
+
+	//Word binary Search
+
+	//sorting
+	public static String[] sort(String[] str)
 	{
-		Scanner sc=new Scanner(System.in);
-		String arr[]=new String[1000];
-		int k=0;
-		for(int i=1;i<=1000;i++)
+		int length=str.length;
+		for(int i=0;i<length;i++)
 		{
-			int n=2;
-			if(i%1==0 && i%i==0)
+			for(int j=i+1;j<length;j++)
 			{
-				if(i%n!=0)
+				if(str[i].compareToIgnoreCase(str[j])>0)
 				{
-					arr[k]=String.valueOf(i);
-					n++;
-					k++;
+					String temp=str[j];
+					str[j]=str[i];
+					str[i]=temp;
 				}
-			}	
-		}
-		for(int i=arr.length-1;arr[i]!=null;i--)
-		{
-			System.out.println(arr[i]);	
-		}
+			}
 
+		}
+		return str;
 	}
 
-	public static void wordBinarySearch(String[] str) throws IOException
-	{ 
-		try
+
+
+	//binary search
+	public static int binarySearch(String str[],String key)
 	{
-			final String delimiter = ",";
-		
-		String csvFile="home/admin1/Desktop/file1.csv";
-		File file = new File(csvFile);
-		FileReader fr = new FileReader(file);
-		BufferedReader br = new BufferedReader(fr);
-		String line = "";
-
-		String[] tempArr;
-		while ((line = br.readLine()) != null)
-		  {
-			tempArr = line.split(delimiter);
-			for (String tempStr : tempArr) 
-			{
-				System.out.print(tempStr + " ");
-			}	
-		  }
-		
-		AlgorithmUtility ai=new AlgorithmUtility();
-		ai.insertionSort1(str,str.length);
-		ai.linearSearch(str,str.length);
-		
-		
-		
-		
-		
-		
-		
-		
-	}
-		catch (Exception e)
+		int first=0;
+		int last=str.length-1;
+		int middle=(first+last)/2;
+		while(first<=last)
 		{
-			e.printStackTrace();
+			if(str[middle].compareToIgnoreCase(key)<0)
+				first=middle+1;
+			else if(str[middle].compareToIgnoreCase(key)==0)
+			{
+				return middle;
+			}
+			else 
+				last=middle-1;
+			middle=(first+last)/2;
 		}
+		return -1;
+	}
+
+
+
+
 
 
 }
-	
-	
-	
-	
-	
-	
-	
-	
-	}
 
 
 

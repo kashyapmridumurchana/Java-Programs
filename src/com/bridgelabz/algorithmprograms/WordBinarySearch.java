@@ -19,16 +19,45 @@ public class WordBinarySearch
 
 	public static void main(String[] args) throws IOException
 	{
-	 
-		//FileReader file=new FileReader("home/admin1/Desktop/file1.txt");
-		Scanner sc=new Scanner(System.in);
-		AlgorithmUtility ai=new AlgorithmUtility();
-		System.out.println("Enter the String to be searched");
-		String[] str=new String[50];    
-		sc.next();
-		ai.wordBinarySearch(str);
+		    String[] str=new String[50];  
+			String file="/home/admin1/Desktop/file1.csv";
+			BufferedReader fileReader=new BufferedReader(new FileReader(file));
+			Scanner sc=new Scanner(System.in);
+			final String DELIMITER=",";
+			try {
+				String line="";
+				while((line=fileReader.readLine())!=null)
+				{
+					String[] tokens=line.split(DELIMITER);
+					AlgorithmUtility.sort(tokens);
+
+
+					for(String token:tokens)
+					{
+						System.out.println(token);
+					}
+					System.out.println("Enter the String to be searched");
+					String key=sc.next();
+					int i=AlgorithmUtility.binarySearch(tokens,key);
+					if(i>=0)
+					{
+						System.out.println(tokens[i]+ "is present in "+ (i+1)+ " position of array");
+					}
+					else 
+						System.out.println(key+ "doesnot exist");
+				}
+
+			}catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+
+		}
+		
+		
+		
 		
 
-	}
+	
 
 }
