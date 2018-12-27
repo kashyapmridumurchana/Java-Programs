@@ -27,17 +27,17 @@ public class MergeSort
 //main method takes the input of the parameters and calls a method
 	public static void main(String[] args) 
 	{
-		Scanner sc=new Scanner(System.in);
+		
 		System.out.println("Merge sort");
 		int i;
 		System.out.println("Enter the size of your array");
-		int n=sc.nextInt();
+		int n=AlgorithmUtility.userInteger();
 		String arr[]=new String[n];
 		System.out.println("Enter the elements");
 
 		for( i=0;i<n;i++)
 		{	
-			arr[i]=sc.next();
+			arr[i]=AlgorithmUtility.userString();
 		}
 		AlgorithmUtility as=new AlgorithmUtility();
 		as.mergeSort(arr,0,n);//method call

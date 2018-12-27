@@ -22,7 +22,7 @@ public class WordBinarySearch
 		    String[] str=new String[50];  
 			String file="/home/admin1/Desktop/file1.csv";
 			BufferedReader fileReader=new BufferedReader(new FileReader(file));
-			Scanner sc=new Scanner(System.in);
+			
 			final String DELIMITER=",";
 			try {
 				String line="";
@@ -37,11 +37,11 @@ public class WordBinarySearch
 						System.out.println(token);
 					}
 					System.out.println("Enter the String to be searched");
-					String key=sc.next();
+					String key=AlgorithmUtility.userString();
 					int i=AlgorithmUtility.binarySearch(tokens,key);
 					if(i>=0)
 					{
-						System.out.println(tokens[i]+ "is present in "+ (i+1)+ " position of array");
+						System.out.println(tokens[i]+ "is present in "+ (i)+ " position of array");
 					}
 					else 
 						System.out.println(key+ "doesnot exist");

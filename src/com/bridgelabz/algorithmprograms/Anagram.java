@@ -17,13 +17,12 @@ public class Anagram
 	//Main methods here takes the input of the strings and calls the function
 	public static void main(String[] args) 
 	{
-		Scanner sc=new Scanner(System.in);
+		
 		System.out.println("enter the first string");
-		String s1=sc.nextLine();
+		String s1=AlgorithmUtility.userString();
 		System.out.println("enter the second string");
 		AlgorithmUtility au=new AlgorithmUtility();
-		String s2=sc.nextLine();
-		
+		String s2=AlgorithmUtility.userString();
 		
 		boolean b=au.anagrams(s1,s2);//function is called to check the conditions
 		if(b)

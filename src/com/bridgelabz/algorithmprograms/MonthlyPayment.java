@@ -17,9 +17,15 @@ public class MonthlyPayment
    //main method performs method call
 	public static void main(String[] args)
 	{
-	
+		System.out.println("Enter the P (principal loan)");
+		double P=AlgorithmUtility.userDouble();
+		System.out.println("Enter the Y (years to pay off)");
+		double Y=AlgorithmUtility.userDouble();
+		System.out.println("Enter the R (interest)");
+		double R=AlgorithmUtility.userDouble();
 	 AlgorithmUtility aa=new AlgorithmUtility();
-	 aa.monthlyPayment();//method is called
+	double payment= aa.monthlyPayment(P,Y,R);//method is called
+	System.out.println("The monthly payment: "+ payment);
 	}
 
 }

@@ -31,19 +31,18 @@ public class AnagramAndPalindrome
 		
 		Set<String> primeAnagramSet=new HashSet<>();//declaration
 		System.out.println("The prime numbers which are anagrams are");
-		//System.out.println(primeList.get(i)+"    "+primeList.get(j) );
-		
 		primeAnagramSet=AlgorithmUtility.primeAnagram(primeList);//method call
-		System.out.println("Anagram list"+primeAnagramSet);
 		
 		
 		
 		
-		Set<String> primePalindromeSet=new HashSet<>();
+		
+		Set<String> primePalindromeSet=new HashSet<>();//Set declaration
 		System.out.println("The prime numbers which are anagram and palindrome are");
-		primePalindromeSet=AlgorithmUtility.primePalindrome(primeAnagramSet);
+		primePalindromeSet=AlgorithmUtility.primePalindrome(primeAnagramSet);//method call
         System.out.println(primePalindromeSet);
-		//AlgorithmUtility.reverse();
+		
+		
 		
 		
 		

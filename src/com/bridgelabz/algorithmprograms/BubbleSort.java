@@ -9,6 +9,7 @@
  *  @since   19.12.2018															*
  *  **************************************************************************/
 package com.bridgelabz.algorithmprograms;
+import com.bridgelabz.util.*;
 import java.util.*;
 
 import com.bridgelabz.util.AlgorithmUtility;
@@ -17,9 +18,27 @@ public class BubbleSort
 	//main method calls the method to perform sorting
 	public static void main(String[] args) 
 	{
+		System.out.println("Enter the size of your array");
+		int n=AlgorithmUtility.userInteger();
+		System.out.println("Enter the array elements");
+		String[] arr=new String[n];
+		for( int i=0;i<n;i++)
+		{
+			arr[i]=AlgorithmUtility.userString();
+		}	
+		System.out.println("the original array is:");
+		for(int i=0;i<n;i++)
+		{
+			System.out.println(arr[i]);
+		}
 		AlgorithmUtility au1=new AlgorithmUtility();
-		au1.bubbleSort();
-
+		au1.bubbleSortString1(arr, n);//method call
+		System.out.println("Sorted array list is:");
+		for(int i=0;i<n;i++)
+		{
+			System.out.println(arr[i]);
+		}
+		
 	}
 
 }

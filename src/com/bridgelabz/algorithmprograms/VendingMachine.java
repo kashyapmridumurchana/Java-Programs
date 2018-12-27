@@ -18,9 +18,9 @@ public class VendingMachine {
 	//main method gives input of the money
 	public static void main(String[] args)
 	{
-	Scanner sc=new Scanner(System.in);
+	
 	System.out.println("enter the money");
-	int money=sc.nextInt();
+	int money=AlgorithmUtility.userInteger();
 	int notes[]= {1000,500,100,50,10,5,2,1};
 	AlgorithmUtility auu=new AlgorithmUtility();
 	auu.vendingMachine(money, notes);//method call
