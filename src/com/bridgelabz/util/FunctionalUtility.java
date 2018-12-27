@@ -372,8 +372,6 @@ public class FunctionalUtility<E>
 			fact=fact*i;
 		}
 		System.out.println("The number of arrangement possible for the given string is: " + fact);
-		
-
 	}
 
 	public void permute(String str1,int l,int r)
@@ -386,13 +384,13 @@ public class FunctionalUtility<E>
 		{
 			for(int i=1;i<=r;i++)
 			{
+				System.out.println(str1);
 				str1=swap(str1,l,i);
 				permute(str1,l+1,r);
 				str1=swap(str1,l,i);
 					
 			}
 		}
-		
 	}
 public String swap(String a1,int i,int j)
 {
@@ -404,6 +402,13 @@ public String swap(String a1,int i,int j)
     return String.valueOf(a);
 	
 }
+
+
+
+
+
+
+
 
 //tic tac toe
 static int player = 0;
