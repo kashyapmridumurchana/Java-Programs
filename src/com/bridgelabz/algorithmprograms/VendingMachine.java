@@ -9,8 +9,6 @@
  *  @since   19.12.2018															*
  *  **************************************************************************/
 package com.bridgelabz.algorithmprograms;
-import java.util.*;
-
 import com.bridgelabz.util.AlgorithmUtility;
 
 public class VendingMachine {

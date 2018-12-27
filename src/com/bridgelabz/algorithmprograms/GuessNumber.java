@@ -9,7 +9,6 @@
  *  @since   19.12.2018															*
  *  **************************************************************************/
 package com.bridgelabz.algorithmprograms;
-import java.util.*;
 import com.bridgelabz.util.*;
 public class GuessNumber
 {
@@ -27,10 +26,7 @@ public class GuessNumber
 		int lower=0;
 		int upper=range;
 		int middle=(lower+upper)/2;
-
-		
-		AlgorithmUtility aa=new AlgorithmUtility();
-		aa.bSearch(lower,upper,middle,count,input,n);//method is called
+		AlgorithmUtility.bSearch(lower,upper,middle,count,input,n);//method is called
 
 	}
 

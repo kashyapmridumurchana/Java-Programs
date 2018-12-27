@@ -5,23 +5,13 @@
  *  @since   19.12.2018															*
  *  **************************************************************************/
 package com.bridgelabz.util;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.*;
 
-import com.bridgelabz.algorithmprograms.BubbleSort;
+/**
+ * @author admin1
+ *
+ */
 
-/**
- * @author admin1
- *
- */
-/**
- * @author admin1
- *
- */
 public class AlgorithmUtility
 {
 	static int i;//global variables
@@ -207,7 +197,7 @@ public class AlgorithmUtility
 	 */
 	public static Set<String> primePalindrome(Set<String> primeAnagramSet)
 	{
-		Iterator iter = primeAnagramSet.iterator();
+		Iterator<String> iter = primeAnagramSet.iterator();
 		Set<String> resultSet=new HashSet<>();
 
 		String a;
@@ -539,7 +529,7 @@ public float tempConversion(float temp)
 public float tempConversion1(float temp)
 {
 	float cel=(temp-32)*5/9;
-    return temp;
+    return cel;
 }
 
 
@@ -701,7 +691,7 @@ public static int [] swapNibble(int first,int middle,int last,int [] binary)
  */
 public static void bSearch(int lower,int upper,int middle,int count,String input,int n)
 {
-	Scanner sc=new Scanner(System.in);
+	
 	System.out.println("Is your number:"+middle);
 	System.out.println("Enter your answer as in 'yes'or 'high' or 'low'");
 	input=sc.nextLine(); 
@@ -841,7 +831,7 @@ public static double stopTimerFunc()
 	double d1=System.nanoTime();
 	return d1;
 }
-public static double elapsedTime(double startTime,double stopTime)
+public static double elapsedTime(double stopTime,double startTime)
 {
 	
 	double timeElapsed=stopTime-startTime;

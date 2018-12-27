@@ -10,7 +10,7 @@
  *  **************************************************************************/
 package com.bridgelabz.algorithmprograms;
 import com.bridgelabz.util.AlgorithmUtility;
-import java.util.*;
+
 public class Anagram
 {
 
@@ -21,10 +21,8 @@ public class Anagram
 		System.out.println("enter the first string");
 		String s1=AlgorithmUtility.userString();
 		System.out.println("enter the second string");
-		AlgorithmUtility au=new AlgorithmUtility();
 		String s2=AlgorithmUtility.userString();
-		
-		boolean b=au.anagrams(s1,s2);//function is called to check the conditions
+		boolean b=AlgorithmUtility.anagrams(s1,s2);//function is called to check the conditions
 		if(b)
 		{
 			System.out.println("Strings are anagrams");

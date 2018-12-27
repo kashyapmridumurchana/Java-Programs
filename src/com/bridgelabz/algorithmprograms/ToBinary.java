@@ -13,12 +13,12 @@ package com.bridgelabz.algorithmprograms;
 import com.bridgelabz.util.AlgorithmUtility;
 
 public class ToBinary {
-	
+	//main method contains the input of the parameters,calls the methods and prints the output given by the called methods
     public static void main(String[] args) {
         System.out.println("Enter the decimal number");
-        int num=AlgorithmUtility.userInteger();
-        int[] binary=AlgorithmUtility.toBinary(num);
-        int [] binary2=new int[binary.length];
+        int num=AlgorithmUtility.userInteger();//method call
+        int[] binary=AlgorithmUtility.toBinary(num);//method call
+        int [] binary2=new int[binary.length];//array declaration
         int k=0;
         for(int i=binary.length-1;i>=0;i--)
         {
@@ -36,18 +36,18 @@ public class ToBinary {
         System.out.println();
         int first=0,last=binary.length-1;
         int middle=(first+last)/2;
-        int [] binary3=AlgorithmUtility.swapNibble(first,middle,last,binary2);
+        int[] binary3=AlgorithmUtility.swapNibble(first,middle,last,binary2);//method call
         for(int i=0;i<binary3.length;i++)
         {
             System.out.print(binary3[i]);
         }
    
         
-        int sum=AlgorithmUtility.decimal(binary3);
+        int sum=AlgorithmUtility.decimal(binary3);//method call
         System.out.println();
         System.out.println("decimal number : "+sum);
         System.out.println();
-        boolean b=AlgorithmUtility.powerOf2(sum);
+        boolean b=AlgorithmUtility.powerOf2(sum);//method call
         if(b==true)
         System.out.println("the resultant number "+sum+" is the number is a power of 2");
         else

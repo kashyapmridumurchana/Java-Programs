@@ -9,18 +9,16 @@
  *  @since   19.12.2018															*
  *  **************************************************************************/
 package com.bridgelabz.algorithmprograms;
-import java.util.*;
-
 import com.bridgelabz.util.AlgorithmUtility;
-
 import java.io.*;
 public class WordBinarySearch 
 {
 
 	public static void main(String[] args) throws IOException
 	{
-		    String[] str=new String[50];  
+		   
 			String file="/home/admin1/Desktop/file1.csv";
+			@SuppressWarnings("resource")
 			BufferedReader fileReader=new BufferedReader(new FileReader(file));
 			
 			final String DELIMITER=",";

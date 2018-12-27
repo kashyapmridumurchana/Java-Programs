@@ -10,7 +10,6 @@
  *  ************************************************************************************************/
 package com.bridgelabz.algorithmprograms;
 import com.bridgelabz.util.*;
-import java.util.*;
 public class TemperatureConversion {
 	
 	//main method takes input of the temperature and calls method 

@@ -9,8 +9,6 @@
  *  @since   19.12.2018															*
  *  **************************************************************************/
 package com.bridgelabz.algorithmprograms;
-import java.util.*;
-import com.bridgelabz.algorithmprograms.*;
 import com.bridgelabz.util.AlgorithmUtility;
 public class InsertionSort 
 {
@@ -31,10 +29,7 @@ public class InsertionSort
 		{
 			System.out.println(arr[i]);
 		}
-		
-		AlgorithmUtility aa=new AlgorithmUtility();
-
-		aa.insertionSort(arr,n);//method is called
+		AlgorithmUtility.insertionSort(arr,n);//method is called
 		System.out.println("Sorted array list is:");//prints the sorted array
 		for(int i=0;i<n;i++)
 		{

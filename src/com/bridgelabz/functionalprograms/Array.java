@@ -16,6 +16,7 @@ public class Array
 //main method gives input
 	public static void main(String[] args)
 	{
+	@SuppressWarnings("resource")
 	Scanner s=new Scanner(System.in);
 	FunctionalUtility fu=new FunctionalUtility();
 	System.out.println("Enter the number of rows :m");

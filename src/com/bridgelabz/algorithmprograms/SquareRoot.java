@@ -9,9 +9,7 @@
  *  @since   19.12.2018															*
  *  **************************************************************************/
 package com.bridgelabz.algorithmprograms;
-
 import com.bridgelabz.util.AlgorithmUtility;
-import java.util.*;
 public class SquareRoot
 {
 //main method takes input and calls the function

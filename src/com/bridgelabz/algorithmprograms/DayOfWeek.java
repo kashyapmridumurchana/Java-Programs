@@ -10,9 +10,6 @@
  *  @since   19.12.2018															*
  *  **************************************************************************/
 package com.bridgelabz.algorithmprograms;
-
-import java.util.Scanner;
-
 import com.bridgelabz.util.AlgorithmUtility;
 
 public class DayOfWeek {
@@ -27,10 +24,7 @@ public class DayOfWeek {
 		int d=AlgorithmUtility.userInteger();
 		System.out.println("Enter the Y (year)");
 		int y=AlgorithmUtility.userInteger();
-		
-		
-		AlgorithmUtility auu=new AlgorithmUtility();
-		int r=auu.dayOfWeek(m,d,y);//method is called
+		int r=AlgorithmUtility.dayOfWeek(m,d,y);//method is called
 		System.out.println("the day of the week is equivalent to the order from 0-6 eg:0 is sunday,1 is monday and so on" );
 		System.out.println("the day is " + r);
 

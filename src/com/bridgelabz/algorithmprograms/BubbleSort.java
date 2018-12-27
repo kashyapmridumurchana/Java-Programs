@@ -9,9 +9,6 @@
  *  @since   19.12.2018															*
  *  **************************************************************************/
 package com.bridgelabz.algorithmprograms;
-import com.bridgelabz.util.*;
-import java.util.*;
-
 import com.bridgelabz.util.AlgorithmUtility;
 public class BubbleSort 
 {
@@ -31,8 +28,8 @@ public class BubbleSort
 		{
 			System.out.println(arr[i]);
 		}
-		AlgorithmUtility au1=new AlgorithmUtility();
-		au1.bubbleSortString1(arr, n);//method call
+		
+		AlgorithmUtility.bubbleSortString1(arr, n);//method call
 		System.out.println("Sorted array list is:");
 		for(int i=0;i<n;i++)
 		{

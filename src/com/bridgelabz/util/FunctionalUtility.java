@@ -1,14 +1,12 @@
 package com.bridgelabz.util;
 import java.util.*;
-import com.bridgelabz.functionalprograms.*;
 public class FunctionalUtility<E> 
 {
-
-	
 	//Replace a string
 
 	public void replaceString(String str1)
 	{
+		@SuppressWarnings("resource")
 		Scanner s=new Scanner(System.in);
 		String usname=s.nextLine();
 		if(usname.length()>=3)
@@ -230,6 +228,7 @@ public class FunctionalUtility<E>
 	public void sumOfThree(int n)
 	{
 		int a[]=new int[n];
+		@SuppressWarnings("resource")
 		Scanner scc=new Scanner(System.in);
 		for(int i=0;i<n;i++)
 		{
@@ -445,7 +444,7 @@ public static void dispBoard() {
     System.out.println("---------------");
 }
 /*
- * static void putVal(int i, int j, int player) { if if (player % 2 == 0) {
+ * static void putVal(int i, int j, int player) { if (player % 2 == 0) {
  * BOARD[i][j] = 0; } else BOARD[i][j] = 1; }
  */
 
@@ -456,7 +455,8 @@ public static void putVal() {
         i = (int) (Math.random() * 10) % 3;
         j = (int) (Math.random() * 10) % 3;
     } else {
-        Scanner s = new Scanner(System.in);
+        @SuppressWarnings("resource")
+		Scanner s = new Scanner(System.in);
         System.out.println("enter value of x and y by space");
         i = s.nextInt();
         j = s.nextInt();

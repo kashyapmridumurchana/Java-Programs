@@ -9,9 +9,7 @@
  *  @since   19.12.2018															*
  *  **************************************************************************/
 package com.bridgelabz.algorithmprograms;
-
 import com.bridgelabz.util.*;
-import java.util.*;
 public class MonthlyPayment 
 {
    //main method performs method call
