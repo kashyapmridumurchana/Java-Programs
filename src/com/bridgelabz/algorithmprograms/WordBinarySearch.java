@@ -18,6 +18,7 @@ public class WordBinarySearch
 	{
 		   
 			String file="/home/admin1/Desktop/file1.csv";
+			
 			@SuppressWarnings("resource")
 			BufferedReader fileReader=new BufferedReader(new FileReader(file));
 			

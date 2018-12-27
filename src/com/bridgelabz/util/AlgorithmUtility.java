@@ -16,6 +16,8 @@ public class AlgorithmUtility
 {
 	static int i;//global variables
 	static  String l,m;//global variables
+	
+	//Scanner creation
 	static Scanner sc=new Scanner(System.in);
 	public static int userInteger()
 	{
@@ -842,7 +844,13 @@ public static List<Double> listCall(List<Double> timeList)
    Collections.sort(timeList);	
    return timeList;
 }
-
+public static Map<String,Double> mapCall(Map<String,Double > map)
+{
+	Map<String, Double> sortedMap = new LinkedHashMap<>();
+	 map.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+	 .forEachOrdered(x -> sortedMap.put(x.getKey(), x.getValue()));
+	 return sortedMap;
+}
 
 
 
