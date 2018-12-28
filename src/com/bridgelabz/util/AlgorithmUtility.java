@@ -532,6 +532,7 @@ public static int [] swapNibble(int first,int middle,int last,int [] binary)
         return sum;
     }
     
+  
     
  // decimal to binary continued  
     

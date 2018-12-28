@@ -402,23 +402,6 @@ public static void iteration(String s)//using iteration
 }
 
 
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 
@@ -428,7 +411,7 @@ static int[][] BOARD = new int[3][3];
 static boolean isEmpty = true;
 
 public static void initBoard() {
-    System.out.println("TIC TAC TOE GAME\nComputer is o\nPlayer  is x ");
+    System.out.println("TIC TAC TOE GAME \n Computer is o \nPlayer  is x ");
     for (int i = 0; i < BOARD.length; i++) {
         for (int j = 0; j < BOARD[i].length; j++) {
             BOARD[i][j] = -10;
