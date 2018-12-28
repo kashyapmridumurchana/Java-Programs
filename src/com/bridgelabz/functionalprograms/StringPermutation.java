@@ -18,6 +18,7 @@ public class StringPermutation
 	//main method takes input of strings and calls a function
 	public static void main(String[] args) 
 	{
+		
 		FunctionalUtility fu3=new FunctionalUtility();
 		System.out.println("Enter the String");
 		String s=AlgorithmUtility.userString();	
@@ -29,9 +30,9 @@ public class StringPermutation
 			fact=fact*i;
 		}
 		
-		System.out.println("The number of combination will be " + fact);
+		System.out.println("The number of combination possible is " + fact);
 		System.out.println("The recursion output:");
-		fu3.recursion("",s);	  //recursion output
+		fu3.recursion("",s);	//recursion output
 		
 		System.out.println("The iteration output:");
 		fu3.iteration(s);         //iteration output

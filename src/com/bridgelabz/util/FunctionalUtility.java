@@ -362,13 +362,15 @@ public class FunctionalUtility<E>
 	
 	
 //String permutation
-public static void recursion(String candidate,String remaining)
+public static void recursion(String candidate,String remaining)//using recursion
 {
 	
-	
+	List<String> s=new ArrayList<>();
 	if(remaining.length()==0)
 	{
 		System.out.println(candidate);
+		
+		
 	}
 	for(int i=0;i<remaining.length();i++)
 	{
@@ -376,14 +378,12 @@ public static void recursion(String candidate,String remaining)
 		
 		String newRemaining=(remaining.substring(0,i)+remaining.substring(i+1));
 		
-		recursion(newCandidate,newRemaining);
-		
-		
+		recursion(newCandidate,newRemaining);	
 		
 	}
 	
 }
-public static void iteration(String s)
+public static void iteration(String s)//using iteration
 {
 	List<String> partial=new ArrayList<>();
 	partial.add(String.valueOf(s.charAt(0)));
@@ -460,10 +460,7 @@ public static void dispBoard() {
     }
     System.out.println("---------------");
 }
-/*
- * static void putVal(int i, int j, int player) { if (player % 2 == 0) {
- * BOARD[i][j] = 0; } else BOARD[i][j] = 1; }
- */
+
 
 public static void putVal() {
     int i;
@@ -482,7 +479,7 @@ public static void putVal() {
             BOARD[i][j] = 0;
         } else {
             BOARD[i][j] = 1;
-            System.out.println("Coumputer Choosing " + i + " " + j);
+            System.out.println("Computer Choosing " + i + " " + j);
         }
     } else
         putVal();

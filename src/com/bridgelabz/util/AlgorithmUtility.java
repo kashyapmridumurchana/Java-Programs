@@ -7,10 +7,7 @@
 package com.bridgelabz.util;
 import java.util.*;
 
-/**
- * @author admin1
- *
- */
+
 
 public class AlgorithmUtility
 {
@@ -19,6 +16,7 @@ public class AlgorithmUtility
 	
 	//Scanner creation
 	static Scanner sc=new Scanner(System.in);
+	//for integers
 	public static int userInteger()
 	{
 		try {
@@ -30,6 +28,7 @@ public class AlgorithmUtility
 		}
 		return 0;
 	}
+	//for double
 	public static double userDouble()
 	{
 		try {
@@ -41,6 +40,7 @@ public class AlgorithmUtility
 		}
 		return 0.0;
 	}
+	//for Boolean
 	public static boolean userBoolean()
 	{
 		try {
@@ -52,6 +52,7 @@ public class AlgorithmUtility
 		}
 		return false ;
 	}
+	//for String
 	public static String userString()
 	{
 		try {
@@ -63,6 +64,7 @@ public class AlgorithmUtility
 		}
 		return null;
 	}
+	//for long
 	public static long userLong()
 	{
 		try {
@@ -78,10 +80,10 @@ public class AlgorithmUtility
 
 
 
-	//String Anagrams	
+	//to check if strings are anagrams or not	
 	/**
-	 * @param s1
-	 * @param s2
+	 * @param s1 is the first string
+	 * @param s2 is the second String
 	 * @return
 	 */
 	public static  boolean anagrams(String s1,String s2)
@@ -120,15 +122,15 @@ public class AlgorithmUtility
 
 
 
-	//Range of prime numbers 
+	//prime numbers between 0-1000
 
 	/**
-	 * @return
+	 * @returns an array List which contains all the prime numbers between 0-1000 
 	 */
 	public static List<String> rangePrime()
 	{
 		int flag=1;
-		List<String> primeList=new ArrayList<>();
+		List<String> primeList=new ArrayList<>();//list declaration
 		for(int i=2;i<=1000;i++)
 		{
 			for(int j=2;j<i;j++)
@@ -143,7 +145,7 @@ public class AlgorithmUtility
 			}
 			if(flag==1)
 			{
-				primeList.add(Integer.toString(i));
+				primeList.add(Integer.toString(i));//integer to String conversion
 
 
 			}
@@ -154,19 +156,11 @@ public class AlgorithmUtility
 
 
 
-
-
-
-
-
-
-
-
-	//Anagram and Palindrome	
+	//to find the prime numbers which are Anagram and Palindrome	
 
 	/**
-	 * @param primeList
-	 * @return
+	 * @param primeList is the list of prime numbers given by the rangePrime() method
+	 * @returns an array set of prime anagrams 
 	 */
 	public static Set<String> primeAnagram(List<String> primeList)
 	{	
@@ -192,10 +186,10 @@ public class AlgorithmUtility
 		return primeAnagramSet;
 	}
 
-
+     //prime number program continued
 	/**
-	 * @param primeAnagramSet
-	 * @return
+	 * @param primeAnagramSet is the set of prime anagrams given by the primAnagram() method
+	 * @returns the set of prime numbers which are anagrams and palindrome
 	 */
 	public static Set<String> primePalindrome(Set<String> primeAnagramSet)
 	{
@@ -203,13 +197,13 @@ public class AlgorithmUtility
 		Set<String> resultSet=new HashSet<>();
 
 		String a;
-		while (iter.hasNext()) 
+		while (iter.hasNext()) //iterates till set is empty
 		{ 
 		    a=(String) iter.next();
-			int a1=Integer.parseInt(a);
-			int lk=reverse(a1);
+			int a1=Integer.parseInt(a);//type casting
+			int lk=reverse(a1);//gives the reverse of a1 and stores in lk
 
-			if(primeAnagramSet.contains(Integer.toString(lk)))
+			if(primeAnagramSet.contains(Integer.toString(lk)))//comparison 
 
 			{
 				String b=Integer.toString(lk);
@@ -221,10 +215,10 @@ public class AlgorithmUtility
 		return resultSet;
 	}
 	
-
+	//prime number program continued
 /**
- * @param n
- * @return
+ * @param n is a number,who reverse is to be found
+ * @returns the reverse of n
  */
 public static int reverse(int n)
 {
@@ -242,69 +236,20 @@ public static int reverse(int n)
 
 
 
-
-
-
-//bubble sorting for integers
-/*
-public void bubbleSort()
-{   
-	
-	System.out.println("How many numbers you want to insert");
-	int n=AlgorithmUtility.userInteger();
-	System.out.println("Enter the integer numbers for the array");
-	int[] array=new int[n];
-	int i;
-	for( i=0;i<n;i++)
-	{
-		array[i]=AlgorithmUtility.userInteger();
-	}	
-	System.out.println("the original array is:");
-	for(i=0;i<n;i++)
-	{
-		System.out.println(array[i]);
-	}
-	for(i=0;i<array.length-1;i++)
-	{
-		for( int j=1;j<array.length-i;j++)
-		{
-			if(array[j-1]>array[j])
-			{
-				int temp=array[j-1];
-				array[j-1]=array[j];
-				array[j]=temp;
-			}
-		}
-	}
-	System.out.println("Sorted array list is:");
-	for(i=0;i<n;i++)
-	{
-		System.out.println(array[i]);
-	}
-
-}
-*/
-
-
-
-
-
-
-
-//Merge Sort
+//to perform sorting of array using merge sort
 /**
- * @param array
- * @param low
- * @param high
+ * @param array is the array of elements provided by the user
+ * @param low is the first element
+ * @param high is the last element
  */
 public static void mergeSort(String array[],int low,int high)
 {
 	int n=high-low;
 	if(n<=1)
 		return;
-	int mid=low+n/2;
-	mergeSort(array,low,mid);//recursive calling
-	mergeSort(array,mid,high);//recursive calling
+	int mid=low+n/2;//middle element calculation
+	mergeSort(array,low,mid);//recursive calling to sort the lower half of array
+	mergeSort(array,mid,high);//recursive calling to sort the lower half of array
 	String[] temparr=new String[n];
 	int i=low,j=mid;
 	for(int k=0;k<n;k++)
@@ -334,8 +279,8 @@ public static void mergeSort(String array[],int low,int high)
 
 //vending machine
 /**
- * @param money
- * @param notes
+ * @param money is the amount entered by the user
+ * @param notes is the array of available notes
  */
 public void vendingMachine(int money,int[] notes)
 {
@@ -371,70 +316,11 @@ public void vendingMachine(int money,int[] notes)
 
 
 
-////insertion sort
-//
-///**
-// * @param array
-// * @param f
-// */
-//public static void insertionSort1(String array[], int f)
-//{ 
-//
-//	String temp="";
-//	for(int i=0;i<f;i++)
-//	{
-//		for(int j=i+1;j<f;j++)
-//		{
-//			if(array[i].compareToIgnoreCase(array[j])>0)
-//			{
-//				temp = array[i];
-//				array[i]=array[j];
-//				array[j]=temp;
-//			}
-//
-//		}
-//
-//	}
-//	System.out.println("the sorted list is");
-//	for (String string : array) {
-//		System.out.println(string);
-//	}
-//}
-
-
-
-
-
-////Linear search 
-//public String[] linearSearch(String array[],int n)
-//{
-//	Scanner sc=new Scanner(System.in);
-//	double startTimer=System.currentTimeMillis(); 
-//
-//	System.out.println("enter the element to be searched"); 
-//	String key=sc.nextLine(); 
-//	for(int i=0;i<n;i++)
-//	{
-//		if(key.compareToIgnoreCase(array[i])==0)
-//		{
-//			System.out.println("search done and element found at position " +i);
-//		}
-//
-//	}
-//	double stopTimer=System.currentTimeMillis();
-//	double timeElapsed=stopTimer-startTimer;
-//	//System.out.println("Elapsed time is"+ timeElapsed);
-//
-//	return array;
-//
-//}
-
-
-
-
-
-
-//insertion sort
+//to perform sorting of array using insertion sort
+/**
+ * @param array is the array of elements provided by the user 
+ * @param f is the size of array
+ */
 public static void insertionSort(String array[], int f)
 {
 	String temp="";
@@ -454,11 +340,12 @@ public static void insertionSort(String array[], int f)
 
 
 
+
 //bubble sort for both integers and strings
 /**
- * @param array
- * @param f
- * @return
+ * @param array is the array of elements provided by the user
+ * @param f is the size of array
+ * @returns the sorted array of Strings
  */
 public static String[] bubbleSortString1(String array[],int f)
 {
@@ -480,53 +367,20 @@ return array;
 
 
 
-//
-////bubble sort for both integers and strings
-//public static void bubbleSortString(String array[],int f)
-//{
-//
-//	System.out.println("the original array is:");
-//	for(int i=0;i<f;i++)
-//	{
-//		System.out.println(array[i]);
-//	}
-//
-//	for(int i=0;i<f;i++)
-//	{
-//		for( int j=1;j<f;j++)
-//		{
-//			if(array[j-1].compareToIgnoreCase(array[j])>0)
-//			{
-//				String temp=array[j-1];
-//				array[j-1]=array[j];
-//				array[j]=temp;
-//			}
-//		}
-//	}
-//	System.out.println("Sorted array list is:");
-//	for (String string : array) {
-//	
-//		System.out.println(string);
-//	}
-//}
-
-
-
-
 //temperature conversion
 /**
- * @param temp
- * @return
+ * @param temp is the temperature entered by the user
+ * @returns the temperature entered by the user in fahrenheit
  */
 public float tempConversion(float temp)
 {
 	float fah=(temp*9/5)+32;
 	return fah;
 	}
-
+//temperature conversion continued
 /**
- * @param temp
- * @return
+ * @param temp is the temperature entered by the user
+ * @returns the temperature entered by the user in celsius
  */
 public float tempConversion1(float temp)
 {
@@ -539,12 +393,12 @@ public float tempConversion1(float temp)
 
 
 
-//Monthly payment
+//to calculate Monthly payment
 /**
- * @param P
- * @param Y
- * @param R
- * @return
+ * @param P is the principal loan
+ * @param Y is the years
+ * @param R is the rate of interest
+ * @returns the  monthly payment
  */
 public double monthlyPayment(double P,double Y,double R)
 {
@@ -561,11 +415,11 @@ public double monthlyPayment(double P,double Y,double R)
 
 
 
-//Square root
+//to calculate the Square root of a number
 /**
- * @param num
- * @param temp
- * @return
+ * @param num is the number whose square root is to be found
+ * @param temp stores the final square root  result 
+ * @returns the temp
  */
 public double squareRoot(double num,double temp)
 {
@@ -590,9 +444,9 @@ public double squareRoot(double num,double temp)
 
 
 
-//Decimal to binary problem
+//to convert a Decimal number  to binary problem
 /**
- * @param num
+ * @param num is the decimal number whose binary value is to be found out
  */
 public static int[] toBinary(int num)
 {
@@ -607,6 +461,15 @@ public static int[] toBinary(int num)
     return binary;
 }
 
+//Decimal to binary continued
+
+/**
+ * @param first is the first element
+ * @param middle is the middle element
+ * @param last is the last element
+ * @param binary is the array of collection of binary number of a corresponding decimal number
+ * @returns the swapped nibble
+ */
 public static int [] swapNibble(int first,int middle,int last,int [] binary)
 {
     int n1=middle-first+1;
@@ -647,13 +510,19 @@ public static int [] swapNibble(int first,int middle,int last,int [] binary)
    
 }
 
-  
+
+
+
+ // decimal to binary continued 
     
+    /**
+     * @param binary is the array of collection of binary number of a corresponding decimal number 
+     * @returns the corresponding decimal of the binary number
+     */
     public static int decimal(int [] binary)
     {
         int num2=binary.length-1;
         int sum=0;
-//        System.out.println(num2);
         for(int i=0;i<binary.length;i++)
         {
             int res=(int)(Math.pow(2, num2));
@@ -662,10 +531,15 @@ public static int [] swapNibble(int first,int middle,int last,int [] binary)
         }
         return sum;
     }
-   
     
     
-     public static boolean powerOf2(int number){
+ // decimal to binary continued  
+    
+     /**
+     * @param number is the decimal number 
+     * @returns a boolean value(true if decimal number is power of 2)
+     */
+    public static boolean powerOf2(int number){
           if(number<=0){
            return false;
           }
@@ -680,16 +554,17 @@ public static int [] swapNibble(int first,int middle,int last,int [] binary)
 
 
 
+    
 
-//Binary search 
+//to search an element using binary search
 
 /**
- * @param lower
- * @param upper
- * @param middle
- * @param count
- * @param input
- * @param n
+ * @param lower is the first element
+ * @param upper is the last element
+ * @param middle is the middle element
+ * @param count is declared to count how many iterations the searching process took
+ * @param input is the string which is provided by the user as answer. 
+ * @param n is the number
  */
 public static void bSearch(int lower,int upper,int middle,int count,String input,int n)
 {
@@ -741,12 +616,12 @@ public static void bSearch(int lower,int upper,int middle,int count,String input
 
 
 
-//day of week
+//to calculate day of week
 /**
- * @param m
- * @param d
- * @param y
- * @return
+ * @param m is the month provided by user
+ * @param d is the  date provided by user
+ * @param y is the year provided by user
+ * @returns the day of the week as an integer(0 as sunday and so on)
  */
 public static int dayOfWeek(int m,int d,int y)
 {
@@ -762,12 +637,12 @@ public static int dayOfWeek(int m,int d,int y)
 
 
 
-//Word binary Search
+//Binary search of a word from a file
 
 //sorting
 /**
- * @param str
- * @return
+ * @param str is the array of strings as input
+ * @return the sorted array
  */
 public static String[] sort(String[] str)
 {
@@ -789,16 +664,11 @@ public static String[] sort(String[] str)
 }
 
 
-
-
-
-
-
-//binary search
+//Searching of a string using binary search
 /**
- * @param str
- * @param key
- * @return
+ * @param str is an array of strings 
+ * @param key is the value to be searched
+ * @returns an integer value 
  */
 public static int binarySearch(String str[],String key)
 {
@@ -824,27 +694,37 @@ public static int binarySearch(String str[],String key)
 
 
 //for timer start and stop
+
+
+//method to Start the timer
 public static double startTimerFunc()
 {
 	double d=System.nanoTime();
 	return d;
 }
+
+//method to stop the timer
 public static double stopTimerFunc()
 {
 	double d1=System.nanoTime();
 	return d1;
 }
+
+//method which calculates elapsed time
 public static double elapsedTime(double stopTime,double startTime)
 {
 	
 	double timeElapsed=stopTime-startTime;
 	return timeElapsed;
 }
+
+//returns an array list which stores the elapsed time of some methods
 public static List<Double> listCall(List<Double> timeList)
 {
-   Collections.sort(timeList);	
    return timeList;
 }
+
+//returns a map sorted in decreasing order
 public static Map<String,Double> mapCall(Map<String,Double > map)
 {
 	Map<String, Double> sortedMap = new LinkedHashMap<>();
