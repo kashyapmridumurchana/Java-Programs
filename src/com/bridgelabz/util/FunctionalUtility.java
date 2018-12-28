@@ -361,54 +361,66 @@ public class FunctionalUtility<E>
 	
 	
 	
-	
 //String permutation
-	public void sPermut(String str1)
-	{
-		int fact=1;
-		int len1=str1.length();
-		for(int i=1;i<=len1;i++)
-		{
-			fact=fact*i;
-		}
-		System.out.println("The number of arrangement possible for the given string is: " + fact);
-	}
-
-	public void permute(String str1,int l,int r)
-	{
-		if(l==r)
-		{
-			System.out.println(str1);
-		}
-		else
-		{
-			for(int i=1;i<=r;i++)
-			{
-				System.out.println(str1);
-				str1=swap(str1,l,i);
-				permute(str1,l+1,r);
-				str1=swap(str1,l,i);
-					
-			}
-		}
-	}
-public String swap(String a1,int i,int j)
+public static void recursion(String candidate,String remaining)
 {
-	char temp;
-	char a[]=a1.toCharArray();
-	temp=a[i];
-	a[i]=a[j];
-	a[j]=temp;
-    return String.valueOf(a);
 	
+	
+	if(remaining.length()==0)
+	{
+		System.out.println(candidate);
+	}
+	for(int i=0;i<remaining.length();i++)
+	{
+		String newCandidate=candidate+remaining.charAt(i);
+		
+		String newRemaining=(remaining.substring(0,i)+remaining.substring(i+1));
+		
+		recursion(newCandidate,newRemaining);
+		
+		
+		
+	}
+	
+}
+public static void iteration(String s)
+{
+	List<String> partial=new ArrayList<>();
+	partial.add(String.valueOf(s.charAt(0)));
+	for(int i=1;i<s.length();i++)
+	{
+		for(int j=partial.size()-1;j>=0;j--)
+		{
+		String str=partial.remove(j);
+		for(int k=0;k<=str.length();k++)
+		{
+			partial.add(str.substring(0,k)+s.charAt(i)+ str.substring(k));
+		}
+	  }		
+	}
+	System.out.println(partial);
 }
 
 
 
 
-
-
-
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 //tic tac toe
 static int player = 0;
@@ -460,11 +472,10 @@ public static void putVal() {
         i = (int) (Math.random() * 10) % 3;
         j = (int) (Math.random() * 10) % 3;
     } else {
-        @SuppressWarnings("resource")
-		Scanner s = new Scanner(System.in);
+        
         System.out.println("enter value of x and y by space");
-        i = s.nextInt();
-        j = s.nextInt();
+        i = AlgorithmUtility.userInteger();
+        j =  AlgorithmUtility.userInteger();
     }
     if (BOARD[i][j] == -10) {
         if (player % 2 == 0) {

@@ -706,6 +706,7 @@ public static void bSearch(int lower,int upper,int middle,int count,String input
 		}
 		else if (input.contentEquals("yes"))
 		{
+			count++;
 			System.out.println("Your number is"+middle);
 			int no=count;
 			System.out.println("It took "+ no+ " times to get your number");

@@ -14,20 +14,28 @@ import java.util.*;
 import com.bridgelabz.util.*;
 public class StringPermutation 
 {
-//main method takes input of strings and calls a function
+
+	//main method takes input of strings and calls a function
 	public static void main(String[] args) 
 	{
-		Scanner s=new Scanner(System.in);
-		System.out.println("Enter the string");
-		String str1=s.nextLine();
 		FunctionalUtility fu3=new FunctionalUtility();
-		fu3.sPermut(str1);//function call
-		int length=str1.length();
-		fu3.permute(str1,0,length-1);//function call
-				
-				
-				
-
+		System.out.println("Enter the String");
+		String s=AlgorithmUtility.userString();	
+		String[] str=new String[1000];
+		int len=s.length();
+		int fact=1;
+		for(int i=len;i>=1;i--)
+		{
+			fact=fact*i;
+		}
+		
+		System.out.println("The number of combination will be " + fact);
+		System.out.println("The recursion output:");
+		fu3.recursion("",s);	  //recursion output
+		
+		System.out.println("The iteration output:");
+		fu3.iteration(s);         //iteration output
+		
 	}
 
 }
