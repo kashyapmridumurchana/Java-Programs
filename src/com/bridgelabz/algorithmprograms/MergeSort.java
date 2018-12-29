@@ -33,7 +33,7 @@ public class MergeSort
 		{
 			System.out.println(arr[i]+"");
 		}
-
+  
 	}
 
 }

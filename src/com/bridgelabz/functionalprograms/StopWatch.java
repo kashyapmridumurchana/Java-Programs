@@ -22,10 +22,10 @@ public class StopWatch
 		FunctionalUtility fu=new FunctionalUtility();
 		
 		Scanner sc=new Scanner(System.in);
-		System.out.println("Press 4 to start the timer");
+		System.out.println("Press any key to start the timer");
 		int n=sc.nextInt();
 		fu.start();//method call
-		System.out.println("Press 5 to start the timer");
+		System.out.println("Press any key to stop the timer");
 		int n1=sc.nextInt();
 		fu.stop();//method call
 		fu.timeTaken();//method call

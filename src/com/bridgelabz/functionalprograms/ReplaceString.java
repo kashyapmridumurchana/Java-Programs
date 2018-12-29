@@ -19,7 +19,7 @@ public class ReplaceString
 	{
 	Scanner s=new Scanner(System.in);	
 	System.out.println("Enter the username");
-	String str1="Hello ##username##,How are you?";
+	String str1="Hello <<username>>,How are you?";
 	FunctionalUtility funtionalUtility=new FunctionalUtility();
 	funtionalUtility.replaceString(str1);//function call
 	}

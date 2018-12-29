@@ -193,7 +193,8 @@ public class AlgorithmUtility
 	 */
 	public static Set<String> primePalindrome(Set<String> primeAnagramSet)
 	{
-		Iterator<String> iter = primeAnagramSet.iterator();
+		Iterator iter=primeAnagramSet.iterator(); 
+		//Iterator<String> iter = primeAnagramSet.iterator();    //Alternative of the line no 196
 		Set<String> resultSet=new HashSet<>();
 
 		String a;
@@ -244,6 +245,8 @@ public static int reverse(int n)
  */
 public static void mergeSort(String array[],int low,int high)
 {
+	if(array.length>0)
+	{
 	int n=high-low;
 	if(n<=1)
 		return;
@@ -268,6 +271,9 @@ public static void mergeSort(String array[],int low,int high)
 	{
 		array[low +k]=temparr[k];
 	}
+	}
+	else
+		System.out.println("kindly enter the more thn one string");
 }
 
 
@@ -561,18 +567,18 @@ public static int [] swapNibble(int first,int middle,int last,int [] binary)
 
 /**
  * @param lower is the first element
- * @param upper is the last element
+ * @param upper is the range value
  * @param middle is the middle element
  * @param count is declared to count how many iterations the searching process took
  * @param input is the string which is provided by the user as answer. 
- * @param n is the number
+ * @param n is the number given by user
  */
 public static void bSearch(int lower,int upper,int middle,int count,String input,int n)
 {
 	
 	System.out.println("Is your number:"+middle);
 	System.out.println("Enter your answer as in 'yes'or 'high' or 'low'");
-	input=sc.nextLine(); 
+	input=AlgorithmUtility.userString();
 	do
 	{
 		if(input.equals("high"))
@@ -598,7 +604,7 @@ public static void bSearch(int lower,int upper,int middle,int count,String input
 		{
 			middle=(lower+upper +1)/2;
 			System.out.println("is your number"+middle);
-			input=sc.nextLine();
+			input=AlgorithmUtility.userString();
 		}
 	}
 	while(lower<upper);
@@ -631,6 +637,8 @@ public static int dayOfWeek(int m,int d,int y)
 	int m1=m+12*((14-m)/12)-2;
 	int d1=(d+x+31*m1/12)%7;
 	return d1;
+	
+	
 }
 
 

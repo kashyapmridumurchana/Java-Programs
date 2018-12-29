@@ -29,16 +29,16 @@ public class TemperatureConversion {
 		
 		
 		//case 1
-		case 1:aa.tempConversion(temp);//method call
-		      System.out.println("the temperature in fahrenheit is "+ temp);
+		case 1:float p=aa.tempConversion(temp);//method call
+		      System.out.println("the temperature in fahrenheit is "+ p);
 		break;
 		
 		
 		
 		
 		//case 2
-		case 2:aa.tempConversion1(temp);//method call
-		System.out.println("the temperature in celsius is"+ temp);
+		case 2:float ck=aa.tempConversion1(temp);//method call
+		System.out.println("the temperature in celsius is"+ ck);
 		break;
 		
 		
@@ -46,7 +46,7 @@ public class TemperatureConversion {
 		default: System.out.println("kindly choose among the given choices");
 		break;
 		}
-
+		
 
 	}
 

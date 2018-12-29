@@ -23,7 +23,7 @@ public class CouponNumbers
 		int n=s.nextInt();
 		FunctionalUtility funtionalUtility=new FunctionalUtility();
 		funtionalUtility.couponNumber(n);	//method call
-
+		
 	}
 
 }

@@ -15,10 +15,8 @@ public class GuessNumber
 	//main method contains the input of the number by the user and calls method
 	public static void main(String[] args)
 	{
-		
-		System.out.println("Enter any number");
-		int n=AlgorithmUtility.userInteger();
-
+       String i=args[0];
+       int n=Integer.parseInt(i);
 		int range=(int) (Math.pow(2,n));  //range is calculated using pre-defined function 'power'
 		int r=range-1;
 		System.out.println("take number between '1' to "+r);

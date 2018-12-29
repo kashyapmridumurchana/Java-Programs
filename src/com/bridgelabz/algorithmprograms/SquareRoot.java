@@ -15,12 +15,12 @@ public class SquareRoot
 //main method takes input and calls the function
 	public static void main(String[] args) 
 	{
-		System.out.println("Enter the number to geth the square root");
+		System.out.println("Enter the number to get the square root");
 		Double num=AlgorithmUtility.userDouble();
 		double temp=num;
 		AlgorithmUtility aa=new AlgorithmUtility();
-		 aa.squareRoot(num,temp);//function call
-		System.out.println("the square root of "+ num+ " is " + temp);
+		 double n1=aa.squareRoot(num,temp);//function call
+		System.out.println("the square root of "+ num+ " is " + n1);
 	}
 
 }
