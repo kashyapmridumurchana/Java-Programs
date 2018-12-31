@@ -41,15 +41,15 @@ public class FunctionalUtility<E>
 	 */
 	public void flipCoin(int n)
 	{
-		int head=0,tail=0;
+		double head=0.0,tail=0.0;
 		int num=n;
 		Random r=new Random();
 		while(num>0)
 		{
 			int nr=r.nextInt(2);
-			if(nr==0)
+			if(nr==0.0)
 				tail++;
-			else if(nr==1)
+			else if(nr==1.0)
 				head++;
 			num--;
 		}
@@ -167,7 +167,7 @@ public class FunctionalUtility<E>
 	 */
 	public void gambler(int $Stake,int $Goal,int n)
 	{
-		int wins=0,loss=0;
+		double wins=0.0,loss=0.0;
 		for(int i=0;i<n;i++)
 		{
 			int money=$Stake;

@@ -97,8 +97,8 @@ public class AlgorithmUtility
 		}
 		else 
 		{
-			sortChar(ch1);
-			sortChar(ch2);
+			ch1=sortChar(ch1);
+			ch2=sortChar(ch2);
 			for(int i=0;i<len1;i++)
 			{
 				String str1=String.valueOf(ch1);
@@ -153,7 +153,7 @@ public class AlgorithmUtility
 	{
 		int flag=1;
 		List<String> primeList=new ArrayList<>();//list declaration
-		for(int i=2;i<=1000;i++)
+		for(int i=2;i<=500;i++)
 		{
 			for(int j=2;j<i;j++)
 			{
@@ -192,7 +192,7 @@ public class AlgorithmUtility
 
 			for(int j=i+1;j<primeList.size();j++)
 			{
-				if(AlgorithmUtility.anagrams(primeList.get(i), primeList.get(j)))
+				if(AlgorithmUtility.anagrams(String.valueOf(primeList.get(i)), String.valueOf(primeList.get(j))))
 				{
 					
 					primeAnagramSet.add(primeList.get(i));
@@ -204,6 +204,40 @@ public class AlgorithmUtility
 
 		return primeAnagramSet;
 	}
+	
+	/*
+	public static Set<Integer> primePalindrome(Set<Integer> primeAnagramSet) {
+        Set<Integer> pal_set=new HashSet<>();
+        Iterator<Integer> itr=primeAnagramSet.iterator();
+        while(itr.hasNext()){
+            Integer num=itr.next();
+            if(isPalindrom(String.valueOf(num))){
+                pal_set.add(num);
+            }
+        }
+        return pal_set;
+    }
+    public static boolean isPalindrom(String str){
+        char temp;
+        int begin=0;
+        int end=str.length()-1;
+        String rev_str=str;
+        char[] array=str.toCharArray();
+        while(begin<=end){
+            temp=array[begin];
+            array[begin]=array[end];
+            array[end]=temp;
+            begin++;
+            end--;
+        }
+        String new_str=String.valueOf(array);
+        if(rev_str.equals(new_str))
+            return true;
+        else
+            return false;
+    }
+
+	*/
 
      //prime number program continued
 	/**
