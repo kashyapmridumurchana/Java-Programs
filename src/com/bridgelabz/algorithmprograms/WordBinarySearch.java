@@ -40,7 +40,7 @@ public class WordBinarySearch
 					int i=AlgorithmUtility.binarySearch(tokens,key);
 					if(i>=0)
 					{
-						System.out.println(tokens[i]+ "is present in "+ (i)+ " position of array");
+						System.out.println(tokens[i]+ " is present in "+ (i)+ " position of array");
 					}
 					else 
 						System.out.println(key+ "doesnot exist");

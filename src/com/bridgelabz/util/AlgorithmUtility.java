@@ -7,8 +7,6 @@
 package com.bridgelabz.util;
 import java.util.*;
 
-
-
 public class AlgorithmUtility
 {
 	static int i;//global variables
@@ -99,8 +97,8 @@ public class AlgorithmUtility
 		}
 		else 
 		{
-			Arrays.sort(ch1);
-			Arrays.sort(ch2);
+			sortChar(ch1);
+			sortChar(ch2);
 			for(int i=0;i<len1;i++)
 			{
 				String str1=String.valueOf(ch1);
@@ -114,6 +112,30 @@ public class AlgorithmUtility
 			}
 			return false;
 		}
+	}
+	
+	//Anagram program continued
+	
+	/**
+	 * @param ch is the character array input
+	 * @returns sorted array
+	 */
+	public static char[] sortChar(char [] ch)
+	{
+		char[] c=new char[ch.length];
+		for(int i=0;i<ch.length;i++)
+		{
+			int count=0;
+			for(int j=0;j<ch.length;j++)
+			{
+				if(ch[i]<ch[j])
+				{
+					count++;
+				}
+			}
+			c[count]=ch[i];
+		}
+		return c;
 	}
 
 
@@ -164,9 +186,6 @@ public class AlgorithmUtility
 	 */
 	public static Set<String> primeAnagram(List<String> primeList)
 	{	
-
-
-
 		Set<String> primeAnagramSet=new HashSet<>();
 		for(int i=0;i<primeList.size();i++)
 		{
@@ -193,8 +212,8 @@ public class AlgorithmUtility
 	 */
 	public static Set<String> primePalindrome(Set<String> primeAnagramSet)
 	{
-		Iterator iter=primeAnagramSet.iterator(); 
-		//Iterator<String> iter = primeAnagramSet.iterator();    //Alternative of the line no 196
+		//Iterator iter=primeAnagramSet.iterator(); 
+		Iterator<String> iter = primeAnagramSet.iterator();    //Alternative of the line no 196
 		Set<String> resultSet=new HashSet<>();
 
 		String a;

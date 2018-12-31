@@ -34,7 +34,6 @@ public class FunctionalUtility<E>
 
 
 
-
 	//To flip a coin and calculate the head and tail percentages
 
 	/**

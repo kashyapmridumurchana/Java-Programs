@@ -32,7 +32,7 @@ public class AnagramAndPalindrome
 		Set<String> primeAnagramSet=new HashSet<>();//declaration
 		System.out.println("The prime numbers which are anagrams are");
 		primeAnagramSet=AlgorithmUtility.primeAnagram(primeList);//method call
-		
+		//System.out.println(primeAnagramSet);
 		
 		
 		
