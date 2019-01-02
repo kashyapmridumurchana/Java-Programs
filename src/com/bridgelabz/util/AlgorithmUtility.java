@@ -380,14 +380,14 @@ public void vendingMachine(int money,int[] notes)
  * @param array is the array of elements provided by the user 
  * @param f is the size of array
  */
-public static void insertionSort(String array[], int f)
+public static <T extends Comparable<T>> void insertionSort(T array[], int f)
 {
-	String temp="";
+	T temp;
 	for(int i=0;i<f;i++)
 	{
 		for(int j=i+1;j<f;j++)
 		{
-			if(array[i].compareToIgnoreCase(array[j])>0)
+			if(array[i].compareTo(array[j])>0)
 			{
 				temp = array[i];
 				array[i]=array[j];
@@ -406,21 +406,21 @@ public static void insertionSort(String array[], int f)
  * @param f is the size of array
  * @returns the sorted array of Strings
  */
-public static String[] bubbleSortString1(String array[],int f)
+public static <T extends Comparable<T>> void bubbleSortString1(T array[],int f)
 {
 	for(int i=0;i<f;i++)
 	{
 		for( int j=1;j<f;j++)
 		{
-			if(array[j-1].compareToIgnoreCase(array[j])>0)
+			if(array[j-1].compareTo((T)array[j])>0)
 			{
-				String temp=array[j-1];
+				T temp=array[j-1];
 				array[j-1]=array[j];
 				array[j]=temp;
 			}
 		}
 	}
-return array;
+//return array;
 }
 
 
@@ -725,23 +725,24 @@ public static String[] sort(String[] str)
 	return str;
 }
 
-
+//word binary search
 //Searching of a string using binary search
 /**
- * @param str is an array of strings 
+ * @param arr is an array of strings 
  * @param key is the value to be searched
+ * @return 
  * @returns an integer value 
  */
-public static int binarySearch(String str[],String key)
+public static int binarySearch(String[] arr,String key)
 {
 	int first=0;
-	int last=str.length-1;
+	int last=arr.length-1;
 	int middle=(first+last)/2;
 	while(first<=last)
 	{
-		if(str[middle].compareToIgnoreCase(key)<0)
+		if(arr[middle].compareToIgnoreCase(key)<0)
 			first=middle+1;
-		else if(str[middle].compareToIgnoreCase(key)==0)
+		else if(arr[middle].compareToIgnoreCase(key)==0)
 		{
 			return middle;
 		}
@@ -751,6 +752,29 @@ public static int binarySearch(String str[],String key)
 	}
 	return -1;
 }
+
+
+
+public static <T extends Comparable<T>> int binarySearch1(T[] arr,String key)
+{
+	int first=0;
+	int last=arr.length-1;
+	int middle=(first+last)/2;
+	while(first<=last)
+	{
+		if(arr[middle].compareTo((T) key)<0)
+			first=middle+1;
+		else if(arr[middle].compareTo((T) key)==0)
+		{
+			return middle;
+		}
+		else 
+			last=middle-1;
+		middle=(first+last)/2;
+	}
+	return -1;
+}
+
 
 
 

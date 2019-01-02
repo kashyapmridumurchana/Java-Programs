@@ -44,11 +44,11 @@ public class Utility {
 				System.out.println("Enter the size of your array");
 				int n = AlgorithmUtility.userInteger();
 
-				String arr[] = new String[n];
+				Integer arr[] = new Integer[n];
 				System.out.println("Enter the elements");
 
 				for (int i = 0; i < n; i++) {
-					arr[i] = AlgorithmUtility.userString();
+					arr[i] = AlgorithmUtility.userInteger();
 				}	
 				switch (choice)// switch case to choose among the choices
 				{
@@ -64,7 +64,7 @@ public class Utility {
 
 					double s1 = AlgorithmUtility.startTimerFunc();// to start timer
 
-					int il = AlgorithmUtility.binarySearch(arr, key);
+					int il = AlgorithmUtility.binarySearch1(arr, key);
 					if (il >= 0) {
 						System.out.println(arr[il] + "is present in " + (il) + " position of array");
 					} else
@@ -94,7 +94,7 @@ public class Utility {
 
 					double s3 = AlgorithmUtility.startTimerFunc();// to start timer
 
-					int ilk = AlgorithmUtility.binarySearch(arr, key1);
+					int ilk = AlgorithmUtility.binarySearch1(arr, key1);
 					if (ilk >= 0) {
 						System.out.println(arr[ilk] + "is present in " + (ilk) + " position of array");
 					} else

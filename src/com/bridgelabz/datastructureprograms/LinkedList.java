@@ -1,151 +1,185 @@
 package com.bridgelabz.datastructureprograms;
 
-import java.util.Iterator;
 
-public class LinkedList<T>{
-     
-    private Node<T> head;
-    private Node<T> tail;
-   
-    public void add(T element){
-        
+public class LinkedList<T> {
+
+    private Node<T> first;
+    private Node<T> last;
+
+    public void add(T element) {
+
         Node<T> nd = new Node<T>();
         nd.setValue(element);
-       // System.out.println("Adding: "+element);
-        if(head == null){
-            head = nd;
-            tail = nd;
+        if (first == null) {
+            first = nd;
+            last = nd;
         } else {
-            tail.setNextRef(nd);
-            tail = nd;
+            last.setNextRef(nd);
+            last = nd;
         }
     }
-    
-    public void addAfter(T element, T after){
-        
-        Node<T> tmp = head;
-        Node<T> refNode = null;
-        System.out.println("Traversing to all nodes..");
-        while(true){
-            if(tmp == null){
+
+    public int print() {
+
+        Node<T> tmp = first;
+        int i = 0;
+        while (true) {
+            if (tmp == null) {
                 break;
             }
-            if(tmp.compareTo(after) == 0){
-                refNode = tmp;
-                break;
-            }
-            tmp = tmp.getNextRef();
-        }
-        if(refNode != null){
-            Node<T> nd = new Node<T>();
-            nd.setValue(element);
-            nd.setNextRef(tmp.getNextRef());
-            if(tmp == tail){
-                tail = nd;
-            }
-            tmp.setNextRef(nd);
-            
-        } else {
-            System.out.println("Unable to find the given element...");
-        }
-    }
-    
-    public void deleteFront(){
-        
-        if(head == null){
-            System.out.println("Underflow...");
-        }
-        Node<T> tmp = head;
-        head = tmp.getNextRef();
-        if(head == null){
-            tail = null;
-        }
-        System.out.println("Deleted: "+tmp.getValue());
-    }
-    
-    public void deleteAfter(T after){
-        
-        Node<T> tmp = head;
-        Node<T> refNode = null;
-        System.out.println("Traversing to all nodes..");
-        while(true){
-            if(tmp == null){
-                break;
-            }
-            if(tmp.compareTo(after) == 0){
-                refNode = tmp;
-                break;
-            }
-            tmp = tmp.getNextRef();
-        }
-        if(refNode != null){
-            tmp = refNode.getNextRef();
-            refNode.setNextRef(tmp.getNextRef());
-            if(refNode.getNextRef() == null){
-                tail = refNode;
-            }
-            System.out.println("Deleted: "+tmp.getValue());
-        } else {
-            System.out.println("Unable to find the given element...");
-        }
-    }
-    
-    public int traverse(){
-        
-        Node<T> tmp = head;
-        int i=0;
-        while(true){
-            if(tmp == null){
-                break;
-            }
+            if(tmp.getValue()!=null)
+            {
             System.out.println(tmp.getValue());
             i++;
+            }
             tmp = tmp.getNextRef();
         }
         return i;
     }
-    public void printValue(int length)
-    {
-//         LinkedList<T> list=new LinkedList<T>();
-         Node<T> nd1 = tail;
-         Node<T> nd2 = head;
-//         int length=list.traverse();
-         System.out.println(length);
-         for(int i=0;head==tail;i++)
-         {
-          System.out.println();
-         }
- 
+
+    
+    
+    
+    
+    public boolean printValue(int length, String key, LinkedList<String> li) {
+        Node<T> nd2 = first;
+        while (true) {
+            if (nd2 == null) {
+                break;
+            }
+            if (key.compareToIgnoreCase(String.valueOf(nd2.getValue())) == 0) {
+                nd2.setValue(null);
+                return true;
+            }
+            nd2 = nd2.getNextRef();
+        }
+        li.add(key);
+        li.print();
+        return false;
+    }
+    
+    
+    
+    
+    //ordered list
+    public boolean printValue1(int length, int key, LinkedList<Integer> li) {
+        Node<T> nd2 = first;
+        while (true) {
+            if (nd2 == null) {
+                break;
+            }
+            if (Integer.toString(key).compareToIgnoreCase(String.valueOf(nd2.getValue())) == 0) {
+                nd2.setValue(null);
+                return true;
+            }
+            nd2 = nd2.getNextRef();
+        }
+        li.add(key);
+        li.print();
+        return false;
+    }
+   
+    
+    
+    
+    public void sort(LinkedList<Integer> li) {
+
+        Node<T> tmp = first;
+        while (true) {
+            if (tmp == null) {
+                break;
+            }
+            if(tmp.getValue()!=null)
+            {
+            System.out.println(tmp.getValue());
+            }
+            tmp = tmp.getNextRef();
+        }
+    }
+   
+    public boolean findIntegerValue(int length, int key, LinkedList<Integer> li) {
+        Node<T> nd2 = first;
+        while (true) {
+            if (nd2 == null) {
+                break;
+            }
+//            if (String.valueOf(key).compareToIgnoreCase(String.valueOf(nd2.getValue())) == 0)
+            if(key==Integer.valueOf(String.valueOf(nd2.getValue())))
+            {
+                nd2.setValue(null);
+                return true;
+            }
+            nd2 = nd2.getNextRef();
+        }
+        li.add(key);
+        li.print();
+        return false;
     }
 
+    public String [] convString(LinkedList<String> li,int len)
+    {
+        Node nd2 = li.first;
+        String [] str=new String[len];
+        int i=0;
+        while (true) {
+            if (nd2 == null) {
+                break;
+            }
+            if(nd2.getValue()!=null)
+            {
+                str[i]=(String) nd2.getValue();
+                i++;
+            }
+            nd2 = nd2.getNextRef();
+        }
+        return str;
+    }
+
+
+
+
+public String [] convString1(LinkedList<Integer> li,int len)
+{
+    Node nd2 = li.first;
+    String [] str=new String[len];
+    int i=0;
+    while (true) {
+        if (nd2 == null) {
+            break;
+        }
+        if(nd2.getValue()!=null)
+        {
+            str[i]=(String) nd2.getValue();
+            i++;
+        }
+        nd2 = nd2.getNextRef();
+    }
+    return str;
 }
- 
-class Node<T> implements Comparable<T> {
-    
+}
+
+
+
+
+class Node<T>  {
+
     private T value;
     private Node<T> nextRef;
-    
+
     public T getValue() {
         return value;
     }
+
     public void setValue(T value) {
         this.value = value;
     }
+
     public Node<T> getNextRef() {
         return nextRef;
     }
+
     public void setNextRef(Node<T> ref) {
         this.nextRef = ref;
     }
-    @Override
-    public int compareTo(T arg) {
-        if(arg == this.value){
-            return 0;
-        } else {
-            return 1;
-           
-        }
-    }
+
 }
-
-
