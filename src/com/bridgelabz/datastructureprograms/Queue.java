@@ -6,7 +6,7 @@ public class Queue
 {
 	class Node
 	{
-		protected int data;
+		protected long data;
 	    protected Node link;
 	 
 	    /*  Constructor  */
@@ -42,20 +42,21 @@ public class Queue
 	    }  
 
 	    /*  Function to get data from current Node  */
-	    public int getData()
+	    public long getData()
 	    {
 	        return data;
 	    }
 	}
 	 
 	/*  Class linkedQueue  */
-	public class CashCounterLogic
+	public class Queue1
 	{
+		
 		public Node front, rear;
 	    public int size;
 	 
 	    /* Constructor */
-	    public CashCounterLogic()
+	    public Queue1()
 	    {
 	        front = null;
 	        rear = null;
@@ -93,13 +94,14 @@ public class Queue
 		}
 	    
 	    /*  Function to remove front element from the queue */
-	   	public int remove()
+	   	public long remove(long qq)
 	    {
 	        if (isEmpty())
 			{
 	        	throw new NoSuchElementException("Underflow Exception");
 			}
 	        Node ptr = front;
+	        
 	        front = ptr.getLink();        
 	        if (front == null)
 			{
@@ -109,8 +111,11 @@ public class Queue
 	        return ptr.getData();
 	    }    
 	    
+	   
+	   	
+	   	
 	    /*  Function to check the front element of the queue */
-	    public int peek()
+	    public long peek()
 	    {
 	        if (isEmpty())
 			{
@@ -122,7 +127,7 @@ public class Queue
 	    /*  Function to display the status of the queue */
 	    public void display()
 	    {  
-			int ptr1=0;
+			long ptr1=0;
 	        System.out.print("Available Balance = ");
 	        if (size == 0)
 	        {
@@ -132,7 +137,7 @@ public class Queue
 	        Node ptr = front;
 	        while (ptr != rear.getLink() )
 	        { 
-	        	ptr1=ptr1+ptr.getData();
+	        	ptr1= (ptr1+ptr.getData());
 	        	System.out.println(ptr1);
 	            ptr = ptr.getLink();
 	        }

@@ -20,9 +20,6 @@ public class Utility {
 	// main method
 	public static void main(String[] args) {
 		int ll=0;
-		//Array list creation
-		List<Double> timeList = new ArrayList<>();
-		List<Double> timeList1 = new ArrayList<>();
 
 		//Map creation
 		Map<String, Double> map=new HashMap<String, Double>();
@@ -38,29 +35,25 @@ public class Utility {
 
 			if(choice<=7)
 			{
-
-				// takes input of array and its size
-
 				System.out.println("Enter the size of your array");
 				int n = AlgorithmUtility.userInteger();
-
-				Integer arr[] = new Integer[n];
-				System.out.println("Enter the elements");
-
-				for (int i = 0; i < n; i++) {
-					arr[i] = AlgorithmUtility.userInteger();
-				}	
 				switch (choice)// switch case to choose among the choices
 				{
 
 				// case 1
 				case 1:
+					Integer arr[]=new Integer[n];
+					System.out.println("Enter the elements");
+					for (int i = 0; i < n; i++) {
+						arr[i] = AlgorithmUtility.userInteger();
+					}	
+
 					System.out.println("the original array is:");
 					for (int i = 0; i < n; i++) {
 						System.out.println(arr[i]);
 					}
 					System.out.println("Enter the Element to be searched");
-					String key = AlgorithmUtility.userString();
+					Integer key = AlgorithmUtility.userInteger();
 
 					double s1 = AlgorithmUtility.startTimerFunc();// to start timer
 
@@ -77,26 +70,31 @@ public class Utility {
 					map.put("Integer Binary search", e);//pushing to map
 
 					System.out.println("Elapsed time is" + e);
-
-					timeList.add(e);// Adding to the arraylist
-
 					break;
+
+
+
 
 					// case 2
 
 				case 2:
+					String arr1[]=new String[n];
+					System.out.println("Enter the elements");
+					for (int i = 0; i < n; i++) {
+						arr1[i] = AlgorithmUtility.userString();
+					}	
 					System.out.println("the original array is:");
 					for (int i = 0; i < n; i++) {
-						System.out.println(arr[i]);
+						System.out.println(arr1[i]);
 					}
 					System.out.println("Enter the Element to be searched");
 					String key1 = AlgorithmUtility.userString();
 
 					double s3 = AlgorithmUtility.startTimerFunc();// to start timer
 
-					int ilk = AlgorithmUtility.binarySearch1(arr, key1);
+					int ilk = AlgorithmUtility.binarySearch1(arr1, key1);
 					if (ilk >= 0) {
-						System.out.println(arr[ilk] + "is present in " + (ilk) + " position of array");
+						System.out.println(arr1[ilk] + "is present in " + (ilk) + " position of array");
 					} else
 						System.out.println(key1 + "doesnot exist");
 
@@ -107,25 +105,29 @@ public class Utility {
 					map.put("String Binary search", e1);
 
 					System.out.println("Elapsed time is" + e1);
-
-					timeList.add(e1);// Adding to the arraylist
 					break;
+
 
 
 					// case 3
 				case 3:
+					Integer arr2[]=new Integer[n];
+					System.out.println("Enter the elements");
+					for (int i = 0; i < n; i++) {
+						arr2[i] = AlgorithmUtility.userInteger();
+					}	
 					System.out.println("the original array is:");
 					for (int i = 0; i < n; i++) {
-						System.out.println(arr[i]);
+						System.out.println(arr2[i]);
 					}
 
 					double s5 = AlgorithmUtility.startTimerFunc();// to start timer
 
-					AlgorithmUtility.insertionSort(arr, arr.length);
+					AlgorithmUtility.insertionSort(arr2, arr2.length);
 
 					System.out.println("Sorted array list is:");// prints the sorted array
 					for (int i = 0; i < n; i++) {
-						System.out.println(arr[i]);
+						System.out.println(arr2[i]);
 					}
 
 					double s6 = AlgorithmUtility.stopTimerFunc();// to stop timer
@@ -135,50 +137,57 @@ public class Utility {
 
 					System.out.println("Elapsed time is" + e2);
 
-					timeList.add(e2);// Adding to the arraylist
-
 					break;
+
 
 					// case 4
 
-				case 4:
-					System.out.println("the original array is:");
-					for (int i = 0; i < n; i++) {
-						System.out.println(arr[i]);
-					}
-					double s7 = AlgorithmUtility.startTimerFunc();// to start timer
+				case 4:String arr3[]=new String[n];
+				System.out.println("Enter the elements");
+				for (int i = 0; i < n; i++) {
+					arr3[i] = AlgorithmUtility.userString();
+				}	
+				System.out.println("the original array is:");
+				for (int i = 0; i < n; i++) {
+					System.out.println(arr3[i]);
+				}
+				double s7 = AlgorithmUtility.startTimerFunc();// to start timer
 
-					AlgorithmUtility.insertionSort(arr, arr.length);
+				AlgorithmUtility.insertionSort(arr3, arr3.length);
 
-					System.out.println("Sorted array list is:");// prints the sorted array
-					for (int i = 0; i < n; i++) {
-						System.out.println(arr[i]);
-					}
+				System.out.println("Sorted array list is:");// prints the sorted array
+				for (int i = 0; i < n; i++) {
+					System.out.println(arr3[i]);
+				}
 
-					double s8 = AlgorithmUtility.stopTimerFunc();// to stop timer
-					double e3 = AlgorithmUtility.elapsedTime(s8, s7);// calculates elapsed time
+				double s8 = AlgorithmUtility.stopTimerFunc();// to stop timer
+				double e3 = AlgorithmUtility.elapsedTime(s8, s7);// calculates elapsed time
 
-					map.put("String Insertion sort", e3);
+				map.put("String Insertion sort", e3);
 
-					System.out.println("Elapsed time is" + e3);
+				System.out.println("Elapsed time is" + e3);
 
-					timeList.add(e3);// Adding to the arraylist
+				break;
 
-					break;
 
-					// case 5
+				// case 5
 				case 5:
+					Integer arr4[]=new Integer[n];
+					System.out.println("Enter the elements");
+					for (int i = 0; i < n; i++) {
+						arr4[i] = AlgorithmUtility.userInteger();
+					}	
 					System.out.println("the original array is:");
 					for (int i = 0; i < n; i++) {
-						System.out.println(arr[i]);
+						System.out.println(arr4[i]);
 					}
 					double s9 = AlgorithmUtility.startTimerFunc();// to start timer
 
-					AlgorithmUtility.bubbleSortString1(arr, n);
+					AlgorithmUtility.bubbleSort(arr4, n);
 
 					System.out.println("Sorted array list is:");// prints the sorted array
 					for (int i = 0; i < n; i++) {
-						System.out.println(arr[i]);
+						System.out.println(arr4[i]);
 					}
 
 					double s10 = AlgorithmUtility.stopTimerFunc();// to stop timer
@@ -186,24 +195,28 @@ public class Utility {
 					double e4 = AlgorithmUtility.elapsedTime(s10, s9);// calculates elapsed time
 					map.put("Integer Bubble sort", e4);
 					System.out.println("Elapsed time is" + e4);
-
-					timeList.add(e4);// Adding to the arraylist
-
 					break;
+
+
 
 					// case 6
 				case 6:
+					String arr5[]=new String[n];
+					System.out.println("Enter the elements");
+					for (int i = 0; i < n; i++) {
+						arr5[i] = AlgorithmUtility.userString();
+					}	
 					System.out.println("the original array is:");
 					for (int i = 0; i < n; i++) {
-						System.out.println(arr[i]);
+						System.out.println(arr5[i]);
 					}
 					double s11 = AlgorithmUtility.startTimerFunc();// to start timer
 
-					AlgorithmUtility.bubbleSortString1(arr, n);
+					AlgorithmUtility.bubbleSort(arr5, n);
 
 					System.out.println("Sorted array list is:");// prints the sorted array
 					for (int i = 0; i < n; i++) {
-						System.out.println(arr[i]);
+						System.out.println(arr5[i]);
 					}
 
 					double s12 = AlgorithmUtility.stopTimerFunc();// to stop timer
@@ -211,27 +224,25 @@ public class Utility {
 					double e5 = AlgorithmUtility.elapsedTime(s12, s11);// calculates elapsed time
 					map.put("String Bubble sort", e5);
 					System.out.println("Elapsed time is" + e5);
-
-					timeList.add(e5);// Adding to the arraylist
-
 					break;
+
 
 					
 					// case 7
 				case 7:
 					System.exit(0);
-					
+
 					ll++;
 
-					
+
 					// default case
 				default:
 					System.out.println("kindly enter among the choices");
 					break;	
 				}
-				timeList1 = AlgorithmUtility.listCall(timeList);
+				
 				choice++;
-				System.out.println(timeList1);
+				
 				map1=AlgorithmUtility.mapCall(map);
 				System.out.println(map1);
 			}

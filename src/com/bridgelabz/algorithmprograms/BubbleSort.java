@@ -29,7 +29,7 @@ public class BubbleSort
 			System.out.println(arr[i]);
 		}
 		
-		AlgorithmUtility.bubbleSortString1(arr, n);//method call
+		AlgorithmUtility.bubbleSort(arr, n);//method call
 		System.out.println("Sorted array list is:");
 		for(int i=0;i<n;i++)
 		{

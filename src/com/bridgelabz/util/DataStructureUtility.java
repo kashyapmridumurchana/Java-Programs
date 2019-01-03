@@ -1,5 +1,8 @@
 package com.bridgelabz.util;
+
+
 import java.util.Scanner;
+
 public class DataStructureUtility
 {
 
@@ -54,9 +57,16 @@ public class DataStructureUtility
 
     }
     
-    
-    
-    
+    public long deposit(long data)
+    {
+    	long data1=0;
+    	data1=data1+data;
+    	 return data1;
+    }
+   public long withdraw()
+   {
+	   
+   }
     
 }
 

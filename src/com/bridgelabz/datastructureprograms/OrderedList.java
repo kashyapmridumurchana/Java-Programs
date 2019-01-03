@@ -14,18 +14,20 @@ public class OrderedList
 
 	public static void main(String[] args) throws IOException
 	{
-		FileReader f=new FileReader("/home/admin1/Desktop/file1.txt");
-		BufferedReader br=new BufferedReader(f);
+		String str="/home/admin1/Desktop/file1.txt";
+		FileReader f=new FileReader(str);
+		BufferedReader read=new BufferedReader(f);
 		FileWriter w=new FileWriter("/home/admin1/Desktop/file4.txt",true);
 		BufferedWriter writer = new BufferedWriter(w);
-		final String DELIMITER= "\n";
+		final String DELIMITER="\n";
 		Node nd=null;
 		int n=0;
 		LinkedList<Integer> li=new LinkedList<>();
-		try
+		LinkedList<Integer> li2=new LinkedList<>();
+		try 
 		{
-			String word;
-			while ((word = br.readLine()) !=null)
+			String word; 
+			while ((word = read.readLine()) != null) 
 			{
 				String[] tokens = word.split(DELIMITER);
 				for(String token:tokens)
@@ -39,99 +41,68 @@ public class OrderedList
 			e.printStackTrace();
 		}
 
-		System.out.println("File Contents :");
+		System.out.println("List of integers in a file are :");
 		int length=li.print();
-		do 
+		int [] arr=li.convInteger(li,length);
+		int [] arr2=li.sort(arr);
+		System.out.println("after sorting:");
+		for(int i:arr2)
 		{
-			System.out.println("1.Enter the number to be searched\n2.Exit the program and display the file ");
+			li2.add(i);
+		}
+		li2.print();
+		do {
+			System.out.println("1.Enter the integer value to be to be searched\n2.Exit the program and display the file ");
 			int choice=DataStructureUtility.userInteger();
 			switch(choice)
 			{
-			case 1: 
-				System.out.println("enter the number to be searched");
-				int key=DataStructureUtility.userInteger();
-				boolean b=li.printValue1(length,key,li);
-				if(b)//runs when true
-				{
-					System.out.println("number found");
-					System.out.println("Number is removed from the file ");
-					System.out.println("new file list is :");
-					li.print();
-				}
-				else
-				{
-					System.out.println("number not found");
-					System.out.println("seached number added to file ");
-				}
-				break;
-			case 2://replaces the whole so that redundancy can be avoided
+			case 1: System.out.println("enter the word to be searched from sorted list:");
+			int key=DataStructureUtility.userInteger();
+			int len=li2.size();
+			System.out.println(len);
+			boolean b=li2.findIntegerValue(len,key,li2);
+			if(b)//runs when true
+			{
+				System.out.println("name found");
+				System.out.println("number is removed from the file ");
+				System.out.println("new file list is :");
+				li2.printNew();
+			}
+			else
+			{
+				System.out.println("name not found");
+				System.out.println("seached word added to file ");
+				li2.printNew();
+			}
+			break;
+
+			case 2:  
 				FileOutputStream writer2 = new FileOutputStream("/home/admin1/Desktop/file4.txt");
-				writer2.write(("").getBytes());
-				//getbytes:Converts a string into sequence of bytes and returns an array of bytes.
+				writer2.write(("").getBytes());//returns new bytes of array
 				writer2.close();
-				int len=li.print();
-				li.sort(li);
-				String [] newStr=li.convString1(li, len);
-				for(int i=0;i<newStr.length;i++)
+				int len2=li2.size();
+				li2.printNew();
+				int [] newStr=li.convInteger(li2, len2);
+				String[] newStringArray = new String[newStr.length];//creating string array
+				for(int i=0; i<newStr.length; i++) {
+					newStringArray[i] = String.valueOf(newStr[i]);//convert integers to string
+				}
+				for(int i=0;i<newStringArray.length;i++)
 				{
-					writer.write(newStr[i]);
+					writer.write(newStringArray[i]);//writing the string to the file
 					writer.write(" ");
 				}
-				writer.flush();
+
 				writer.close();
 				System.exit(0);
 				break;
 			default :System.out.println("please select correct choice");
 			break;
-
 			}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		}
-		while(n<50)	;	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+			n++;
+		}while(n<30);
 
 
 	}
-
 }

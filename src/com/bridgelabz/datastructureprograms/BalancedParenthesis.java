@@ -39,14 +39,15 @@ public class BalancedParenthesis
 					{
 					long l = (stack.pop()+1);
 					
-					System.out.println("')' at index "+(i+1)+" matched with '(' at index "+l);
-					
+					System.out.println("'(' at index "+l+" matched with ')' at index "+(i+1));
+					System.out.println("TRUE");
 					}
+					
 					catch(Exception e)
 					{
 					System.out.println("')' at index "+(i+1)+" is unmatched");
 					
-					System.out.println("unbalanced");
+					System.out.println("FALSE");
 					}
 				}            
 			}

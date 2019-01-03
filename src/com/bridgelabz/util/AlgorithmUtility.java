@@ -7,7 +7,7 @@
 package com.bridgelabz.util;
 import java.util.*;
 
-public class AlgorithmUtility
+public class AlgorithmUtility<T>
 {
 	static int i;//global variables
 	static  String l,m;//global variables
@@ -404,9 +404,9 @@ public static <T extends Comparable<T>> void insertionSort(T array[], int f)
 /**
  * @param array is the array of elements provided by the user
  * @param f is the size of array
- * @returns the sorted array of Strings
+ * 
  */
-public static <T extends Comparable<T>> void bubbleSortString1(T array[],int f)
+public static <T extends Comparable<T>> void bubbleSort(T array[],int f)
 {
 	for(int i=0;i<f;i++)
 	{
@@ -420,7 +420,7 @@ public static <T extends Comparable<T>> void bubbleSortString1(T array[],int f)
 			}
 		}
 	}
-//return array;
+
 }
 
 
@@ -755,16 +755,17 @@ public static int binarySearch(String[] arr,String key)
 
 
 
-public static <T extends Comparable<T>> int binarySearch1(T[] arr,String key)
+
+public static  <T extends Comparable<T>> int binarySearch1(T[] arr,T key)
 {
 	int first=0;
 	int last=arr.length-1;
 	int middle=(first+last)/2;
 	while(first<=last)
 	{
-		if(arr[middle].compareTo((T) key)<0)
+		if(arr[middle].compareTo(key)<0)
 			first=middle+1;
-		else if(arr[middle].compareTo((T) key)==0)
+		else if(arr[middle].compareTo(key)==0)
 		{
 			return middle;
 		}
