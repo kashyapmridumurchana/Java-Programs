@@ -1,6 +1,6 @@
 package com.bridgelabz.datastructureprograms;
-import com.bridgelabz.datastructureprograms.Stack;
 import com.bridgelabz.util.DataStructureUtility;
+import com.bridgelabz.util.Stack;
 public class BalancedParenthesis
 {
 	public static void main(String[] args) 

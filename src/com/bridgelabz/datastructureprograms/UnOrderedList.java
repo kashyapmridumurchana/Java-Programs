@@ -1,11 +1,13 @@
 package com.bridgelabz.datastructureprograms;
-
+import com.bridgelabz.util.LinkedList;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+
+
 
 import com.bridgelabz.util.DataStructureUtility;
 
@@ -18,7 +20,7 @@ public class UnOrderedList  {
 		FileWriter w=new FileWriter("/home/admin1/Desktop/file2.txt",true);
 		BufferedWriter writer = new BufferedWriter(w);
 		final String DELIMITER=" ";
-		Node nd=null;
+		
 		int n=0;
 		LinkedList<String> li=new LinkedList<>();
 		try

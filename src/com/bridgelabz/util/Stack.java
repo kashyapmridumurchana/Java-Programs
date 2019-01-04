@@ -1,10 +1,11 @@
-package com.bridgelabz.datastructureprograms;
+package com.bridgelabz.util;
 
 public class Stack
 {
 	private int maxSize;
 	private long[] stackArray;
 	private int top;
+	private int size=0;
 
 	//for size  
 	public Stack(int s)
@@ -17,6 +18,11 @@ public class Stack
 	public void push(long j)
 	{
 	stackArray[++top] = j;
+	size++;
+	}
+	public int size()
+	{
+	return size;
 	}
 	//for pop   
 	public long pop() 

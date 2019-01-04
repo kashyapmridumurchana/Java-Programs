@@ -8,6 +8,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import com.bridgelabz.util.DataStructureUtility;
+import com.bridgelabz.util.LinkedList;
+
 
 public class OrderedList 
 {
@@ -20,7 +22,7 @@ public class OrderedList
 		FileWriter w=new FileWriter("/home/admin1/Desktop/file4.txt",true);
 		BufferedWriter writer = new BufferedWriter(w);
 		final String DELIMITER="\n";
-		Node nd=null;
+		
 		int n=0;
 		LinkedList<Integer> li=new LinkedList<>();
 		LinkedList<Integer> li2=new LinkedList<>();

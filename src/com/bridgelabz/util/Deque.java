@@ -1,4 +1,4 @@
-package com.bridgelabz.datastructureprograms;
+package com.bridgelabz.util;
 
 public class Deque<E> 
 {

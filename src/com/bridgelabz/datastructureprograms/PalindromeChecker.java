@@ -1,8 +1,8 @@
 package com.bridgelabz.datastructureprograms;
 
-import com.bridgelabz.datastructureprograms.Deque;
-import com.bridgelabz.datastructureprograms.Deque.DequeUtility;
 import com.bridgelabz.util.DataStructureUtility;
+import com.bridgelabz.util.Deque;
+import com.bridgelabz.util.Deque.DequeUtility;
 
 public class PalindromeChecker 
 {

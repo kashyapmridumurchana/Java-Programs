@@ -1,9 +1,9 @@
-package com.bridgelabz.datastructureprograms;
+package com.bridgelabz.util;
 
 
 public class LinkedList<T> {
 
-    private Node<T> first;
+    Node<T> first;
     private Node<T> last;
 
     public void add(T element) {
@@ -61,43 +61,7 @@ public class LinkedList<T> {
     
     
     
-    
-//    //ordered list
-//    public boolean printValue1(int length, int key, LinkedList<Integer> li) {
-//        Node<T> nd2 = first;
-//        while (true) {
-//            if (nd2 == null) {
-//                break;
-//            }
-//            if (Integer.toString(key).compareToIgnoreCase(String.valueOf(nd2.getValue())) == 0) {
-//                nd2.setValue(null);
-//                return true;
-//            }
-//            nd2 = nd2.getNextRef();
-//        }
-//        li.add(key);
-//        li.print();
-//        return false;
-//    }
-//   
-    
-    
-    
-//    public void sort(int[] arr) {
-//
-//        Node<T> tmp = first;
-//        while (true) {
-//            if (tmp == null) {
-//                break;
-//            }
-//            if(tmp.getValue()!=null)
-//            {
-//            System.out.println(tmp.getValue());
-//            }
-//            tmp = tmp.getNextRef();
-//        }
-//    }
-//   
+
     
     public int[] sort(int [] arr)
     {
@@ -224,6 +188,8 @@ public  int[] convInteger(LinkedList<Integer> li,int len)
 
 
 
+
+
 class Node<T>  {
 
     private T value;
@@ -244,5 +210,35 @@ class Node<T>  {
     public void setNextRef(Node<T> ref) {
         this.nextRef = ref;
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    } 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
-}
