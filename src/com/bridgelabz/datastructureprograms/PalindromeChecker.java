@@ -23,8 +23,8 @@ public class PalindromeChecker
 		Deque de=new Deque();
 		DequeUtility deq=de.new DequeUtility();
 		System.out.println("Enter a String: ");
-		String s=DataStructureUtility.userString();
-
+		String st=DataStructureUtility.userString();
+        String s=st.toLowerCase();
 		//adding each character to the rear of the deque
 		for(int i=0;i<s.length();i++)
 		{

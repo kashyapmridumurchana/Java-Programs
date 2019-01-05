@@ -50,8 +50,8 @@ public class BalancedParenthesis
 					{
 					long l = (stack.pop()+1);
 					
-					System.out.println("'(' at index "+l+" matched with ')' at index "+(i+1));
-					System.out.println("TRUE");
+					//System.out.println("'(' at index "+l+" matched with ')' at index "+(i+1));
+					System.out.println("TRUE:expression is balanced");
 					}
 					
 					catch(Exception e)
