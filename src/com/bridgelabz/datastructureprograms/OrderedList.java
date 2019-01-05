@@ -1,3 +1,15 @@
+/*****************************************************************************************
+ *   Compilation:  javac -d bin OrderedList.java								  		 *
+ *  Execution:    java -cp bin com.bridgelabz.datastructureprograms.OrderedList          *
+ *                                                                  					 *
+ *  Purpose:  Ordered List
+
+																				     	 *
+ *														          						 *
+ *  @author  Mridumurchana Kashyap													     *
+ *  @version 1.0																	   	 *
+ *  @since   3.1.2019															         *
+ *  **************************************************************************************/
 package com.bridgelabz.datastructureprograms;
 
 import java.io.BufferedReader;
@@ -68,13 +80,13 @@ public class OrderedList
 				System.out.println("name found");
 				System.out.println("number is removed from the file ");
 				System.out.println("new file list is :");
-				li2.printNew();
+				li2.print();
 			}
 			else
 			{
 				System.out.println("name not found");
 				System.out.println("seached word added to file ");
-				li2.printNew();
+				li2.print();
 			}
 			break;
 
@@ -83,7 +95,7 @@ public class OrderedList
 				writer2.write(("").getBytes());//returns new bytes of array
 				writer2.close();
 				int len2=li2.size();
-				li2.printNew();
+				li2.print();
 				int [] newStr=li.convInteger(li2, len2);
 				String[] newStringArray = new String[newStr.length];//creating string array
 				for(int i=0; i<newStr.length; i++) {

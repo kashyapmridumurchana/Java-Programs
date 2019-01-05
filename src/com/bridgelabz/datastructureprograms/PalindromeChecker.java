@@ -1,3 +1,15 @@
+/*****************************************************************************************
+ *   Compilation:  javac -d bin PalindromeChecker.java								   	 *
+ *  Execution:    java -cp bin com.bridgelabz.datastructureprograms.PalindromeChecker    *
+ *                                                                  					 *
+ *  Purpose:  Palindrome Checker
+
+																				     	 *
+ *														          						 *
+ *  @author  Mridumurchana Kashyap													     *
+ *  @version 1.0																	   	 *
+ *  @since   3.1.2019															         *
+ *  **************************************************************************************/
 package com.bridgelabz.datastructureprograms;
 
 import com.bridgelabz.util.DataStructureUtility;

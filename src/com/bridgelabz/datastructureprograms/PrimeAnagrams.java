@@ -1,3 +1,15 @@
+/*****************************************************************************************
+ *   Compilation:  javac -d bin PrimeAnagram.java								   		 *
+ *  Execution:    java -cp bin com.bridgelabz.datastructureprograms.PrimeAnagram    	 *
+ *                                                                  					 *
+ *  Purpose: Take a range of 0 - 1000 Numbers and find the Prime Anagrams numbers in .  
+            that range and Store the prime numbers in a 2D Array
+																				     	 *
+ *														          						 *
+ *  @author  Mridumurchana Kashyap													     *
+ *  @version 1.0																	   	 *
+ *  @since   3.1.2019															         *
+ *  **************************************************************************************/
 package com.bridgelabz.datastructureprograms;
 
 import java.util.ArrayList;

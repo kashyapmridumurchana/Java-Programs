@@ -1,3 +1,10 @@
+/*******************************************************************************
+ *																				*
+ *  @author  Mridumurchana Kashyap												*
+ *  @version 1.0																*
+ *  @since   3.1.2018															*
+ *  **************************************************************************/
+
 package com.bridgelabz.util;
 
 public class Queue {
@@ -14,7 +21,7 @@ public class Queue {
 
 	
 	
-	
+	//Calculates the size of queue
 	public int size()
 	{
 		return currentSize;
@@ -24,14 +31,15 @@ public class Queue {
 	
 	
 	
-	
+	//adds element onto the queue
 	/**
 	 * this method adds element at the end of the queue.
-	 * @param item
+	 * @param item is the item to be added
 	 */
 	
 	public void enqueue(int item) {
-		if (isQueueFull()) {
+		if (isQueueFull())
+		{
 			System.out.println("Overflow ! Unable to add element: "+item);
 		} else {
 			rear++;
@@ -40,10 +48,13 @@ public class Queue {
 			}
 			queueArr[rear] = item;
 			currentSize++;
-//			System.out.println("Element " + item+ " is pushed to Queue !");
+      // System.out.println("Element " + item+ " is pushed to Queue !");
 		}
 	}
 
+	
+	
+	//removes element from queue
 	/**
 	 * this method removes an element from the top of the queue
 	 */
@@ -62,6 +73,9 @@ public class Queue {
 		}
 	}
 
+	
+	
+	//checks if queue is full
 	/**
 	 * This method checks whether the queue is full or not
 	 * @return boolean
@@ -74,9 +88,12 @@ public class Queue {
 		return status;
 	}
 	
+	
+	
+	//checks if queue is empty
 	/**
 	 * This method checks whether the queue is empty or not
-	 * @return
+	 * @returns a boolean value
 	 */
 	public boolean isQueueEmpty(){
 		boolean status = false;

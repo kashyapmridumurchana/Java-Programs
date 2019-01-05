@@ -1,38 +1,52 @@
+/*******************************************************************************
+ *																				*
+ *  @author  Mridumurchana Kashyap												*
+ *  @version 1.0																*
+ *  @since   3.1.2018															*
+ *  **************************************************************************/
 package com.bridgelabz.util;
 
-
+//Linked List creation
 public class LinkedList<T> {
 
     Node<T> first;
     private Node<T> last;
 
-    public void add(T element) {
+    public void add(T element) 
+    {
 
         Node<T> nd = new Node<T>();
         nd.setValue(element);
-        if (first == null) {
+        if (first == null)
+        {
             first = nd;
             last = nd;
-        } else {
+        } 
+        else
+        {
             last.setNextRef(nd);
             last = nd;
         }
     }
-
+    
+    
+    
+//traverses the list and prints the Length of List including the node values
     public int print() {
 
         Node<T> tmp = first;
         int i = 0;
         while (true) {
-            if (tmp == null) {
+            if (tmp == null)//end reached
+            {
                 break;
             }
-            if(tmp.getValue()!=null)
+            if(tmp.getValue()!=null)//traverses till null not found
             {
-            System.out.println(tmp.getValue());
+            System.out.println(tmp.getValue());//prints node value
             i++;
             }
-            tmp = tmp.getNextRef();
+            tmp = tmp.getNextRef();//node incremented so that next node is traversed till the loop ends
         }
         return i;
     }
@@ -40,7 +54,13 @@ public class LinkedList<T> {
     
     
     
-    
+   //Searching of a word (UnOrdered List)
+    /**
+     * @param length is the length of the list
+     * @param key is the value to be searched
+     * @param li is the list of strings contained in the file
+     * @returns boolean value
+     */
     public boolean printValue(int length, String key, LinkedList<String> li) {
         Node<T> nd2 = first;
         while (true) {
@@ -49,20 +69,24 @@ public class LinkedList<T> {
                 break;
             }
             if (key.compareToIgnoreCase(String.valueOf(nd2.getValue())) == 0) {
-                nd2.setValue(null);
+                nd2.setValue(null);//sets the value of the node as null
                 return true;
             }
-            nd2 = nd2.getNextRef();
+            nd2 = nd2.getNextRef();//node incremented so that next node is traversed till the loop ends
         }
-        li.add(key);
+        li.add(key);//adds the key to the list if not found in file
         li.print();
         return false;
     }
     
     
     
-
     
+  //for sorting the array elements
+  	/**
+  	 * @param arr is an integer array
+  	 * @return the array in sorted order
+  	 */
     public int[] sort(int [] arr)
     {
     	int length=arr.length;
@@ -80,6 +104,8 @@ public class LinkedList<T> {
     	return arr;
     }
     
+    
+   //gives the size of the list 
     public int size() {
 
         Node<T> tmp = first;
@@ -90,38 +116,27 @@ public class LinkedList<T> {
             }
             if(tmp.getValue()!=null)
             {
-            //System.out.println(tmp.getValue());
+           
             i++;
             }
             tmp = tmp.getNextRef();
         }
         return i;
     }
-    public int printNew() {
-
-        Node<T> tmp = first;
-        int i = 0;
-        while (true) {
-            if (tmp == null) {
-                break;
-            }
-            if(tmp.getValue()!=null)
-            {
-            System.out.println(tmp.getValue());
-            i++;
-            }
-            tmp = tmp.getNextRef();
-        }
-        return i;
-    }
-
     
     
     
     
+  
     
     
-    
+    //Searching of a number (Ordered List) 
+    /**
+     * @param length is the length of the list
+     * @param key is the value to be searched
+     * @param li is the list of Integers contained in the file
+     * @returns boolean value
+     */
     public boolean findIntegerValue(int length, int key, LinkedList<Integer> li) {
         Node<T> nd2 = first;
         while (true) {
@@ -129,7 +144,7 @@ public class LinkedList<T> {
             {
                 break;
             }
-//            if (String.valueOf(key).compareToIgnoreCase(String.valueOf(nd2.getValue())) == 0)
+
             if(key==Integer.valueOf(String.valueOf(nd2.getValue())))
             {
                 nd2.setValue(null);
@@ -142,6 +157,16 @@ public class LinkedList<T> {
         return false;
     }
 
+    
+    
+    
+    
+    //returns a list of string as an array of strings
+    /**
+     * @param li is the list containing strings
+     * @param len is the length of the list
+     * @returns the list elements as a string array
+     */
     public String [] convString(LinkedList<String> li,int len)
     {
         Node nd2 = li.first;
@@ -162,7 +187,14 @@ public class LinkedList<T> {
     }
 
 
-
+    
+    
+    //returns a list of Integers as array of Integers
+    /**
+     * @param li is the list containing Integers
+     * @param len is the length of the list
+     * @returns the list elements as a Integers array
+     */
 
 public  int[] convInteger(LinkedList<Integer> li,int len)
 {
@@ -183,6 +215,73 @@ public  int[] convInteger(LinkedList<Integer> li,int len)
     }
     return str;
 }
+
+
+//searching method(used in hashing question)
+public boolean search(T data){
+	   Node<T> temp=first;
+	   while(temp.getNextRef()!=null)
+	   {
+		   if( data.equals(temp.getValue()))
+		   {
+			   return true;
+		   }
+		   temp=temp.getNextRef();
+	   }
+	   return false;
+	}
+
+
+//returns the index(used in hashing question)
+public int index(T data){
+	Node<T> curr=first;
+	int count=0;
+	while(curr!=null){
+		if(curr.getValue().equals(data)){
+			curr.getNextRef();
+			return count;
+		}
+		count++;
+		curr=curr.getNextRef();
+	}
+	assert(false);
+	return 0;
+}
+
+
+
+//to remove elements(used in hashing question)
+/**
+ * @param index is the index of the element
+ */
+public void remove(int index)
+{
+	if(isEmpty())
+		return;
+	
+	Node<T> temp=first;
+	if(index==0)
+	{
+		first=temp.getNextRef();
+		return;
+	}
+	for(int i=0;temp!=null && i<index-1;i++){
+		temp=temp.getNextRef();
+	}
+	if (temp == null || temp.getNextRef() == null) 
+     return; 
+	
+    Node<T> next = temp.getNextRef().getNextRef(); 
+  
+       next= temp.getNextRef();
+}
+
+
+
+//checks if list is empty
+public boolean isEmpty()
+{
+	return first==null;
 }
 
 
@@ -190,6 +289,11 @@ public  int[] convInteger(LinkedList<Integer> li,int len)
 
 
 
+}
+
+
+
+//Node creation and operations involved
 class Node<T>  {
 
     private T value;

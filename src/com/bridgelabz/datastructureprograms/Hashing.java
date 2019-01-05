@@ -1,3 +1,15 @@
+/*****************************************************************************************
+ *   Compilation:  javac -d bin Hashing.java											 *
+ *  Execution:    java -cp bin com.bridgelabz.datastructureprograms.Hashing              *
+ *                                                                  					 *
+ *  Purpose:  Hashing Function to search a Number in a slot
+
+																				     	 *
+ *														          						 *
+ *  @author  Mridumurchana Kashyap													     *
+ *  @version 1.0																	   	 *
+ *  @since   3.1.2019															         *
+ *  **************************************************************************************/
 package com.bridgelabz.datastructureprograms;
 
 
@@ -25,7 +37,7 @@ public class Hashing {
 			map.put(i, ds1);
 		}
 		
-		FileReader fr=new FileReader("C:\\Users\\Nikita\\Desktop\\HashNumb.csv");
+		FileReader fr=new FileReader("/home/admin1/Desktop/numbers.csv");
 		BufferedReader br=new BufferedReader(fr);
 		int rem;
 		String num;
@@ -95,7 +107,7 @@ public class Hashing {
 					}
 					break;
 			case 2: System.out.println("Writing the modifications into the file..");
-					FileWriter fw=new FileWriter("C:\\Users\\Nikita\\Desktop\\HashNumb.csv");
+					FileWriter fw=new FileWriter("/home/admin1/Desktop/numbers.csv");
 					BufferedWriter bw=new BufferedWriter(fw);
 					int leng=ds1.size();
 					int[] res_array=new int[leng];

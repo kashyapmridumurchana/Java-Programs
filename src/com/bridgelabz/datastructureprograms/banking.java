@@ -1,4 +1,16 @@
+/*****************************************************************************************
+ *   Compilation:  javac -d bin Banking.java											 *
+ *  Execution:    java -cp bin com.bridgelabz.datastructureprograms.Banking              *
+ *                                                                  					 *
+ *  Purpose: Simulate Banking Cash Counter
+																				     	 *
+ *														          						 *
+ *  @author  Mridumurchana Kashyap													     *
+ *  @version 1.0																	   	 *
+ *  @since   3.1.2019															         *
+ *  **************************************************************************************/
 package com.bridgelabz.datastructureprograms;
+ 
 
 import com.bridgelabz.util.DataStructureUtility;
 import com.bridgelabz.util.Queue;
@@ -13,6 +25,7 @@ public class banking {
 			int choice=DataStructureUtility.userInteger();
 			switch(choice)
 			{
+			//case 1
 			case 1:
 				queue.enqueue(i++);
 				System.out.println(i+" member added to queue\n");
@@ -47,10 +60,13 @@ public class banking {
 				queue.dequeue();
 				System.out.println("removed him from the queue");
 				break;
+			//case 2
 			case 2:System.out.println("Cash count is :"+cash);
 			break;
+			//case 3
 			case 3:System.exit(0);
 			break;
+			//default case
 			default:System.out.println("choose correct choice");
 			}
 			n++;

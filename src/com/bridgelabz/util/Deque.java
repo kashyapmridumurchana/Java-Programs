@@ -1,5 +1,13 @@
+/*******************************************************************************
+ *																				*
+ *  @author  Mridumurchana Kashyap												*
+ *  @version 1.0																*
+ *  @since   3.1.2018															*
+ *  **************************************************************************/
 package com.bridgelabz.util;
 
+
+//Dequeue creation
 public class Deque<E> 
 {
 	public E data;
@@ -109,7 +117,7 @@ public class DequeUtility<E>
 				return false;
 		}
 	 
-		//return size of deque
+		//return size of dequeue
 		public int size()
 		{
 			return size;

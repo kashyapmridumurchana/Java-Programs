@@ -1,4 +1,17 @@
+/*****************************************************************************************
+ *   Compilation:  javac -d bin UnOrderedList.java										*
+ *  Execution:    java -cp bin com.bridgelabz.datastructureprograms.UnOrderedList       *
+ *                                                                  					 *
+ *  Purpose:  UnOrdered List
+
+																				     	 *
+ *														          						 *
+ *  @author  Mridumurchana Kashyap													     *
+ *  @version 1.0																	   	 *
+ *  @since   3.1.2019															         *
+ *  **************************************************************************************/
 package com.bridgelabz.datastructureprograms;
+
 import com.bridgelabz.util.LinkedList;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

@@ -1,3 +1,15 @@
+/*******************************************************************************
+ *   Compilation:  javac -d bin AnagramStack.java								*
+ *  Execution:    java -cp bin com.bridgelabz.datastructureprograms.AnagramStack *
+ *                                                                  			 *
+ *  Purpose: Add the Prime Numbers that are Anagram in the Range of 0 - 1000 in *						*
+ *			  a Stack using the Linked List and Print the Anagrams and print in 
+ *			reverse order.
+ *														          				 *
+ *  @author  Mridumurchana Kashyap												*
+ *  @version 1.0																*
+ *  @since   3.1.2019															*
+ *  **************************************************************************/
 package com.bridgelabz.datastructureprograms;
 
 import java.util.ArrayList;
@@ -16,50 +28,26 @@ public class AnagramStack
 
 	public static void main(String[] args)
 	{
-		DataStructureUtility dw=new DataStructureUtility();
-		List<Integer> prime=new ArrayList<Integer>();
-		Set<Integer> primeAnagram=new HashSet();
-		List<Integer> primeAnagrams=new ArrayList<Integer>();
-		List<Integer> primeAnagram1=new ArrayList<Integer>();
-		prime=DataStructureUtility.rangePrime(0, 1000);
-		primeAnagram=DataStructureUtility.primeAnagram1(prime);
-		primeAnagram1.addAll(primeAnagram);
 
-		//System.out.println("The prime anagrams are " +primeAnagram1);
-		//System.out.println("The prime anagrams size is " +primeAnagram1.size());
-		int len=primeAnagram1.size();
-		int arr[]=new int[len];
-		for(int i=0;i<len;i++)
-		{
-			arr[i]=primeAnagram1.get(i);
-		}
-		int[] arr1=DataStructureUtility.sortArray(arr);
-		for(int i=0;i<len;i++)
-		{
-			primeAnagrams.add(arr1[i]);
-		}
-		//System.out.println(primeAnagrams);
-		System.out.println("the size is of list containing prime anagrams is:" + primeAnagrams.size());
+		
+	    List<Integer> list2 = new ArrayList<Integer>();
+	    list2 = DataStructureUtility.rangePrime(0, 1000); //finding prime
+	    int len=list2.size();
+	    com.bridgelabz.util.Stack stack=new com.bridgelabz.util.Stack(len);
+	    stack=DataStructureUtility.primeAnagram2(list2); //finding anagram
+	    System.out.println(stack.size()+" is the size of the stack");
+	    System.out.println("Printing the elements in reverse order using pop function of stack");
+	    while(!stack.isEmpty())
+	    {
+	        System.out.println(stack.pop()+" "+stack.pop());
+	    }
+	}
 		
 		
-		com.bridgelabz.util.Stack st=new com.bridgelabz.util.Stack(len);
-
-
-		for(int i=0;i<len;i++)
-		{
-			st.push(primeAnagrams.get(i));
-		}
-		System.out.println("the stack is size is " +st.size());
-		System.out.println("the stack in reverse order is \n");
-		while(!st.isEmpty())
-		{
-			System.out.print(st.pop()+" ");
-
-		}
-
+		
 
 
 
 	}
 
-}
+

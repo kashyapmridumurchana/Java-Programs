@@ -1,3 +1,14 @@
+/*****************************************************************************************
+ *   Compilation:  javac -d bin BalancedParenthesis.java								 *
+ *  Execution:    java -cp bin com.bridgelabz.datastructureprograms.BalancedParenthesis  *
+ *                                                                  					 *
+ *  Purpose: Simple Balanced Parentheses
+ 																						 *
+ *														          						 *
+ *  @author  Mridumurchana Kashyap													     *
+ *  @version 1.0																	   	 *
+ *  @since   3.1.2019															         *
+ *  **************************************************************************************/
 package com.bridgelabz.datastructureprograms;
 import com.bridgelabz.util.DataStructureUtility;
 import com.bridgelabz.util.Stack;
