@@ -30,7 +30,7 @@ public class UnOrderedList  {
 		String str="/home/admin1/Desktop/file.txt";
 		FileReader f=new FileReader(str);
 		BufferedReader read=new BufferedReader(f);
-		FileWriter w=new FileWriter("/home/admin1/Desktop/file2.txt",true);
+		FileWriter w=new FileWriter("/home/admin1/Desktop/file.txt",true);
 		BufferedWriter writer = new BufferedWriter(w);
 		final String DELIMITER=" ";
 		
@@ -77,7 +77,7 @@ public class UnOrderedList  {
 			break;
 
 			case 2: 
-				FileOutputStream writer2 = new FileOutputStream("/home/admin1/Desktop/file2.txt");
+				FileOutputStream writer2 = new FileOutputStream("/home/admin1/Desktop/file.txt");
 				writer2.write(("").getBytes());//converting to sequence of bytes
 				writer2.close();
 				int len=li.print();

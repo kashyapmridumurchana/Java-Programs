@@ -27,7 +27,9 @@ public class Stack
 	//for pop   
 	public long pop() 
 	{
+	size--;
 	return stackArray[top--];
+	
 	}
 	//for peek   
 	public long peek() 

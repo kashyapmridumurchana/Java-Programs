@@ -34,8 +34,7 @@ public class PrimeAnagrams
 		List<String> primeAnagram1=new ArrayList<String>();
 		
 		prime=DataStructureUtility.rangePrime1(0, 1000);		
-		//System.out.println("prime numbers are" + prime);	
-		//System.out.println(prime.size());
+		
 		primeAnagram=DataStructureUtility.primeAnagram(prime);
 		
         primeAnagram1.addAll(primeAnagram);
@@ -43,8 +42,7 @@ public class PrimeAnagrams
         
         
         list1.add(primeAnagram1);
-        //System.out.println("the prime anagram size is " +primeAnagram1.size());
-        //System.out.println("prime anagrams are"+ primeAnagram1);
+        
       
         for(int i=0;i<primeAnagram1.size();i++)
         {

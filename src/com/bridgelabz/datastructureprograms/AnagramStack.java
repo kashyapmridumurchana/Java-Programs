@@ -17,10 +17,10 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.Stack;
 
 
 import com.bridgelabz.util.DataStructureUtility;
+import com.bridgelabz.util.Stack;
 
 
 public class AnagramStack
@@ -33,7 +33,7 @@ public class AnagramStack
 	    List<Integer> list2 = new ArrayList<Integer>();
 	    list2 = DataStructureUtility.rangePrime(0, 1000); //finding prime
 	    int len=list2.size();
-	    com.bridgelabz.util.Stack stack=new com.bridgelabz.util.Stack(len);
+	    Stack stack=new Stack(len);
 	    stack=DataStructureUtility.primeAnagram2(list2); //finding anagram
 	    System.out.println(stack.size()+" is the size of the stack");
 	    System.out.println("Printing the elements in reverse order using pop function of stack");
