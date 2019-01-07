@@ -108,7 +108,7 @@ public class DequeUtility<E>
 			return val;
 		}
 		
-		//to remove
+		//checks empty
 		public boolean isEmpty()
 		{
 			if(front==null)

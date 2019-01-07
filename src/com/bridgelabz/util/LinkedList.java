@@ -12,6 +12,8 @@ public class LinkedList<T> {
     Node<T> first;
     private Node<T> last;
 
+    
+    //to add a node
     public void add(T element) 
     {
 
@@ -61,7 +63,7 @@ public class LinkedList<T> {
      * @param li is the list of strings contained in the file
      * @returns boolean value
      */
-    public boolean printValue(int length, String key, LinkedList<String> li) {
+    public  boolean printValue(int length, String key, LinkedList<String> li) {
         Node<T> nd2 = first;
         while (true) {
             if (nd2 == null)//end reached
@@ -233,6 +235,33 @@ public boolean search(T data){
 	}
 
 
+
+//returns the array of strings
+public String[] convArray(String[] array){ 
+	Node<T> tnode = first;
+	int i=0;
+	while(tnode!=null){ 
+		array[i]=String.valueOf(tnode.getValue()); 
+		tnode = tnode.getNextRef();
+		i++;
+	} 
+	return array;
+}
+
+
+
+//returns integer array
+public int[] convertIntArray(String [] arr)
+{
+	int [] arrInt=new int[arr.length];
+	for(int i=0;i<arr.length;i++)
+	{
+		arrInt[i]=Integer.valueOf(arr[i]);
+	}
+	return arrInt;
+}
+
+
 //returns the index(used in hashing question)
 public int index(T data){
 	Node<T> curr=first;
@@ -257,26 +286,27 @@ public int index(T data){
  */
 public void remove(int index)
 {
-	if(isEmpty())
-		return;
-	
-	Node<T> temp=first;
-	if(index==0)
-	{
-		first=temp.getNextRef();
-		return;
-	}
-	for(int i=0;temp!=null && i<index-1;i++){
-		temp=temp.getNextRef();
-	}
-	if (temp == null || temp.getNextRef() == null) 
-     return; 
-	
-    Node<T> next = temp.getNextRef().getNextRef(); 
-  
-       next= temp.getNextRef();
+	 
+	    
+	        Node temp = first;
+	        if( index==1)
+	        {
+	            first =first.nextRef;
+	            System.out.println("After Deleting LIst is ");
+	            print();
+	        }
+	        else
+	        {
+		     for(int i=0;i<index-1;i++)
+		     {
+			 	temp=temp.nextRef;
+		     }
+	        temp.nextRef =temp.nextRef.nextRef;
+	        System.out.println("After Deleting LIst is ");
+	        print();
+	        }
+		
 }
-
 
 
 //checks if list is empty
@@ -297,8 +327,17 @@ public boolean isEmpty()
 //Node creation and operations involved
 class Node<T>  {
 
-    private T value;
-    private Node<T> nextRef;
+     T value;
+     Node<T> nextRef;
+     public Node(){
+         value=null;
+         nextRef=null;
+     }
+    
+     public Node(T data, Node<T> next){
+         this.value=data;
+         this.nextRef=next;
+     }
 
     public T getValue() {
         return value;

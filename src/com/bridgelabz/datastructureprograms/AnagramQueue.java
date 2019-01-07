@@ -12,6 +12,7 @@
 package com.bridgelabz.datastructureprograms;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -21,41 +22,52 @@ public class AnagramQueue {
 
 	public static void main(String[] args) 
 	{
-		Queue q=new Queue(1000);
+		Queue q=new Queue(9000);
 		List<Integer> prime=new ArrayList<Integer>();//list creation
-		Set<Integer> primeAnagram=new HashSet();//Set creation
+		List<Integer> primeAnagram= new ArrayList<Integer>();
 		List<Integer> primeAnagrams=new ArrayList<Integer>();
-		List<Integer> primeAnagram1=new ArrayList<Integer>();
+		//List<Integer> primeAnagram1=new ArrayList<Integer>();
+		List<Integer> primeAnagram12=new ArrayList<Integer>();
 		prime=DataStructureUtility.rangePrime(0, 1000);
 		primeAnagram=DataStructureUtility.primeAnagram1(prime);
-		primeAnagram1.addAll(primeAnagram);
+		//primeAnagram1.addAll(primeAnagram);
 
 		
-		System.out.println("The size of list containing prime anagrams is " +primeAnagram1.size());
-		int len=primeAnagram1.size();
+		System.out.println("The size of list containing prime anagrams is " +primeAnagram.size());
+		int len=primeAnagram.size();
 		int arr[]=new int[len];
 		for(int i=0;i<len;i++)
 		{
-			arr[i]=primeAnagram1.get(i);
+			arr[i]=primeAnagram.get(i);
 		}
 		int[] arr1=DataStructureUtility.sortArray(arr);
 		for(int i=0;i<len;i++)
 		{
 			primeAnagrams.add(arr1[i]);
 		}
+		
 		//System.out.println(primeAnagrams);
 		//System.out.println("the size is:" + primeAnagrams.size());
-		for(int i=0;i<len;i++)
+		Iterator<Integer> iter=primeAnagrams.iterator();
+		while(iter.hasNext())
 		{
-			q.enqueue(primeAnagrams.get(i));
+			q.enqueue(iter.next());
 		}
+		
+		
+//		for(int i=0;i<len;i++)
+//		{
+//			System.out.println(q.enqueue(primeAnagrams.get(i)));
+//			
+//		}
 		System.out.println("the queue size is " +q.size());
-		System.out.println("Elements in the queue are \n");
+		System.out.println("Elements in the queue are\n");
 		
 		while(!q.isQueueEmpty())
 		{
+			
 		q.dequeue();
-		
+			
 		}
 
 	}

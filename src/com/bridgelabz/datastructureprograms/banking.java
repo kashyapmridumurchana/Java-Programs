@@ -17,7 +17,7 @@ import com.bridgelabz.util.Queue;
 
 public class banking {
 	public static void main(String[] args) {
-		Queue queue=new Queue(400);
+		Queue queue=new Queue(4000);
 		int n=0,i=0;
 		double cash=20000;
 		do {

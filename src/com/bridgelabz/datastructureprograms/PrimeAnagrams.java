@@ -29,26 +29,26 @@ public class PrimeAnagrams
 		
 		List<List<String>> list1=new ArrayList<List<String>>();
 		
-		Set<String> primeAnagram=new HashSet();
+		List<String> primeAnagram=new ArrayList<String>();
 		List<String> prime=new ArrayList<String>();
-		List<String> primeAnagram1=new ArrayList<String>();
+		//List<String> primeAnagram1=new ArrayList<String>();
 		
 		prime=DataStructureUtility.rangePrime1(0, 1000);		
 		
 		primeAnagram=DataStructureUtility.primeAnagram(prime);
 		
-        primeAnagram1.addAll(primeAnagram);
+       // primeAnagram1.addAll(primeAnagram);
         
         
         
-        list1.add(primeAnagram1);
+        list1.add(primeAnagram);
         
       
-        for(int i=0;i<primeAnagram1.size();i++)
+        for(int i=0;i<primeAnagram.size();i++)
         {
-        	if(prime.contains(primeAnagram1.get(i)))
+        	if(prime.contains(primeAnagram.get(i)))
         	{
-        		prime.remove(primeAnagram1.get(i));
+        		prime.remove(primeAnagram.get(i));
         	}
         	
         }

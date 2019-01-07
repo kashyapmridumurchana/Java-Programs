@@ -7,14 +7,14 @@
 
 package com.bridgelabz.util;
 
-public class Queue {
+public class Queue<E> {
 	private int capacity;
 	int queueArr[];
 	int front = 0;
-	int rear = -1;
+	int rear =-1;
 	int currentSize = 0;
 	
-	public Queue(int queueSize){
+	public <E> Queue(int queueSize){
 		this.capacity = queueSize;
 		queueArr = new int[this.capacity];
 	}
@@ -22,7 +22,7 @@ public class Queue {
 	
 	
 	//Calculates the size of queue
-	public int size()
+	public <E> int size()
 	{
 		return currentSize;
 	}
@@ -37,7 +37,7 @@ public class Queue {
 	 * @param item is the item to be added
 	 */
 	
-	public void enqueue(int item) {
+	public <E> void enqueue(int item) {
 		if (isQueueFull())
 		{
 			System.out.println("Overflow ! Unable to add element: "+item);
@@ -51,6 +51,9 @@ public class Queue {
       // System.out.println("Element " + item+ " is pushed to Queue !");
 		}
 	}
+	
+	
+	
 
 	
 	
@@ -58,7 +61,7 @@ public class Queue {
 	/**
 	 * this method removes an element from the top of the queue
 	 */
-	public void dequeue() {
+	public  void dequeue() {
 		if (isQueueEmpty()) {
 			System.out.println("Underflow ! Unable to remove element from Queue");
 		} else {
@@ -72,7 +75,39 @@ public class Queue {
 			currentSize--;
 		}
 	}
-
+//
+//	public E remove(){
+//		if(isQueueEmpty())
+//			System.out.println("Underflow");
+//		Node<E> curr=front;
+//		front = curr.getNext();        
+//        if (front == null){
+//            rear =null;
+//			size-- ; 
+//		}       
+//        return curr.getData();
+//	}
+	
+	public  Queue<Integer>  dequeue1()
+	{
+		Queue<Integer> q=new Queue<>(9000);
+		if (isQueueEmpty()) {
+			System.out.println("Underflow ! Unable to remove element from Queue");
+		} else 
+		{
+			q.enqueue(front++);
+			//front++;
+			if(front == capacity-1){
+				System.out.println(queueArr[front-1]);
+				front = 0;
+			} else {
+				System.out.println(queueArr[front-1]);
+			}
+			
+		}
+		return q ;
+	}
+	
 	
 	
 	//checks if queue is full
@@ -80,7 +115,7 @@ public class Queue {
 	 * This method checks whether the queue is full or not
 	 * @return boolean
 	 */
-	public boolean isQueueFull(){
+	public <E> boolean isQueueFull(){
 		boolean status = false;
 		if (currentSize == capacity){
 			status = true;
@@ -95,7 +130,7 @@ public class Queue {
 	 * This method checks whether the queue is empty or not
 	 * @returns a boolean value
 	 */
-	public boolean isQueueEmpty(){
+	public <E> boolean isQueueEmpty(){
 		boolean status = false;
 		if (currentSize == 0){
 			status = true;

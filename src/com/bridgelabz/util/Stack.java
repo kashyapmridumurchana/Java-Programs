@@ -1,6 +1,6 @@
 package com.bridgelabz.util;
 
-public class Stack
+public class Stack<T>
 {
 	private int maxSize;
 	private long[] stackArray;
@@ -8,24 +8,24 @@ public class Stack
 	private int size=0;
 
 	//for size  
-	public Stack(int s)
+	public <T> Stack(int s)
 	{
 	maxSize = s;
 	stackArray = new long[maxSize];
 	top = -1;
 	}
 	//for push   
-	public void push(long j)
+	public <T> void push(long j)
 	{
 	stackArray[++top] = j;
 	size++;
 	}
-	public int size()
+	public <T> int size()
 	{
 	return size;
 	}
 	//for pop   
-	public long pop() 
+	public <T> long pop() 
 	{
 	size--;
 	return stackArray[top--];
@@ -37,12 +37,12 @@ public class Stack
 	return stackArray[top];
 	}
 	//to check whether stack is empty	   
-	public boolean isEmpty()
+	public <T> boolean isEmpty()
 	{
 	return (top == -1);
 	}
 	//to check whether stack is full	   
-	public boolean isFull()
+	public <T> boolean isFull()
 	{
 	return (top == maxSize - 1);
 }

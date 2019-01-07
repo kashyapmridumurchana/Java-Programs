@@ -28,7 +28,7 @@ public class PrimeNumber2D
 
 		for(int i=0;i<10;i++)
 		{
-			System.out.println("prime numbers between " +a+ " and "+b +" are");
+			System.out.println("Prime numbers between " +a+ " and "+b +" are");
 			list1=DataStructureUtility.rangePrime(a, b);
 			list.add(list1);
 			System.out.println(list1);

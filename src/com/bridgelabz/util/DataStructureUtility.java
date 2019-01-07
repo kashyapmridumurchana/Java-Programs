@@ -161,9 +161,9 @@ public class DataStructureUtility
 	 * @param primeList is the list containing all the prime numbers
 	 * @return a List of strings containing all the prime anagrams in it
 	 */
-	public static Set<String> primeAnagram(List<String> primeList)
+	public static List<String> primeAnagram(List<String> primeList)
 	{	
-		Set<String> primeAnagramSet=new HashSet<String>();
+		List<String> primeAnagramSet=new ArrayList<String>();
 		for(int i=0;i<primeList.size();i++)
 		{
 
@@ -239,9 +239,9 @@ public class DataStructureUtility
 	 * @param primeList contains list of prime numbers
 	 * @return a set of prime anagrams
 	 */
-	public static Set<Integer> primeAnagram1(List<Integer> primeList)
+	public static List<Integer> primeAnagram1(List<Integer> primeList)
 	{	
-		Set<Integer> primeAnagramSet=new HashSet<Integer>();
+		List<Integer> primeAnagramSet=new ArrayList<Integer>();
 		for(int i=0;i<primeList.size();i++)
 		{
 
@@ -311,6 +311,50 @@ public class DataStructureUtility
 
 		return false;
 	}
+
+	
+	//Simple balanced parenthesis
+	/**
+	 * @param exp is the character array of the expression
+	 * @return a boolean value
+	 */
+	public boolean isBalanced(char exp[]) {
+
+        Stack st = new Stack(500);
+        for (int i = 0; i < exp.length; i++) {
+            if (exp[i] == '(')
+                st.push(exp[i]);
+
+            if (exp[i] == ')') {
+                if (st.isEmpty()) {
+                    return false;
+                }
+
+                else if (!Pair((char) st.pop(), exp[i])) {
+                    return false;
+                }
+            }
+
+        }
+
+        if (st.isEmpty())
+            return true;
+        else
+            return false;
+    }
+	
+//checks the pair of the parenthesis (Balanced parenthesis continued)
+    /**
+     * @param character1 is the first character
+     * @param character2 is the second character
+     * @return
+     */
+    public static boolean Pair(char character1, char character2) {
+        if (character1 == '(' && character2 == ')')
+            return true;
+        else
+            return false;
+    }   
 
 
 

@@ -1,10 +1,10 @@
 /*****************************************************************************************
- *   Compilation:  javac -d bin UnOrderedList.java										*
- *  Execution:    java -cp bin com.bridgelabz.datastructureprograms.UnOrderedList       *
+ *   Compilation:  javac -d bin UnOrderedList.java										 *
+ *  Execution:    java -cp bin com.bridgelabz.datastructureprograms.UnOrderedList        *
  *                                                                  					 *
- *  Purpose:  UnOrdered List
-
-																				     	 *
+ *  Purpose:  UnOrdered List															 *
+ *																					     *
+ *																				     	 *
  *														          						 *
  *  @author  Mridumurchana Kashyap													     *
  *  @version 1.0																	   	 *
@@ -30,7 +30,7 @@ public class UnOrderedList  {
 		String str="/home/admin1/Desktop/file.txt";
 		FileReader f=new FileReader(str);
 		BufferedReader read=new BufferedReader(f);
-		FileWriter w=new FileWriter("/home/admin1/Desktop/file.txt",true);
+		FileWriter w=new FileWriter("/home/admin1/Desktop/file2.txt");
 		BufferedWriter writer = new BufferedWriter(w);
 		final String DELIMITER=" ";
 		
@@ -77,7 +77,7 @@ public class UnOrderedList  {
 			break;
 
 			case 2: 
-				FileOutputStream writer2 = new FileOutputStream("/home/admin1/Desktop/file.txt");
+				FileOutputStream writer2 = new FileOutputStream("/home/admin1/Desktop/file2.txt");
 				writer2.write(("").getBytes());//converting to sequence of bytes
 				writer2.close();
 				int len=li.print();
@@ -87,7 +87,8 @@ public class UnOrderedList  {
 					writer.write(newStr[i]);
 					writer.write(" ");
 				}
-                //writer.flush();   //this tells the bufferedWriter to write everything on to the file
+              
+				//writer.flush();   //this tells the bufferedWriter to write everything on to the file
 				writer.close();
 				System.exit(0);
 				break;

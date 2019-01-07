@@ -1,15 +1,15 @@
 /*******************************************************************************
- *   Compilation:  javac -d bin AnagramStack.java								*
- *  Execution:    java -cp bin com.bridgelabz.datastructureprograms.AnagramStack *
- *                                                                  			 *
- *  Purpose: Add the Prime Numbers that are Anagram in the Range of 0 - 1000 in *						*
- *			  a Stack using the Linked List and Print the Anagrams and print in 
- *			reverse order.
- *														          				 *
- *  @author  Mridumurchana Kashyap												*
- *  @version 1.0																*
- *  @since   3.1.2019															*
- *  **************************************************************************/
+ *   Compilation:  javac -d bin AnagramStack.java								  *
+ *  Execution:    java -cp bin com.bridgelabz.datastructureprograms.AnagramStack  *
+ *                                                                  			  *
+ *  Purpose: Add the Prime Numbers that are Anagram in the Range of 0 - 1000 in   *						*
+ *			  a Stack using the Linked List and Print the Anagrams and print in   *
+ *			reverse order.														  *
+ *														          				  *
+ *  @author  Mridumurchana Kashyap												  *
+ *  @version 1.0																  *
+ *  @since   3.1.2019															  *
+ *  *******************************************************************************/
 package com.bridgelabz.datastructureprograms;
 
 import java.util.ArrayList;
