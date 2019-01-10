@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 
-public class DataStructureUtility
+public class DataStructureUtility<T>
 {
 	//Creating Scanner classes
 	/**
@@ -188,10 +188,10 @@ public class DataStructureUtility
 	 * @param primeList is the list containing all the prime numbers
 	 * @return a stack containing the prime anagrams
 	 */
-	public static Stack primeAnagram2(List<Integer> primeList) { 
+	public StackLinkedList<Integer> primeAnagram2(List<Integer> primeList) { 
 
-		int len=primeList.size();
-		com.bridgelabz.util.Stack stack=new com.bridgelabz.util.Stack(len);
+		
+		StackLinkedList<Integer> stack=new StackLinkedList<Integer>();
 		for (int i = 0; i < primeList.size(); i++) {
 			for (int j = i+1; j < primeList.size(); j++) {
 				if (AlgorithmUtility.anagrams(String.valueOf(primeList.get(i)), String.valueOf(primeList.get(j)))) {

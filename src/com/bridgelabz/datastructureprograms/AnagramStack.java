@@ -13,14 +13,10 @@
 package com.bridgelabz.datastructureprograms;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
-
-
 import com.bridgelabz.util.DataStructureUtility;
-import com.bridgelabz.util.Stack;
+
+import com.bridgelabz.util.StackLinkedList;
 
 
 public class AnagramStack
@@ -29,13 +25,13 @@ public class AnagramStack
 	public static void main(String[] args)
 	{
 
-		
+		DataStructureUtility<Integer> du=new DataStructureUtility<Integer>();
 	    List<Integer> list2 = new ArrayList<Integer>();
 	    list2 = DataStructureUtility.rangePrime(0, 1000); //finding prime
-	    int len=list2.size();
-	    Stack stack=new Stack(len);
-	    stack=DataStructureUtility.primeAnagram2(list2); //finding anagram
-	    System.out.println(stack.size()+" is the size of the stack");
+	   
+	    StackLinkedList<Integer> stack=new StackLinkedList<Integer>();
+	    stack=du.primeAnagram2(list2); //finding anagram
+	    System.out.println(stack.getSize()+" is the size of the stack");
 	    System.out.println("Printing the elements in reverse order using pop function of stack");
 	    while(!stack.isEmpty())
 	    {

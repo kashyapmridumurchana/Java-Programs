@@ -11,11 +11,11 @@
  *  **************************************************************************************/
 package com.bridgelabz.datastructureprograms;
 import com.bridgelabz.util.DataStructureUtility;
-import com.bridgelabz.util.Stack;
+import com.bridgelabz.util.StackLinkedList;
 
 public class BalancedParenthesis {
     public static void main(String[] args) throws Exception {
-        Stack stack = new Stack(500);
+        StackLinkedList<String> stack = new StackLinkedList<String>();
         DataStructureUtility d=new DataStructureUtility();
         int n=0;
         do

@@ -15,10 +15,11 @@ import com.bridgelabz.util.*;
 
 
 public class Array {
-
+  
 	public static void main(String[] args) {
 		@SuppressWarnings("resource")
 		Scanner s = new Scanner(System.in);
+		@SuppressWarnings("rawtypes")
 		FunctionalUtility fu = new FunctionalUtility();
 		int choice;
 		do {

@@ -7,8 +7,13 @@
 package com.bridgelabz.util;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -65,6 +70,18 @@ public class OopsUtility
         return scanner.next();
 
     }
+    
+    
+    /**
+     * static function to read float input from the user
+     *
+     * @return float values that are read
+     */
+    public static Float userFloat() {
+
+        return scanner.nextFloat();
+
+    }
 
     //replace string
     public static String replaceString(String first,String fullName,String phoneNum,String date,String line) 
@@ -113,17 +130,83 @@ public class OopsUtility
     
     
     
+    public static void display(List<InventoryList> list2)
+    {
+        for (int i = 0; i < list2.size(); i++) {
+            InventoryList it = list2.get(i);
+            System.out.println("Inventory name :" + it.getInventoryName());
+            for (int j = 0; j < it.getListOfInventories().size(); j++) {
+                System.out.println("name :" + it.getListOfInventories().get(j).getName());
+                System.out.println("price :" + it.getListOfInventories().get(j).getPrice());
+                System.out.println("weight :" + it.getListOfInventories().get(j).getWeight());
+                System.out.println();
+            }
+            System.out.println("---------------------------------------------");
+    }
+   
+    } 
     
     
     
     
+    public static InventoryList insertInventoryList(String inventoryName,List<Inventory> listOfInventories)
+    {
+        InventoryList inventoryList = new InventoryList();
+        inventoryList.setInventoryName(inventoryName);
+        inventoryList.setListOfInventories(listOfInventories);
+        return inventoryList;
+    }
+    
+    
+    public static Inventory insertInventoryDetail()
+    {
+        Inventory inventory = new Inventory();
+        System.out.println("Enter name of inventory");
+        inventory.setName(OopsUtility.userString());
+        System.out.println("Enter weight of inventory");
+        inventory.setWeight(OopsUtility.userFloat());
+        System.out.println("Enter price of inventory");
+        inventory.setPrice(OopsUtility.userDouble());
+        return inventory;
+    }
+    
+    static List<Inventory> liInventories = new ArrayList<Inventory>();
+    public static List<Inventory> insertInventory(String name,float weight,double price)
+    {
+        Inventory inventory = new Inventory();
+        inventory.setName(name);
+        inventory.setWeight(weight);
+        inventory.setPrice(price);
+        liInventories.add(inventory);
+        return liInventories;
+    }
+    
+    public static void write(String json) throws IOException
+    {
+        FileWriter fw = new FileWriter("/home/admin1/Desktop/Inventory.json");
+        BufferedWriter bw = new BufferedWriter(fw);
+        bw.write(json);
+        bw.flush();
+    }
     
     
     
-    
-    
-    
-    
+    public static void price(List<InventoryList> list2)
+    {
+       
+        for (int i = 0; i < list2.size(); i++) {
+            double sum=0;
+            InventoryList it = list2.get(i);
+            System.out.println("Inventory name :" + it.getInventoryName());
+            for (int j = 0; j < it.getListOfInventories().size(); j++) {
+                sum+=it.getListOfInventories().get(j).getPrice();
+            }
+            System.out.println("total price to be given is :"+sum);
+            System.out.println("---------------------------------------------");
+    }
+    }
+
+ 
     
     
     

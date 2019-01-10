@@ -242,7 +242,7 @@ public class FunctionalUtility<E>
 	 */
 	public void displayArray(E[][] garray,int m,int n)
 	{
-		PrintWriter p=new PrintWriter(System.out,true);
+		//PrintWriter p=new PrintWriter(System.out,true);
 		for(int i=0;i<m;i++)
 		{
 			for(int j=0;j<n;j++)
