@@ -14,14 +14,14 @@ package com.bridgelabz.datastructureprograms;
 
 import com.bridgelabz.util.DataStructureUtility;
 import com.bridgelabz.util.Deque;
-import com.bridgelabz.util.Deque.DequeUtility;
+
 
 public class PalindromeChecker 
 {
 	public static void main(String[] args) 
 	{
 		Deque de=new Deque();
-		DequeUtility deq=de.new DequeUtility();
+		
 		System.out.println("Enter a String: ");
 		String st=DataStructureUtility.userString();
         String s=st.toLowerCase();
@@ -29,13 +29,13 @@ public class PalindromeChecker
 		for(int i=0;i<s.length();i++)
 		{
 			char c =s.charAt(i);
-			deq.addRear(c);
+			de.addRear(c);
 		}
 		int flag=0;
 
-		while(deq.size()>1)
+		while(de.size()>1)
 		{
-			if(deq.removeFront()!=deq.removeRear())
+			if(de.removeFront()!=de.removeRear())
 			{
 				flag=1;
 				break;

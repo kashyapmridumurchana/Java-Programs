@@ -3,7 +3,7 @@
  *  @author  Mridumurchana Kashyap												*
  *  @version 1.0																*
  *  @since   3.1.2018															*
- *  **************************************************************************/
+ *  *****************************************************************************/
 package com.bridgelabz.util;
 
 public class StackLinkedList<T>
