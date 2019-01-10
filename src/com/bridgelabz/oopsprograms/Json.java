@@ -21,7 +21,7 @@ import com.bridgelabz.util.OopsUtility;
 public class Json {
     public static void main(String[] args) throws IOException {
 //        Inventory it=new Inventory();
-        String str="/home/admin1/Desktop/Inventory.json";
+        String str="/home/admin1/Desktop/Inventory.json"; 
         String file=OopsUtility.readFile(str);
         System.out.println(file);
         ObjectMapper objectMapper = new ObjectMapper();
@@ -57,7 +57,7 @@ public class Json {
 //       
 //        String json = objectMapper.writeValueAsString(list1);
 //       
-//        FileWriter fw = new FileWriter("/home/admin1/Documents/adiga_docs/Programs/Files/json1.json");
+//        FileWriter fw = new FileWriter("/home/admin1/Desktop/Inventory.json");
 //        BufferedWriter bw = new BufferedWriter(fw);
 //        bw.write(json);
 //        bw.flush();
