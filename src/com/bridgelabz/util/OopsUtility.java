@@ -77,12 +77,25 @@ public class OopsUtility
      *
      * @return float values that are read
      */
-    public static Float userFloat() {
+    public static float userFloat() {
 
         return scanner.nextFloat();
 
     }
+    /**
+     * static function to read long input from the user
+     *
+     * @return long values that are read
+     */
+    public static long userLong() {
 
+        return scanner.nextLong();
+
+    }
+    
+    
+    
+    
     //replace string
     public static String replaceString(String first,String fullName,String phoneNum,String date,String line) 
     {
@@ -206,9 +219,31 @@ public class OopsUtility
     }
     }
 
- 
+    public static void write1(String json) throws IOException
+    {
+        FileWriter fw = new FileWriter("/home/admin1/Desktop/address.json");
+        BufferedWriter bw = new BufferedWriter(fw);
+        bw.write(json);
+        bw.flush();
+    }
     
+    public static String readFile1(String str) throws FileNotFoundException {
+        FileReader f = new FileReader(str);
+        @SuppressWarnings("resource")
+        BufferedReader read = new BufferedReader(f);
+        String line = "";
+        try {
+            String word="";
+            while ((word = read.readLine()) != null) {
+                line = word;
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        return line;
     
+    }
     
     
     

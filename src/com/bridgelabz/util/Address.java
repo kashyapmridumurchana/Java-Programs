@@ -2,10 +2,10 @@ package com.bridgelabz.util;
 
 public class Address
 {
-String street;
-String city;
-String state;
-long zipCode;
+private String street;
+private String city;
+private String state;
+private long zipCode;
 
 
 public Address()
