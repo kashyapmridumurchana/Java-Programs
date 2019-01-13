@@ -11,6 +11,7 @@ import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 
+import com.bridgelabz.oopsprograms.AddressBookApplication;
 import com.bridgelabz.util.OopsUtility;
 
 public class AddressBook 
@@ -41,8 +42,8 @@ public class AddressBook
 		addr.setZipCode(OopsUtility.userLong());
 		person.setAddr(addr);
 		listOfPerson.add(person);
-		String json = objectMapper.writeValueAsString(listOfPerson);
-		OopsUtility.write1(json);
+		//String json = objectMapper.writeValueAsString(listOfPerson);
+		//OopsUtility.write1(json);
 	}
 
 	public void editPerson() throws JsonGenerationException, JsonMappingException, IOException {
@@ -52,7 +53,7 @@ public class AddressBook
 		System.out.println("Enter the last name");
 		String lName=OopsUtility.userString();
 		person=new Person();
-		ObjectMapper objectMapper = new ObjectMapper();
+		
 		for(int i=0;i<listOfPerson.size();i++)
 		{
 			person=listOfPerson.get(i);
@@ -61,63 +62,64 @@ public class AddressBook
 				if(lName.contains(person.getLastName()))
 				{
 					System.out.println("Choose which details you want to edit");
-					//System.out.println("1. Phone Number \n 2. Address\n 3.End  ");
-					
 					
 					int n=1;
 					while(n==1)
 					{   
-						System.out.println("1. Phone Number \n 2. Address\n 3.End  ");
+						System.out.println("1.Phone Number \n2. Address \n3.End  ");
 						int ch=OopsUtility.userInteger();
 						switch(ch)
 						{
 						case 1:   System.out.println("Enter the phone number to update");
-						person.setPhoneNumber(OopsUtility.userLong());
-						System.out.println("Phone number updated");
-						String json = objectMapper.writeValueAsString(listOfPerson);
-						OopsUtility.write1(json);
-						
-						break;
+						         person.setPhoneNumber(OopsUtility.userLong());
+						         System.out.println("Phone number updated");						         
+						         break;
 
 						case 2: Address addr=person.getAddr();//to get that particular address
-						int n1=1;
+						       int n1=1;
 						while(n1==1)
 						{ 
-							System.out.println("Choose your option to edit in address\n 1. Street\n 2.City\n 3.State 4.Zipcode");
+							System.out.println("Choose your option to edit in address\n 1. Street\n 2.City\n 3.State\n 4.Zipcode\n 5.Goto main method ");
 							int choice=OopsUtility.userInteger();
 							switch(choice)
 							{
 							case 1: System.out.println("Enter the new street details");
 							addr.setStreet(OopsUtility.userString());
 							System.out.println("Street details updated");
+							n=0;
 							break;
 
-							case 2:  System.out.println("Enter the new street details");
+							case 2:  System.out.println("Enter the new city details");
 							addr.setCity(OopsUtility.userString());
 							System.out.println("City details updated");
+							n=0;
 							break;
 							case 3: System.out.println("Enter the new state details");
 							addr.setState(OopsUtility.userString());
 							System.out.println("State details updated");
+							n=0;
 							break;
 							case 4: System.out.println("Enter the new zipcode");
 							addr.setZipCode(OopsUtility.userLong());
 							System.out.println("Zipcode details updated");
+							n=0;
+							break;
+							case 5: AddressBookApplication.main(null);
 							break;
 							default: System.out.println("Enter correct choice");
-
+  
 							}//end of inside switch
 							person.setAddr(addr);
-
-							//System.out.println("1. Continue \n 2. Exit");
-							//n1=OopsUtility.userInteger();
+//
+//							
 						}
+						case 3: AddressBookApplication.main(null);
 						default: System.out.println("Choose among the choices");
 						} //end of outside switch
 
 
-						System.out.println("1. Continue \n 2. Exit");
-						n=OopsUtility.userInteger();
+						//System.out.println("1. Continue \n 2. Exit");
+						//n=OopsUtility.userInteger();
 
 					}//end of inside if
 
@@ -131,6 +133,14 @@ public class AddressBook
 
 
 
+	}
+
+	public static List<Person> getListOfPerson() {
+		return listOfPerson;
+	}
+
+	public static void setListOfPerson(List<Person> listOfPerson) {
+		AddressBook.listOfPerson = listOfPerson;
 	}
 
 	public void display() 
@@ -167,8 +177,8 @@ public class AddressBook
 						{
 		                listOfPerson.remove(per);
 		                System.out.println("Person removed from the address book ");
-		                String json = objectMapper.writeValueAsString(listOfPerson);
-		        		OopsUtility.write1(json);
+		                //String json = objectMapper.writeValueAsString(listOfPerson);
+		        		//OopsUtility.write1(json);
 		                break;
 		            }
 		            flag=1;

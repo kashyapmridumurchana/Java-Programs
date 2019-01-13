@@ -1,3 +1,4 @@
+
 package com.bridgelabz.oopsprograms;
 
 import java.io.IOException;
@@ -17,10 +18,11 @@ public class AddressBookApplication
 	{
 		AddressBookManager addm=new AddressBookManager();
 		AddressBook add=new AddressBook();
+		System.out.println("..........ADDRESS BOOK APPLICATION..........");
 		int op=1;
 		while(op==1){
 		System.out.println("Enter choice");
-		System.out.println("1:Create Book\n  2:Open book\n  3:Save Book\n  4:Close book\n  5:Save Book As\n  6:add Book");
+		System.out.println("\n1:Create Book\n  2:Open book\n  3:Save Book\n  4:Close book\n  5:Save Book As\n  6:Quit");
 		int choice=OopsUtility.userInteger();
 		switch(choice){
 		case 1: addm.createBook();
@@ -37,7 +39,7 @@ public class AddressBookApplication
 				
 		case 5:addm.saveBookAs();
 		
-		case 6: addm.addressBook();
+		case 6: System.exit(0);
 				
 				
 		default: System.out.println("kindly choose among the choices");

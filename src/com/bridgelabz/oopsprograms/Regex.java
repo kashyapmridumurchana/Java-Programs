@@ -13,6 +13,8 @@ package com.bridgelabz.oopsprograms;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import com.bridgelabz.util.OopsUtility;
 
@@ -33,7 +35,6 @@ public class Regex
 		            {
 		                line=word;
 		            }
-		            System.out.println(line);
 		        }
 		       
 		        catch(Exception e)
@@ -47,10 +48,12 @@ public class Regex
 		        String fullName=firstName+" "+lastName;
 		        System.out.println("Please enter your 10 digit phone number");
 		        String phoneNum=OopsUtility.userString();
-		        System.out.println("Please enter date in the format DD/MM/YYYY");
-		        String date=OopsUtility.userString();
-		        String message=OopsUtility.replaceString(firstName,fullName,phoneNum,date,line);
+		        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy"); 
+		        LocalDateTime now = LocalDateTime.now(); 
+		        String date=dtf.format(now);
+		        String message = OopsUtility.replaceString(firstName, fullName, phoneNum, date, line);
 		        System.out.println(message);
+		        
 		       
 		    }
 	
