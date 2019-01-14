@@ -23,7 +23,7 @@ public class AddressBook
 	public void addPerson() throws JsonGenerationException, JsonMappingException, IOException
 	{
 		person=new Person();
-		 ObjectMapper objectMapper = new ObjectMapper();
+		// ObjectMapper objectMapper = new ObjectMapper();
 		System.out.println("Enter the firstname");
 		person.setFirstName(OopsUtility.userString());
 		System.out.println("Enter the lastname");
@@ -42,8 +42,7 @@ public class AddressBook
 		addr.setZipCode(OopsUtility.userLong());
 		person.setAddr(addr);
 		listOfPerson.add(person);
-		//String json = objectMapper.writeValueAsString(listOfPerson);
-		//OopsUtility.write1(json);
+		
 	}
 
 	public void editPerson() throws JsonGenerationException, JsonMappingException, IOException {

@@ -7,7 +7,7 @@ public class Patient
 	private int age;
 	private long phNo;
 	
-	Patient()
+	public Patient()
 	{
 		id=0;
 		name=null;

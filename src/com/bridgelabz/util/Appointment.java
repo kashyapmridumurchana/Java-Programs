@@ -1,13 +1,8 @@
 package com.bridgelabz.util;
 
 
-import java.io.IOException;
 import java.util.ArrayList;
-import com.bridgelabz.util.PatientManagement;
 import java.util.List;
-
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.type.TypeReference;
 
 public class Appointment
 {

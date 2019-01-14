@@ -8,15 +8,12 @@ package com.bridgelabz.util;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -25,9 +22,8 @@ import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.map.type.CollectionType;
 import org.codehaus.jackson.type.TypeReference;
-
-import com.bridgelabz.oopsprograms.CliniqueManagement;
 
 public class OopsUtility {
 	/**
@@ -103,14 +99,12 @@ public class OopsUtility {
 		return scanner.nextLong();
 
 	}
-	public static <T> List<T> userReadValue(String str,List<T> list) throws JsonParseException, JsonMappingException, IOException 
-	{
-		return objectMapper.readValue(str,new TypeReference<List<T>>() {
-		});
+	public static <T> List<T> userReadValue(String str, Class<?> clazz) throws JsonParseException, JsonMappingException, IOException{
+		CollectionType colletion = objectMapper.getTypeFactory().constructCollectionType(ArrayList.class, clazz);
+		return objectMapper.readValue(str, colletion);
 	}
 	
-	public static <T> String userWriteValueAsString(List<T> list) throws JsonGenerationException, JsonMappingException, IOException
-	{
+	public static <T> String userWriteValueAsString(List<T> list) throws JsonGenerationException, JsonMappingException, IOException{
 		return objectMapper.writeValueAsString(list);
 	}
 	
@@ -249,63 +243,8 @@ public class OopsUtility {
 
 
 
-	public void  add() throws JsonGenerationException, JsonMappingException, IOException
-	{
-		 
-		List<Doctor> docList=new ArrayList<Doctor>();		
-		List<Patient> patList=new ArrayList<Patient>();
 
-		 
-		boolean run=true;
-		while(run==true)
-		{	
-			System.out.println("Enter among the choices\n 1.Add a Doctor\n 2.Add a Patient\n 3.Go Back");
-            int ch=OopsUtility.userInteger();
-            switch(ch)
-            {
-            case 1: DoctorManagement dm=new DoctorManagement();                 
-                    docList=dm.addDoctor();                   
-                    run=true;
-                    break;
-                    
-            case 2: PatientManagement pm=new PatientManagement();
-                    patList=pm.addPatient();                 
-                    run=true;
-                    break;
-                    
-                    
-            case 3: CliniqueManagement.main(null);
-                    break;
-            }
-
-
-		}	
-	}
 	
-	
-	public void search() throws JsonGenerationException, JsonMappingException, IOException
-	{
-		boolean run=true;
-		while(run==true)
-		{
-			System.out.println("Enter among the choices\n 1.Search a Doctor\n 2.Search a Patient\n 3.Go Back");
-			int ch=OopsUtility.userInteger();
-            switch(ch)
-            {
-            case 1: DoctorManagement dm=new DoctorManagement();
-                    dm.searchDoctor();
-                    run=true;
-                    break;
-            case 2: PatientManagement pm=new PatientManagement();
-                    pm.searchPatient();
-                    run=true;
-                    break;
-            case 3: CliniqueManagement.main(null);
-                    break;
-            }
-		}
-	}
-
 	
 
 

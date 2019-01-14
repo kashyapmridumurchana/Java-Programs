@@ -9,7 +9,7 @@ private String name;
 private String specialization;
 private String avail;
 
-Doctor()
+public Doctor()
 {
 	id=0;
 	name=null;
