@@ -1,3 +1,13 @@
+/********************************************************************** *********
+ *   Compilation:  javac -d bin Search.java						                *
+ *  Execution:    java -cp bin com.bridgelabz.oopsprograms.Search               *
+ *                                                                  			*
+ *  Purpose: Clinic Management
+ *																				*
+ *  @author  Mridumurchana Kashyap												*
+ *  @version 1.0																*
+ *  @since   9.1.2018															*
+ *  **************************************************************************/
 package com.bridgelabz.oopsprograms;
 
 

@@ -1,3 +1,13 @@
+/********************************************************************** *********
+ *   Compilation:  javac -d bin StockPortfolio.java						        *
+ *  Execution:    java -cp bin com.bridgelabz.oopsprograms.StockPortfolio       *
+ *                                                                  			*
+ *  Purpose: Stock Management
+ *																				*
+ *  @author  Mridumurchana Kashyap												*
+ *  @version 1.0																*
+ *  @since   9.1.2018															*
+ *  **************************************************************************/
 package com.bridgelabz.oopsprograms;
 
 import java.io.FileNotFoundException;
@@ -55,15 +65,40 @@ public class StockPortfolio
 			System.out.println("Stock is " +stock.getStockName() + " and price of each share of it is " +dir);
 			
 		}
-		
-		
-		
-		
-		
-		
-		
-		
+			
 	}
+	
+	
+	public static void totalStockValue() throws FileNotFoundException
+	{
+		float sum=0;
+		String string=OopsUtility.readFile(stockFile);
+		try {
+			listOfStock=OopsUtility.userReadValue(string, Stock.class);
+			System.out.println("File is not empty!");
+		}catch(Exception e) {
+			System.out.println("File is empty");
+		}
+		for(Stock stock:listOfStock)
+		{
+			float dir=stock.getSharePrice()*stock.getNoOfShare();
+			sum+=dir;
+			System.out.println("Total stock of "+stock.getStockName()+" is " +sum);
+			
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }

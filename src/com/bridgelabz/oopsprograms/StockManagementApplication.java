@@ -27,9 +27,11 @@ public class StockManagementApplication
 			case 2: StockPortfolio.eachStockValue();
 			       run=true;
 			       break;
-			case 3:
+			case 3:StockPortfolio.totalStockValue();
+			       run=true;
+			       break;
 			case 4: System.exit(0);
-			default:System.out.println("kindly enter amon the choices");
+			default:System.out.println("kindly enter among the choices");
 			        StockManagementApplication.main(null);
 			        break;
 				

@@ -1,3 +1,13 @@
+/********************************************************************** *********
+ *   Compilation:  javac -d bin Stock.java						                *
+ *  Execution:    java -cp bin com.bridgelabz.oopsprograms.Stock                *
+ *                                                                  			*
+ *  Purpose: Stock MAnagement Application
+ *																				*
+ *  @author  Mridumurchana Kashyap												*
+ *  @version 1.0																*
+ *  @since   9.1.2018															*
+ *  **************************************************************************/
 package com.bridgelabz.oopsprograms;
 
 public class Stock
@@ -6,7 +16,7 @@ private String stockName;
 private int noOfShare;
 private float sharePrice;
 
-Stock()
+public Stock()
 {
 	stockName=null;
 	noOfShare=0;

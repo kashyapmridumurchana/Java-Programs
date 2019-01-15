@@ -241,8 +241,54 @@ public class OopsUtility {
 		bw.flush();
 	}
 
-
-
+	 public static QueueLinkedList<QueueLinkedList<String>> deckQueueStore(String[] deck )
+	    {
+	        QueueLinkedList<QueueLinkedList<String>> mainQueue = new QueueLinkedList<QueueLinkedList<String>>();
+	        QueueLinkedList<String> queueLinkedList = new QueueLinkedList<String>();
+	        System.out.println("Total numver of deck of cards are " + deck.length);
+	        //storing those cards of particular person in an array
+	        for (int i = 0; i < 4; i++) {
+	            String[] demo = new String[9];
+	            for (int j = 0; j < 9; j++) {
+	                demo[j] = deck[i + j * 4];
+	            }
+	            //sorting demo array and storing in str2
+	            String[] str2 = sortArray(demo);
+	            for (int k = 0; k < str2.length; k++) {
+	                queueLinkedList.enqueue(str2[k]);//inserting it to one queue
+	            }
+	            mainQueue.enqueue(queueLinkedList);//inserting to the main queue
+	            queueLinkedList = new QueueLinkedList<String>();//takes the cards of the particular person corresponding to the indices
+	            continue;
+	        }
+	        return mainQueue;
+	    }
+	    public static void displayDeck(QueueLinkedList<QueueLinkedList<String>> mainQueue)
+	    {
+	        for (int i = 0; i < mainQueue.size(); i++) {
+	            QueueLinkedList<String> queue2 = mainQueue.dequeue();
+	            System.out.println("---------------------------------------- Person " + (i + 1)
+	                    + " -------------------------------------------");
+	            for (int j = 0; j < queue2.size(); j++) {
+	                System.out.print(queue2.dequeue() + " ");
+	            }
+	            System.out.println();
+	        }
+	    }
+	    //Sorting function(insertion)
+	    public static <T extends Comparable<T>> T[] sortArray(T str[]) {
+	        int length = str.length;
+	        for (int i = 1; i < length; i++) {
+	            T key = str[i];
+	            int j = i - 1;
+	            while (j >= 0 && ((str[j].compareTo(key) > 0))) {
+	                str[j + 1] = str[j];
+	                j--;
+	            }
+	            str[j + 1] = key;
+	        }
+	        return str;
+	    }
 
 	
 	

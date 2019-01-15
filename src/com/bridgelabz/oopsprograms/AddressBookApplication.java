@@ -1,4 +1,13 @@
-
+/********************************************************************* *********
+ *   Compilation:  javac -d bin AddressBookApplication.java						*
+ *  Execution:    java -cp bin com.bridgelabz.oopsprograms.AddressBookApplication*
+ *                                                                  			*
+ *  Purpose: Address Book Application
+ *																				*
+ *  @author  Mridumurchana Kashyap												*
+ *  @version 1.0																*
+ *  @since   9.1.2018															*
+ *  **************************************************************************/
 package com.bridgelabz.oopsprograms;
 
 import java.io.IOException;
