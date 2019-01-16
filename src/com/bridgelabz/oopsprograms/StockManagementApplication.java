@@ -1,6 +1,15 @@
+/********************************************************************** **************
+ *   Compilation:  javac -d bin StockManagementApplication.java				         *
+ *  Execution:    java -cp bin com.bridgelabz.oopsprograms.StockManagementApplication*
+ *                                                                  	       		 *
+ *  Purpose: Stock MAnagement Application
+ *																					 *
+ *  @author  Mridumurchana Kashyap													 *
+ *  @version 1.0																	 *
+ *  @since   9.1.2018																 *
+ *  **********************************************************************************/
 package com.bridgelabz.oopsprograms;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.codehaus.jackson.JsonGenerationException;

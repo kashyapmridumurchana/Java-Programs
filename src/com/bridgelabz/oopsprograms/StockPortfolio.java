@@ -12,6 +12,8 @@ package com.bridgelabz.oopsprograms;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -88,14 +90,32 @@ public class StockPortfolio
 		}
 	}
 	
+	public static void displayStock() throws IOException 
+	{
+		String s2=OopsUtility.readFile1(StockPortfolio.stockFile);
+		try {
+			StockPortfolio.listOfStock=OopsUtility.userReadValue(s2, Stock.class);
+		}
+		catch(Exception e)
+		{
+			System.out.println("unable to read");
+		}
+		for (Stock st : listOfStock)
+		{
+            System.out.println("Stock name : " +st.getStockName());
+            System.out.println("Stock's number of share : " + st.getNoOfShare());
+            System.out.println("Stock per share price : " + st.getSharePrice());
+            System.out.println("------------------------------------------------------");
+	}
 	
+	}
 	
-	
-	
-	
-	
-	
-	
+	public static String getDate() {
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+		LocalDateTime now = LocalDateTime.now();
+		String date = dtf.format(now);
+		return date;
+	}
 	
 	
 	

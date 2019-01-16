@@ -1,31 +1,33 @@
+/********************************************************************** *********
+ *   Compilation:  javac -d bin Transaction.java						        *
+ *  Execution:    java -cp bin com.bridgelabz.oopsprograms.Transaction          *
+ *                                                                  			*
+ *  Purpose: Stock MAnagement Application
+ *																				*
+ *  @author  Mridumurchana Kashyap												*
+ *  @version 1.0																*
+ *  @since   9.1.2018															*
+ *  **************************************************************************/
 package com.bridgelabz.oopsprograms;
 
-import java.util.Date;
+public class Transaction {
+	private String date;
+	private String transactionStatus;
 
-public class Transaction
-{
-private Date date=new Date();
-private String transactionStatus;
+	public String getDate() {
+		return date;
+	}
 
-public Transaction()
-{
-	transactionStatus=null;
-}
+	public void setDate(String date) {
+		this.date = date;
+	}
 
+	public String getTransactionStatus() {
+		return transactionStatus;
+	}
 
-
-public Date getDate() {
-	return date;
-}
-public void setDate(Date date) {
-	this.date = date;
-}
-public String getTransactionStatus() {
-	return transactionStatus;
-}
-public void setTransactionStatus(String transactionStatus) {
-	this.transactionStatus = transactionStatus;
-}
-
+	public void setTransactionStatus(String transactionStatus) {
+		this.transactionStatus = transactionStatus;
+	}
 
 }
