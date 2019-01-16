@@ -28,7 +28,8 @@ import com.bridgelabz.util.Doctor;
 import com.bridgelabz.util.OopsUtility;
 import com.bridgelabz.util.Patient;
 
-public class CliniqueManager {
+public class CliniqueManager
+{
 	static List<Doctor> listOfDoctor = new ArrayList<Doctor>();
 	static String doctorFile = "/home/admin1/eclipse-workspace/Java-Programs/Doctor.json";
 	static List<Patient> listOfPatients = new ArrayList<Patient>();
@@ -36,6 +37,11 @@ public class CliniqueManager {
 	static List<Appointment> listOfAppointments = new ArrayList<>();
 	static String appointmentFile = "/home/admin1/eclipse-workspace/Java-Programs/Appointment.json";
 
+	
+	//Adding doctor and patient
+	/**
+	 * @throws IOException
+	 */
 	public static void add() throws IOException {
 		System.out.println("choose among the choices:\n1:To Add Doctor\n2:To Add Patient");
 		int choice = OopsUtility.userInteger();
@@ -49,6 +55,12 @@ public class CliniqueManager {
 		}
 	}
 
+	
+	
+	//add a doctor
+	/**
+	 * @throws IOException
+	 */
 	public static void addDoctor() throws IOException {
 		String string = OopsUtility.readFile(doctorFile);
 		try {
@@ -73,6 +85,12 @@ public class CliniqueManager {
 		OopsUtility.write11(json, doctorFile);
 	}
 
+	
+	
+	//Add a patient
+	/**
+	 * @throws IOException
+	 */
 	public static void addPatient() throws IOException {
 		String string = OopsUtility.readFile(patientFile);
 		try {
@@ -96,6 +114,13 @@ public class CliniqueManager {
 		OopsUtility.write11(json, patientFile);
 	}
 
+	
+	//Search a doctor
+	/**
+	 * @throws JsonParseException
+	 * @throws JsonMappingException
+	 * @throws IOException
+	 */
 	public static void searchDoctor() throws JsonParseException, JsonMappingException, IOException {
 		System.out.println("Enter among the choices");
 		System.out.println("1:Search by ID\n2:Search By Name\n3:Search By Specialization\n4:Search By Availability");
@@ -136,6 +161,11 @@ public class CliniqueManager {
 		}
 	}
 
+	
+	//Search a patient
+	/**
+	 * @throws IOException
+	 */
 	public static void searchPatient() throws IOException {
 		System.out.println("Enter your choice ");
 		System.out.println("1:Search by ID\n2:Search By Phone Number");
@@ -162,6 +192,13 @@ public class CliniqueManager {
 		}
 	}
 
+	
+	//search
+	/**
+	 * @throws JsonParseException
+	 * @throws JsonMappingException
+	 * @throws IOException
+	 */
 	public static void search() throws JsonParseException, JsonMappingException, IOException {
 		System.out.println("Enter choice:\n1:Search a Doctor\n2:Search a Patient");
 		int choice = OopsUtility.userInteger();
@@ -175,6 +212,11 @@ public class CliniqueManager {
 		}
 	}
 
+	
+	//take appointment with a specific doctor
+	/**
+	 * @throws IOException
+	 */
 	public static void takeAppointment() throws IOException {
 		String string = OopsUtility.readFile(appointmentFile);
 		try {
@@ -197,6 +239,10 @@ public class CliniqueManager {
 
 	}
 
+	//display doctor's list
+	/**
+	 * @param docList contains list of doctors
+	 */
 	public static void displayList(List<Doctor> docList) {
 		for (Doctor doctor : docList) {
 			System.out.println("Doctor's ID is " + doctor.getId());
@@ -206,6 +252,12 @@ public class CliniqueManager {
 		}
 	}
 
+	
+	//take appointment continued
+	/**
+	 * @param doctorList contains list of doctors
+	 * @param patient is an object of patient class
+	 */
 	public static void searchDoc(List<Doctor> doctorList, Patient patient) {
 		System.out.println("Enter id");
 		int id = OopsUtility.userInteger();
@@ -261,6 +313,11 @@ public class CliniqueManager {
 		}
 	}
 
+	//take appointment continued
+	/**
+	 * @param patient is an object of patient class
+	 * @throws IOException
+	 */
 	public static void operation(Patient patient) throws IOException {
 		System.out.println("Search doctor by:\n1:Name\n2:Speciality\n3:Availability");
 		int choice = OopsUtility.userInteger();
@@ -283,6 +340,11 @@ public class CliniqueManager {
 		}
 	}
 
+	
+	//famous doctor search
+	/**
+	 * @throws IOException
+	 */
 	public static void famousDoctor() throws IOException {
 		String string = OopsUtility.readFile(appointmentFile);
 		Map<String, Integer> map = new HashMap<>();
@@ -308,6 +370,11 @@ public class CliniqueManager {
 		}
 	}
 
+	
+	//famous specialist search
+	/**
+	 * @throws IOException
+	 */
 	public static void famousSpecialist() throws IOException {
 		String string = OopsUtility.readFile(doctorFile);
 		List<String> list = new ArrayList<>();

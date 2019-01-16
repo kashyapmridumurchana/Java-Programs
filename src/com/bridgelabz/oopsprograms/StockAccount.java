@@ -17,22 +17,25 @@ import java.util.List;
 
 import com.bridgelabz.util.LinkedList;
 import com.bridgelabz.util.OopsUtility;
-import com.bridgelabz.util.Queue;
 import com.bridgelabz.util.QueueLinkedList;
 import com.bridgelabz.util.StackLinkedList;
 
 public class StockAccount {
+	//member declaration
 	static String chooseAccount;
 	static List<StockCustomer> listOfStocks = new ArrayList<StockCustomer>();
 	static String path = "/home/admin1/eclipse-workspace/Java-Programs/";
-static LinkedList<String> list=new LinkedList<String>();
-static QueueLinkedList<String> queue=new QueueLinkedList<String>();
-static StackLinkedList<String> stack=new StackLinkedList<String>();
-static StackLinkedList<String> tempStack=new StackLinkedList<String>();
-	
-	
-	
-	
+	static LinkedList<String> list=new LinkedList<String>();
+	static QueueLinkedList<String> queue=new QueueLinkedList<String>();
+	static StackLinkedList<String> stack=new StackLinkedList<String>();
+	static StackLinkedList<String> tempStack=new StackLinkedList<String>();
+
+
+
+//contains switch cases for get stock details
+	/**
+	 * @throws IOException
+	 */
 	public static void stockEntry() throws IOException {
 		boolean isRun = true;
 		while (isRun) {
@@ -64,6 +67,12 @@ static StackLinkedList<String> tempStack=new StackLinkedList<String>();
 		}
 	}
 
+	
+	
+	//buy stock
+	/**
+	 * @throws IOException
+	 */
 	public static void buyStock() throws IOException
 	{
 		System.out.println("Stocks available are");
@@ -84,10 +93,16 @@ static StackLinkedList<String> tempStack=new StackLinkedList<String>();
 		}
 		String json = OopsUtility.userWriteValueAsString(StockPortfolio.listOfStock);
 		OopsUtility.write11(json, StockPortfolio.stockFile);
-		
-
 	}
 
+	
+	
+	//buy stock continued
+	/**
+	 * @param sName is the name of the stock
+	 * @param nOfShare  is the number of the stock
+	 * @return
+	 */
 	public static StockCustomer newEntry(String sName, int nOfShare) {
 		for (Stock stock : StockPortfolio.listOfStock) {
 			if (sName.equals(stock.getStockName())) {
@@ -98,7 +113,7 @@ static StackLinkedList<String> tempStack=new StackLinkedList<String>();
 				stockCustomer.setNoOfShare(nOfShare);
 				stockCustomer.setSharePrice(stock.getSharePrice());
 				Transaction transaction = new Transaction();
-                String date1=StockPortfolio.getDate();
+				String date1=StockPortfolio.getDate();
 				transaction.setDate(date1);
 				transaction.setTransactionStatus("Purchase");
 				stockCustomer.setTransaction(transaction);
@@ -108,7 +123,14 @@ static StackLinkedList<String> tempStack=new StackLinkedList<String>();
 		}
 		return null;
 	}
+	
+	
+	
 
+	//buy stock continued
+	/**
+	 * @throws IOException
+	 */
 	public static void displayAccount() throws IOException {
 		String string = OopsUtility.readFile1(path + chooseAccount);
 		File[] arrayOfFiles = new File(System.getProperty("user.dir")).listFiles();
@@ -133,6 +155,12 @@ static StackLinkedList<String> tempStack=new StackLinkedList<String>();
 		}
 	}
 
+	
+	//sell stock
+	
+	/**
+	 * @throws IOException
+	 */
 	public static void sellStock() throws IOException {
 		displayAccount();
 		System.out.println("Enter the name of stock to sell");
@@ -151,6 +179,13 @@ static StackLinkedList<String> tempStack=new StackLinkedList<String>();
 
 	}
 
+	
+	//sell stock continued
+	/**
+	 * @param stockName is name of stock
+	 * @param numOfShares  is the number of the stock
+	 * @throws IOException
+	 */
 	private static void updateStock(String stockName, int numOfShares) throws IOException {
 		String string = OopsUtility.readFile1(StockPortfolio.stockFile);
 		try {
@@ -167,6 +202,14 @@ static StackLinkedList<String> tempStack=new StackLinkedList<String>();
 
 	}
 
+	
+	
+	//sell stock continued
+	/**
+	 * @param stockName is name of stock
+	 * @param numOfShares is the number of the stock
+	 * @returns new stock details
+	 */
 	private static StockCustomer soldData(String stockName, int numOfShares) {
 		for (StockCustomer stock : listOfStocks) {
 			if (stockName.equals(stock.getStockName())) {
@@ -179,7 +222,7 @@ static StackLinkedList<String> tempStack=new StackLinkedList<String>();
 				transaction.setDate(date1);
 				transaction.setTransactionStatus("Sold");
 				newStock.setTransaction(transaction);
-				
+
 				return newStock;
 			}
 		}
@@ -187,6 +230,9 @@ static StackLinkedList<String> tempStack=new StackLinkedList<String>();
 		return null;
 	}
 
+	
+	
+	//saving a stock
 	public static void saveStock() {
 		System.out.println("Saving the account");
 		File[] arrayOfFiles = new File(System.getProperty("user.dir")).listFiles();
@@ -207,58 +253,71 @@ static StackLinkedList<String> tempStack=new StackLinkedList<String>();
 
 	
 	
-	
+//Printing stock
+	/**
+	 * @throws IOException
+	 */
 	public static void addPrint() throws IOException 
 	{
 		String string=OopsUtility.readFile1(path +chooseAccount);
 		for(StockCustomer stock:listOfStocks)
-		try {
-			
-			listOfStocks=OopsUtility.userReadValue(string, StockCustomer.class);
-			list.add(stock.getStockName());
-			queue.enqueue(stock.getTransaction().getDate());
-			stack.push(stock.getTransaction().getTransactionStatus());
-		}
+			try {
+				listOfStocks=OopsUtility.userReadValue(string, StockCustomer.class);
+				list.add(stock.getStockName());
+				queue.enqueue(stock.getTransaction().getDate());
+				stack.push(stock.getTransaction().getTransactionStatus());
+			}
 		catch(Exception e)
 		{
 			System.out.println("No operations performed");
 		}
 	}
+
 	
 	
+//printing stock continued
+	/**
+	 * @throws IOException
+	 */
 	public static void printReport() throws IOException
 	{
 		addPrint();
 		System.out.println("Stock sold and purchased details are:");
-		
-		for(int i=0;i<list.size();i++)
+
+		for(int i=0;i<listOfStocks.size();i++)
 		{
-			
+
 			list.getLinkedList();
-			
+
 		}
-		
+
 		System.out.println();
 		for(int i=0;i<queue.size;i++)
 		{
-		
-		System.out.print(queue.dequeue()+"\t\t");
-		
+
+			System.out.print(queue.dequeue()+"\t\t");
+
 		}
 		System.out.println();
 		while(!stack.isEmpty())
 		{
 			tempStack.push(stack.pop());
 		}
-		
+
 		while(!tempStack.isEmpty())
 		{
 			System.out.print(tempStack.pop() +"\t\t\t");
 		}
-        System.out.println();
-        System.out.println("---------------------------------------");
+		System.out.println();
+		System.out.println("-------------------------------------------------------------------------------------------");
 	}
 
+	
+	
+	//creating a new customer
+	/**
+	 * @throws IOException
+	 */
 	public static void createCustomer() throws IOException {
 
 		System.out.println("Enter the name of Customer.");
@@ -273,6 +332,12 @@ static StackLinkedList<String> tempStack=new StackLinkedList<String>();
 			System.out.println("Account already exists");
 	}
 
+	
+	
+	//opening a customer's account
+	/**
+	 * @throws IOException
+	 */
 	public static void openAccount() throws IOException {
 
 		System.out.println("Enter your choice");

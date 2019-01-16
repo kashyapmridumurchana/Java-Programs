@@ -22,10 +22,6 @@ public class CliniqueManagement
 
 	public static void main(String[] args) throws JsonGenerationException, JsonMappingException, IOException 
 	{
-
-
-
-
 		OopsUtility o=new OopsUtility();
 		System.out.println("--------CLINIC MANAGEMENT---------");
 		boolean run=true;

@@ -23,7 +23,7 @@ public class Regex
 
 	public static void main(String[] args) throws FileNotFoundException 
 	{
-		 {
+		 
 		        String str = "/home/admin1/Desktop/Document.txt";
 		        FileReader f = new FileReader(str);
 		        @SuppressWarnings("resource")
@@ -59,4 +59,4 @@ public class Regex
 	
 	}
 
-}
+

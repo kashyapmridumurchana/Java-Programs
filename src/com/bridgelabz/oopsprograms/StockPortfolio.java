@@ -28,6 +28,13 @@ public class StockPortfolio
 	static List<Stock> listOfStock=new ArrayList<Stock>();
 	static String stockFile="/home/admin1/eclipse-workspace/Java-Programs/Stock.json";
 	
+	
+	//adding a stock
+	/**
+	 * @throws JsonGenerationException
+	 * @throws JsonMappingException
+	 * @throws IOException
+	 */
 	public static void addStock() throws JsonGenerationException, JsonMappingException, IOException
 	{
 		String string=OopsUtility.readFile(stockFile);
@@ -48,10 +55,14 @@ public class StockPortfolio
 		System.out.println("Stock created");
 		String json=OopsUtility.userWriteValueAsString(listOfStock);
 		OopsUtility.write11(json,stockFile);
-		
-		
-		
+			
 	}
+	
+	
+	//per share stock's price calculation
+	/**
+	 * @throws FileNotFoundException
+	 */
 	public static void eachStockValue() throws FileNotFoundException
 	{
 		String string=OopsUtility.readFile(stockFile);
@@ -71,6 +82,11 @@ public class StockPortfolio
 	}
 	
 	
+	
+	//total stock share calculation
+	/**
+	 * @throws FileNotFoundException
+	 */
 	public static void totalStockValue() throws FileNotFoundException
 	{
 		float sum=0;
@@ -90,6 +106,12 @@ public class StockPortfolio
 		}
 	}
 	
+	
+	
+	//displaying stock
+	/**
+	 * @throws IOException
+	 */
 	public static void displayStock() throws IOException 
 	{
 		String s2=OopsUtility.readFile1(StockPortfolio.stockFile);
@@ -110,6 +132,7 @@ public class StockPortfolio
 	
 	}
 	
+	//date 
 	public static String getDate() {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 		LocalDateTime now = LocalDateTime.now();

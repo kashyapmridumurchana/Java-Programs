@@ -21,6 +21,11 @@ import com.bridgelabz.util.Patient;
 
 public class Search {
 
+	//search a doctor by name
+	/**
+	 * @returns list of doctor after successful search
+	 * @throws IOException
+	 */
 	public static List<Doctor> searchByName() throws IOException {
 		String string = OopsUtility.readFile(CliniqueManager.doctorFile);
 		try {
@@ -35,13 +40,21 @@ public class Search {
 				}
 			}
 			return list;
-		} catch (Exception e) {
+		}
+		catch (Exception e)
+		{
 			System.out.println("File is empty!");
 			return null;
 		}
 
 	}
 
+	
+	//search a doctor by id
+	/**
+	 * @returns list of doctor after successful search
+	 * @throws IOException
+	 */
 	public static List<Doctor> searchById() throws IOException {
 		String string = OopsUtility.readFile(CliniqueManager.doctorFile);
 		try {
@@ -63,6 +76,11 @@ public class Search {
 
 	}
 
+	//search doctor by specialization
+	/**
+	 * @returns list of doctor after successful search
+	 * @throws IOException
+	 */
 	public static List<Doctor> searchBySpecialization() throws IOException {
 		String string = OopsUtility.readFile(CliniqueManager.doctorFile);
 		try {
@@ -84,6 +102,11 @@ public class Search {
 
 	}
 
+	//search doctor by availability
+	/**
+	 * @returns list of doctor after successful search
+	 * @throws IOException
+	 */
 	public static List<Doctor> searchByAvailability() throws IOException {
 		String string = OopsUtility.readFile(CliniqueManager.doctorFile);
 		try {
@@ -104,6 +127,12 @@ public class Search {
 
 	}
 
+	//search a patient by id
+	
+	/**
+	 * @returns list of patient after successful search
+	 * @throws IOException
+	 */
 	public static Patient searchByPatientId() throws IOException {
 		String string = OopsUtility.readFile(CliniqueManager.patientFile);
 		CliniqueManager.listOfPatients = OopsUtility.userReadValue(string, Patient.class);
@@ -117,6 +146,11 @@ public class Search {
 		return null;
 	}
 
+	//search a patient by phone number
+	/**
+	 * @returns list of patient after successful search
+	 * @throws IOException
+	 */
 	public static Patient searchByPhoneNo() throws IOException {
 		String string = OopsUtility.readFile(CliniqueManager.patientFile);
 		CliniqueManager.listOfPatients = OopsUtility.userReadValue(string, Patient.class);

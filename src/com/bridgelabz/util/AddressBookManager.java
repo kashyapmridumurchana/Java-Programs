@@ -1,12 +1,8 @@
-/********************************************************************** *********
- *   Compilation:  javac -d bin AddressBookManager.java							*
- *  Execution:    java -cp bin com.bridgelabz.oopsprograms.AddressBookManager *
- *                                                                  			*
- *  Purpose: Address Book Manager	
+/*******************************************************************************
  *																				*
  *  @author  Mridumurchana Kashyap												*
  *  @version 1.0																*
- *  @since   9.1.2018															*
+ *  @since   19.12.2018															*
  *  **************************************************************************/
 package com.bridgelabz.util;
 

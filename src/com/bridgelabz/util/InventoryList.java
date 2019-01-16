@@ -1,14 +1,9 @@
-/********************************************************************** *********
- *   Compilation:  javac -d bin InventoryList.java						      	*
- *  Execution:    java -cp bin com.bridgelabz.oopsprograms.InventoryList        *
- *                                                                  			*
- *  Purpose: Create a JSON file having Inventory Details for Rice, 				*
- *           Pulses and Wheats.                                                 *
+/*******************************************************************************
  *																				*
  *  @author  Mridumurchana Kashyap												*
  *  @version 1.0																*
- *  @since   9.1.2018															*
- *  *****************************************************************************/
+ *  @since   19.12.2018															*
+ *  **************************************************************************/
 package com.bridgelabz.util;
 
 import java.util.ArrayList;

@@ -21,7 +21,8 @@ import com.bridgelabz.util.InventoryList;
 import com.bridgelabz.util.Inventory;
 import com.bridgelabz.util.OopsUtility;
 
-public class InventoryManagement {
+public class InventoryManagement 
+{
     public static void main(String[] args) throws IOException {
 
     	final String str = "/home/admin1/Desktop/Inventory.json";
