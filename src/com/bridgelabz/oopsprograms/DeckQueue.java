@@ -27,7 +27,7 @@ public class DeckQueue
 	                deck[Suits.length * i + j] = Ranks[i] + " " + Suits[j];
 	            }
 	        }
-	        //distributes randomly to all the 4 persons
+	        //distributes randomly to all the 4 persons//shuffle
 	        for (int i = 0; i < n; i++)
 	        {
 	            int r = i + (int) (Math.random() * (n - i));

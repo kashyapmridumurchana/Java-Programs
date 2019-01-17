@@ -24,8 +24,8 @@ public class CliniqueManagement
 	{
 		OopsUtility o=new OopsUtility();
 		System.out.println("--------CLINIC MANAGEMENT---------");
-		boolean run=true;
-		while(run==true)
+		int op=3;
+		while(op!=0)
 		{
 			
 			System.out.println("Enter the choice");
@@ -34,27 +34,27 @@ public class CliniqueManagement
 			switch (choice) {
 			case 1:
 				CliniqueManager.add();
-				run = true;
+				
 				break;
 			case 2:
 				CliniqueManager.search();
-				run = true;
+				
 				break;
 			case 3:
 				CliniqueManager.takeAppointment();
-				run = true;
+				
 				break;
 			case 4:
 				CliniqueManager.famousDoctor();
-				run = true;
+				
 				break;
 			case 5:
 				CliniqueManager.famousSpecialist();
-				run=true;
+				
 				break;
 			default:
-				System.out.println("Invalid choice");
-				run = false;
+				System.out.println("Invalid choice,Kindly enter valid one");
+				CliniqueManagement.main(null);
 				break;
 			}
 			}

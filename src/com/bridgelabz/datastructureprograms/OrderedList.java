@@ -73,7 +73,7 @@ public class OrderedList
 			case 1: System.out.println("enter the word to be searched from sorted list:");
 			int key=DataStructureUtility.userInteger();
 			int len=li2.size();
-			System.out.println(len);
+			//System.out.println(len);
 			boolean b=li2.findIntegerValue(len,key,li2);
 			if(b)//runs when true
 			{

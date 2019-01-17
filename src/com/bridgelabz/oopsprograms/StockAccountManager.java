@@ -19,8 +19,8 @@ public class StockAccountManager {
 	public static void main(String[] args) throws IOException 
 	{
 		
-		boolean isRun=true;
-		while(isRun)
+		int op=3;
+		while(op!=0)
 		{
 			System.out.println("------STOCK MANAGEMENT APPLICATION------");
 			System.out.println("Enter the choice");
@@ -29,10 +29,10 @@ public class StockAccountManager {
 			switch(ch)
 			{
 			case 1: StockAccount.createCustomer();
-			        isRun=true;
+			        
 			        break;
 			case 2: StockAccount.openAccount();
-			        isRun=true;
+			       
 			        break;
 			case 3:  System.exit(0);
 			       

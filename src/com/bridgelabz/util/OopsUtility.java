@@ -111,9 +111,9 @@ public class OopsUtility {
 
 	// replace string
 	public static String replaceString(String first, String fullName, String phoneNum, String date, String line) {
-		final String REGEX_NAME1 = "<{2}+\\w+>{2}";
-		final String REGEX_NAME2 = "<{2}+\\w+ +\\w+>{2}";
-		final String REGEX_NAME3 = "x{10}";
+		 String REGEX_NAME1 = "<{2}+\\w+>{2}";
+		String REGEX_NAME2 = "<{2}+\\w+ +\\w+>{2}";
+		 String REGEX_NAME3 = "x{10}";
 
 		final String REGEX_NAME4 = "<{2}\\d{2}+/+\\d{2}+/\\d{4}+>{2}";
 		Pattern p1 = Pattern.compile(REGEX_NAME1);

@@ -23,21 +23,22 @@ public class StockManagementApplication
 	public static void main(String[] args) throws JsonGenerationException, JsonMappingException, IOException 
 	{
 		System.out.println("-----STOCK MANAGEMENT APPLICATION------");
-		boolean run=true;
-		while(run)
+		
+		int op=2;
+		while(op!=0)
 		{
-			System.out.println("Enter your choice\n1.Add Stock\n2.Calculate each stock value\n3.Calculate value of total stocks\n4.Quit");
+			
+			System.out.println("Enter your choice");
+			System.out.println("1.Add Stock\n2.Calculate each stock value\n3.Calculate value of total stocks\n4.Quit");
 			int ch=OopsUtility.userInteger();
+
 			switch(ch)
 			{
 			case 1: StockPortfolio.addStock();
-			        run=true;
 			        break;
-			case 2: StockPortfolio.eachStockValue();
-			       run=true;
+			case 2: StockPortfolio.eachStockValue(); 
 			       break;
 			case 3:StockPortfolio.totalStockValue();
-			       run=true;
 			       break;
 			case 4: System.exit(0);
 			default:System.out.println("kindly enter among the choices");
@@ -46,6 +47,7 @@ public class StockManagementApplication
 				
 			}
 		}
+		
 
 	}
 

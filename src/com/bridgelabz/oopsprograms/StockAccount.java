@@ -37,31 +37,31 @@ public class StockAccount {
 	 * @throws IOException
 	 */
 	public static void stockEntry() throws IOException {
-		boolean isRun = true;
-		while (isRun) {
+		int op=4;
+		while (op!=0) {
 			System.out.println("Enter the choice");
 			System.out.println("1.Buy Stock\n2.Sell Stock\n3.Save Stock\n4.Print Report\n5.Go Back");
 			int ch = OopsUtility.userInteger();
 			switch (ch) {
 			case 1:
 				buyStock();
-				isRun = true;
+				
 				break;
 			case 2:
 				sellStock();
-				isRun = true;
+				
 				break;
 			case 3:
 				saveStock();
-				isRun = true;
+				
 				break;
 			case 4:
 				printReport();
-				isRun = true;
+				
 				break;
 			case 5:
 				StockAccountManager.main(null);
-				isRun = false;
+				
 
 			}
 		}
@@ -284,12 +284,7 @@ public class StockAccount {
 		addPrint();
 		System.out.println("Stock sold and purchased details are:");
 
-		for(int i=0;i<listOfStocks.size();i++)
-		{
-
 			list.getLinkedList();
-
-		}
 
 		System.out.println();
 		for(int i=0;i<queue.size;i++)
