@@ -2,6 +2,8 @@ package com.bridgelabz.designpatterns.creational.singleton;
 
 public class BillPughSingleton
 {
+	
+	
 private BillPughSingleton() {}
 
 

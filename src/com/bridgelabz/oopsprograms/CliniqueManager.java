@@ -37,7 +37,7 @@ public class CliniqueManager
 	static List<Appointment> listOfAppointments = new ArrayList<>();
 	static String appointmentFile = "/home/admin1/eclipse-workspace/Java-Programs/Appointment.json";
 
-	
+
 	//Adding doctor and patient
 	/**
 	 * @throws IOException
@@ -55,8 +55,8 @@ public class CliniqueManager
 		}
 	}
 
-	
-	
+
+
 	//add a doctor
 	/**
 	 * @throws IOException
@@ -85,8 +85,8 @@ public class CliniqueManager
 		OopsUtility.write11(json, doctorFile);
 	}
 
-	
-	
+
+
 	//Add a patient
 	/**
 	 * @throws IOException
@@ -114,7 +114,7 @@ public class CliniqueManager
 		OopsUtility.write11(json, patientFile);
 	}
 
-	
+
 	//Search a doctor
 	/**
 	 * @throws JsonParseException
@@ -161,7 +161,7 @@ public class CliniqueManager
 		}
 	}
 
-	
+
 	//Search a patient
 	/**
 	 * @throws IOException
@@ -192,7 +192,7 @@ public class CliniqueManager
 		}
 	}
 
-	
+
 	//search
 	/**
 	 * @throws JsonParseException
@@ -212,7 +212,7 @@ public class CliniqueManager
 		}
 	}
 
-	
+
 	//take appointment with a specific doctor
 	/**
 	 * @throws IOException
@@ -252,7 +252,7 @@ public class CliniqueManager
 		}
 	}
 
-	
+
 	//take appointment continued
 	/**
 	 * @param doctorList contains list of doctors
@@ -261,41 +261,36 @@ public class CliniqueManager
 	public static void searchDoc(List<Doctor> doctorList, Patient patient) {
 		System.out.println("Enter id");
 		int id = OopsUtility.userInteger();
+		int flag = 0;
 		try {
-			for (Doctor doctor : doctorList) 
-			{
-				if (id == doctor.getId())
-				{
-					for (Appointment appointment : listOfAppointments) 
-					{
-						if (doctor.getName().equals(appointment.getDoctorName())) 
-						{
+			for (Doctor doctor : doctorList) {
+				if (id == doctor.getId()) {
+					for (Appointment appointment : listOfAppointments) {
+						if (doctor.getName().equals(appointment.getDoctorName())) {
 							List<Patient> patientAppointmentList = appointment.getPatList();
-							if (patientAppointmentList.size() < 5) 
-							{
-								patientAppointmentList.add(patient);
-								appointment.setPatList(patientAppointmentList);
-								listOfAppointments.add(appointment);
-								System.out.println("Appointment is set");
-							} 
-							else 
-							{
+							if (patientAppointmentList.size() < 5) {
+								for (Patient patient2 : patientAppointmentList) {
+									if (patient.getId() == patient2.getId()) {
+										System.out.println("You have already have an appointment with this doctor");
+										flag = 1;
+										break;
+									} else {
+										patientAppointmentList.add(patient);
+										appointment.setPatList(patientAppointmentList);
+										System.out.println("Appointment is set");
+										flag = 1;
+										break;
+									}
+								}
+
+							} else {
 								System.out.println("Appointment is full");
+								flag = 1;
+								break;
 							}
-						} 
-						else
-						{
-							Appointment newAppointment = new Appointment();
-							newAppointment.setDoctorName(doctor.getName());
-							List<Patient> newPatientAppointmentList = new ArrayList<>();
-							newPatientAppointmentList.add(patient);
-							newAppointment.setPatList(newPatientAppointmentList);
-							listOfAppointments.add(newAppointment);
-							System.out.println("Appointment is set");
 						}
 					}
-					if (listOfAppointments.size() == 0) 
-					{
+					if (flag == 0) {
 						Appointment appointment2 = new Appointment();
 						List<Patient> patientList1 = new ArrayList<Patient>();
 						patientList1.add(patient);
@@ -340,7 +335,7 @@ public class CliniqueManager
 		}
 	}
 
-	
+
 	//famous doctor search
 	/**
 	 * @throws IOException
@@ -370,7 +365,7 @@ public class CliniqueManager
 		}
 	}
 
-	
+
 	//famous specialist search
 	/**
 	 * @throws IOException

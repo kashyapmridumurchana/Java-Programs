@@ -12,8 +12,8 @@ import java.util.List;
 
 public class Appointment
 {
-private String doctorName;
-static List<Patient> patList1=new ArrayList<Patient>();
+private  String doctorName;
+private List<Patient> patList1=new ArrayList<Patient>();
 
 
 public String getDoctorName() {
