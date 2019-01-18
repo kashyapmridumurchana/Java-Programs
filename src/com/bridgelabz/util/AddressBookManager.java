@@ -68,8 +68,54 @@ public class AddressBookManager {
 			}
 		}
 
+		
+	}
+	
+	
+	
+	
+	
+	
+	public void openBook1() throws JsonGenerationException, JsonMappingException, IOException {
+
+		System.out.println("Available file are");
+		// stores all the available name of files in the form of array of files
+		File[] arrayOfFiles = new File(System.getProperty("user.dir")).listFiles();
+		for (File file : arrayOfFiles) {
+			if (file.getName().endsWith(".json"))
+				System.out.println(file.getName());
+		}
+		System.out.println("Enter the book name you want to open");
+		String b = OopsUtility.userString();
+		for (File file : arrayOfFiles) {
+			String fileName = file.getName();
+			if (b.equals(fileName)) {
+				if (file.length() > 0) {
+					System.out.println("Address book is not empty");
+					String str = OopsUtility.readFile1(fileName);
+					listBook1 = obj.readValue(str, new TypeReference<List<Person>>() {
+					});
+					AddressBook.setListOfPerson(listBook1);
+					addressBook();
+				}
+				else {
+				System.out.println("Address Book is empty");
+				System.out.println("Add new data onto the address book");
+				addressBook();
+				}
+			}
+		}
+
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
 	public void addressBook() throws JsonGenerationException, JsonMappingException, IOException {
 		AddressBook ab = new AddressBook();
 		int op = 1;

@@ -1,7 +1,7 @@
 package com.bridgelabz.designpatterns.creational.factor;
 
 	//subclass 2
-	public class Server extends FactoryComputers {
+	public class Server extends Computers {
 
 		private String ram;
 		private String hdd;

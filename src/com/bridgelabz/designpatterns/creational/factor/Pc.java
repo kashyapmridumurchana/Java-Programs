@@ -1,7 +1,7 @@
 package com.bridgelabz.designpatterns.creational.factor;
 
 //sub class 1
-	public class Pc extends FactoryComputers {
+	public class Pc extends Computers {
 
 		private String ram;
 		private String hdd;

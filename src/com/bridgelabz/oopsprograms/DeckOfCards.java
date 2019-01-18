@@ -30,9 +30,10 @@ public class DeckOfCards {
             deck[r] = deck[i];
             deck[i] = temp;
         }
-        System.out.println("Total numver of deck of cards are " + deck.length);
+        System.out.println("Total number of deck of cards are " + deck.length);
         for (int i = 0; i < 4; i++)//for persons
         {
+        	System.out.println();
             System.out.println("----- Person " + (i + 1) + " -----");//to ensure 9 cards
             for (int j = 0; j < 9; j++) {
                 System.out.println(deck[i + j * 4] + " (Card " + (i + j * 4) + ")");

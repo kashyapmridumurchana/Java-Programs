@@ -1,6 +1,6 @@
 package com.bridgelabz.designpatterns.creational.factor;
 
-public abstract class FactoryComputers
+public abstract class Computers
 {
 	public abstract String getRAM();
 	public abstract String getHDD();

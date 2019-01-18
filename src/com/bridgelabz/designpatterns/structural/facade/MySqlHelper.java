@@ -1,0 +1,22 @@
+package com.bridgelabz.designpatterns.structural.facade;
+
+import java.sql.Connection;//represents a session with database
+
+public class MySqlHelper 
+{
+	public static Connection getMySqlDBConnection()
+	{
+		//get MySql DB connection using connection parameters
+		return null;
+	}
+	
+	public void generateMySqlPDFReport(String tableName, Connection con)
+	{
+		//get data from table and generate pdf report
+	}
+	
+	public void generateMySqlHTMLReport(String tableName, Connection con)
+	{
+		//get data from table and generate pdf report
+	}
+}
