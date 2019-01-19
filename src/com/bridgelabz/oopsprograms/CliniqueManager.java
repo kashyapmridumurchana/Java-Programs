@@ -9,7 +9,6 @@
  *  @since   9.1.2018															*
  *  **************************************************************************/
 package com.bridgelabz.oopsprograms;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -19,23 +18,20 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
-
 import com.bridgelabz.util.Appointment;
 import com.bridgelabz.util.Doctor;
 import com.bridgelabz.util.OopsUtility;
 import com.bridgelabz.util.Patient;
-
 public class CliniqueManager
 {
-	static List<Doctor> listOfDoctor = new ArrayList<Doctor>();
-	static String doctorFile = "/home/admin1/eclipse-workspace/Java-Programs/Doctor.json";
-	static List<Patient> listOfPatients = new ArrayList<Patient>();
-	static String patientFile = "/home/admin1/eclipse-workspace/Java-Programs/Patient.json";
-	static List<Appointment> listOfAppointments = new ArrayList<>();
-	static String appointmentFile = "/home/admin1/eclipse-workspace/Java-Programs/Appointment.json";
+	static List<Doctor> doctors = new ArrayList<Doctor>();
+	static String DOCTOR_FILE = "/home/admin1/eclipse-workspace/Java-Programs/Doctor.json";
+	static List<Patient> patients = new ArrayList<Patient>();
+	static String PATIENT_FILE = "/home/admin1/eclipse-workspace/Java-Programs/Patient.json";
+	static List<Appointment> appointments = new ArrayList<>();
+	static String APPOINTMENT_FILE = "/home/admin1/eclipse-workspace/Java-Programs/Appointment.json";
 
 
 	//Adding doctor and patient
@@ -62,56 +58,53 @@ public class CliniqueManager
 	 * @throws IOException
 	 */
 	public static void addDoctor() throws IOException {
-		String string = OopsUtility.readFile(doctorFile);
+		String string = OopsUtility.readFile(DOCTOR_FILE);
 		try {
-			listOfDoctor = OopsUtility.userReadValue(string, Doctor.class);
+			doctors = OopsUtility.userReadValue(string, Doctor.class);
 			System.out.println("File is not empty!");
 		} catch (Exception e) {
 			System.out.println("File is empty!");
 		}
 		Doctor doctor = new Doctor();
 		System.out.println("Setting Id for the new Doctor\nDone!");
-		doctor.setId(listOfDoctor.size() + 1);
-
+		doctor.setId(doctors.size() + 1);
 		System.out.println("Enter the doctor's name");
 		doctor.setName(OopsUtility.userString());
 		System.out.println("Enter the specialization");
 		doctor.setSpecialization(OopsUtility.userString());
 		System.out.println("Enter the availability");
 		doctor.setAvail(OopsUtility.userString());
-		listOfDoctor.add(doctor);
+		doctors.add(doctor);
 		System.out.println("Doctor added successfully");
-		String json = OopsUtility.userWriteValueAsString(listOfDoctor);
-		OopsUtility.write11(json, doctorFile);
+		String json = OopsUtility.userWriteValueAsString(doctors);
+		OopsUtility.write11(json, DOCTOR_FILE);
 	}
-
-
 
 	//Add a patient
 	/**
 	 * @throws IOException
 	 */
 	public static void addPatient() throws IOException {
-		String string = OopsUtility.readFile(patientFile);
+		String string = OopsUtility.readFile(PATIENT_FILE);
 		try {
-			listOfPatients = OopsUtility.userReadValue(string, Patient.class);
+			patients = OopsUtility.userReadValue(string, Patient.class);
 			System.out.println("File is not empty!");
 		} catch (Exception e) {
 			System.out.println("File is empty!");
 		}
 		Patient patient = new Patient();
 		System.out.println("Setting id for the Patient,\nDone!");
-		patient.setId(listOfPatients.size() + 1);
+		patient.setId(patients.size() + 1);
 		System.out.println("Enter the patient's name");
 		patient.setName(OopsUtility.userString());
 		System.out.println("Enter the age");
 		patient.setAge(OopsUtility.userInteger());
 		System.out.println("Enter the phone number");
 		patient.setPhNo(OopsUtility.userLong());
-		listOfPatients.add(patient);
+		patients.add(patient);
 		System.out.println("Patient added successfully");
-		String json = OopsUtility.userWriteValueAsString(listOfPatients);
-		OopsUtility.write11(json, patientFile);
+		String json = OopsUtility.userWriteValueAsString(patients);
+		OopsUtility.write11(json, PATIENT_FILE);
 	}
 
 
@@ -218,9 +211,9 @@ public class CliniqueManager
 	 * @throws IOException
 	 */
 	public static void takeAppointment() throws IOException {
-		String string = OopsUtility.readFile(appointmentFile);
+		String string = OopsUtility.readFile(APPOINTMENT_FILE);
 		try {
-			listOfAppointments = OopsUtility.userReadValue(string, Appointment.class);
+			appointments = OopsUtility.userReadValue(string, Appointment.class);
 			System.out.println("File is not empty");
 
 		} catch (Exception e) {
@@ -234,8 +227,8 @@ public class CliniqueManager
 			Patient patient2 = Search.searchByPhoneNo();
 			operation(patient2);
 		}
-		String json = OopsUtility.userWriteValueAsString(listOfAppointments);
-		OopsUtility.write11(json, appointmentFile);
+		String json = OopsUtility.userWriteValueAsString(appointments);
+		OopsUtility.write11(json, APPOINTMENT_FILE);
 
 	}
 
@@ -265,7 +258,7 @@ public class CliniqueManager
 		try {
 			for (Doctor doctor : doctorList) {
 				if (id == doctor.getId()) {
-					for (Appointment appointment : listOfAppointments) {
+					for (Appointment appointment : appointments) {
 						if (doctor.getName().equals(appointment.getDoctorName())) {
 							List<Patient> patientAppointmentList = appointment.getPatList();
 							if (patientAppointmentList.size() < 5) {
@@ -296,7 +289,7 @@ public class CliniqueManager
 						patientList1.add(patient);
 						appointment2.setDoctorName(doctor.getName());
 						appointment2.setPatList(patientList1);
-						listOfAppointments.add(appointment2);
+						appointments.add(appointment2);
 						System.out.println("Appointment is set");
 					}
 
@@ -341,12 +334,12 @@ public class CliniqueManager
 	 * @throws IOException
 	 */
 	public static void famousDoctor() throws IOException {
-		String string = OopsUtility.readFile(appointmentFile);
+		String string = OopsUtility.readFile(APPOINTMENT_FILE);
 		Map<String, Integer> map = new HashMap<>();
 		try {
-			listOfAppointments = OopsUtility.userReadValue(string, Appointment.class);
-			for (int i = 0; i < listOfAppointments.size(); i++) {
-				Appointment appointment = listOfAppointments.get(i);
+			appointments = OopsUtility.userReadValue(string, Appointment.class);
+			for (int i = 0; i < appointments.size(); i++) {
+				Appointment appointment = appointments.get(i);
 				String doctorName = appointment.getDoctorName();
 				Integer numberOfAppointments = appointment.getPatList().size();
 				map.put(doctorName, numberOfAppointments);
@@ -371,13 +364,13 @@ public class CliniqueManager
 	 * @throws IOException
 	 */
 	public static void famousSpecialist() throws IOException {
-		String string = OopsUtility.readFile(doctorFile);
+		String string = OopsUtility.readFile(DOCTOR_FILE);
 		List<String> list = new ArrayList<>();
 		try {
-			listOfDoctor = OopsUtility.userReadValue(string, Doctor.class);
+			doctors = OopsUtility.userReadValue(string, Doctor.class);
 			//to access two elements are equal or not
-			for (Doctor doctor : listOfDoctor) {
-				for (Doctor doctor1 : listOfDoctor) {
+			for (Doctor doctor : doctors) {
+				for (Doctor doctor1 : doctors) {
 					if (doctor.getSpecialization().equals(doctor1.getSpecialization())) {
 						list.add(doctor.getSpecialization());
 					}

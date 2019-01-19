@@ -2,6 +2,7 @@ package com.bridgelabz.designpatterns.structural.adapter;
 
 public class ObjectAdapter implements SocketAdapter
  {
+	//objects used
 	//Using Composition for adapter pattern
 		private Socket sock = new Socket();
 		

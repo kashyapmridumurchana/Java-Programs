@@ -27,14 +27,14 @@ public class Search {
 	 * @throws IOException
 	 */
 	public static List<Doctor> searchByName() throws IOException {
-		String string = OopsUtility.readFile(CliniqueManager.doctorFile);
+		String string = OopsUtility.readFile(CliniqueManager.DOCTOR_FILE);
 		try {
-			CliniqueManager.listOfDoctor = OopsUtility.userReadValue(string, Doctor.class);
+			CliniqueManager.doctors = OopsUtility.userReadValue(string, Doctor.class);
 			List<Doctor> list = new ArrayList<>();
 			System.out.println("Enter the doctor's name to be searched");
 			String name = OopsUtility.userString();
 			System.out.println(name);
-			for (Doctor doctor : CliniqueManager.listOfDoctor) {
+			for (Doctor doctor : CliniqueManager.doctors) {
 				if (name.equals(doctor.getName())) {
 					list.add(doctor);
 				}
@@ -56,13 +56,13 @@ public class Search {
 	 * @throws IOException
 	 */
 	public static List<Doctor> searchById() throws IOException {
-		String string = OopsUtility.readFile(CliniqueManager.doctorFile);
+		String string = OopsUtility.readFile(CliniqueManager.DOCTOR_FILE);
 		try {
-			CliniqueManager.listOfDoctor = OopsUtility.userReadValue(string, Doctor.class);
+			CliniqueManager.doctors = OopsUtility.userReadValue(string, Doctor.class);
 			List<Doctor> list = new ArrayList<>();
 			System.out.println("Enter the doctor's id to be searched");
 			int id = OopsUtility.userInteger();
-			for (Doctor doctor : CliniqueManager.listOfDoctor) {
+			for (Doctor doctor : CliniqueManager.doctors) {
 				if (id == doctor.getId()) {
 					list.add(doctor);
 
@@ -82,13 +82,13 @@ public class Search {
 	 * @throws IOException
 	 */
 	public static List<Doctor> searchBySpecialization() throws IOException {
-		String string = OopsUtility.readFile(CliniqueManager.doctorFile);
+		String string = OopsUtility.readFile(CliniqueManager.DOCTOR_FILE);
 		try {
-			CliniqueManager.listOfDoctor = OopsUtility.userReadValue(string, Doctor.class);
+			CliniqueManager.doctors= OopsUtility.userReadValue(string, Doctor.class);
 			List<Doctor> list = new ArrayList<>();
 			System.out.println("Enter the doctor's name to be searched");
 			String specialization = OopsUtility.userString();
-			for (Doctor doctor : CliniqueManager.listOfDoctor) {
+			for (Doctor doctor : CliniqueManager.doctors) {
 				if (specialization.equals(doctor.getSpecialization())) {
 					list.add(doctor);
 				}
@@ -108,13 +108,13 @@ public class Search {
 	 * @throws IOException
 	 */
 	public static List<Doctor> searchByAvailability() throws IOException {
-		String string = OopsUtility.readFile(CliniqueManager.doctorFile);
+		String string = OopsUtility.readFile(CliniqueManager.DOCTOR_FILE);
 		try {
-			CliniqueManager.listOfDoctor = OopsUtility.userReadValue(string, Doctor.class);
+			CliniqueManager.doctors = OopsUtility.userReadValue(string, Doctor.class);
 			List<Doctor> list = new ArrayList<>();
 			System.out.println("Enter when you need the doctor (eg: am/pm)");
 			String availability = OopsUtility.userString();
-			for (Doctor doctor : CliniqueManager.listOfDoctor) {
+			for (Doctor doctor : CliniqueManager.doctors) {
 				if (availability.equals(doctor.getAvail())) {
 					list.add(doctor);
 				}
@@ -134,11 +134,11 @@ public class Search {
 	 * @throws IOException
 	 */
 	public static Patient searchByPatientId() throws IOException {
-		String string = OopsUtility.readFile(CliniqueManager.patientFile);
-		CliniqueManager.listOfPatients = OopsUtility.userReadValue(string, Patient.class);
+		String string = OopsUtility.readFile(CliniqueManager.PATIENT_FILE);
+		CliniqueManager.patients = OopsUtility.userReadValue(string, Patient.class);
 		System.out.println("Enter the patient's id to be searched");
 		int id = OopsUtility.userInteger();
-		for (Patient patient : CliniqueManager.listOfPatients) {
+		for (Patient patient : CliniqueManager.patients) {
 			if (id == patient.getId()) {
 				return patient;
 			}
@@ -152,12 +152,12 @@ public class Search {
 	 * @throws IOException
 	 */
 	public static Patient searchByPhoneNo() throws IOException {
-		String string = OopsUtility.readFile(CliniqueManager.patientFile);
-		CliniqueManager.listOfPatients = OopsUtility.userReadValue(string, Patient.class);
+		String string = OopsUtility.readFile(CliniqueManager.PATIENT_FILE);
+		CliniqueManager.patients = OopsUtility.userReadValue(string, Patient.class);
 		System.out.println("Enter the patient's phone number to search");
 		long phoneNo = OopsUtility.userLong();
 
-		for (Patient patient : CliniqueManager.listOfPatients) {
+		for (Patient patient : CliniqueManager.patients) {
 			if (phoneNo == patient.getPhNo()) {
 				return patient;
 			}

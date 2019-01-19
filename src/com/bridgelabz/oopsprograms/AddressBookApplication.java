@@ -9,55 +9,43 @@
  *  @since   9.1.2018															*
  *  **************************************************************************/
 package com.bridgelabz.oopsprograms;
-
 import java.io.IOException;
-
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.map.JsonMappingException;
-
-import com.bridgelabz.util.Address;
-import com.bridgelabz.util.AddressBook;
 import com.bridgelabz.util.AddressBookManager;
 import com.bridgelabz.util.OopsUtility;
-
 public class AddressBookApplication 
 {
 
 	public static void main(String[] args) throws JsonGenerationException, JsonMappingException, IOException 
 	{
-		AddressBookManager addm=new AddressBookManager();
-		AddressBook add=new AddressBook();
+		 AddressBookManager addressBookManager =null;
 		System.out.println("..........ADDRESS BOOK APPLICATION..........");
-		int op=1;
-		while(op==1){
+		do{
 		System.out.println("Enter choice");
-		System.out.println("\n1:Create Book\n  2:Open book\n  3:Save Book\n  4:Close book\n  5:Save Book As\n  6:Quit");
+		System.out.println("\n1:Create Book\n2:Open book\n3:Save Book\n4:Close book\n5:Save Book As\n6:Quit");
 		int choice=OopsUtility.userInteger();
 		switch(choice){
-		case 1: addm.createBook();
+		case 1: addressBookManager=new AddressBookManager();
+		        addressBookManager.createBook();
+				break;		
+		case 2: addressBookManager=new AddressBookManager();
+		        addressBookManager.openBook();
 				break;
-				
-		case 2:addm.openBook();
-				break;
-				
-		case 3: addm.saveBook();
-				break;
-				
-		case 4: addm.closeBook();
-				break;
-				
-		case 5:addm.saveBookAs();
-		
+		case 3: addressBookManager=new AddressBookManager();
+		        addressBookManager.saveBook();
+				break;	
+		case 4:addressBookManager=new AddressBookManager(); 
+		       addressBookManager.closeBook();
+				break;	
+		case 5:addressBookManager=new AddressBookManager();
+		       addressBookManager.saveBookAs();
+		       break;
 		case 6: System.exit(0);
-				
-				
 		default: System.out.println("kindly choose among the choices");
 		}	
+		}while(addressBookManager!=null);
 		}
-		System.out.println("Do you want to continue? yes then 1 else 0");
-		op=OopsUtility.userInteger();
-		}
-
 	}
 
 
