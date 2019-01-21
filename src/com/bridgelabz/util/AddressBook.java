@@ -5,38 +5,36 @@
  *  @since   19.12.2018															*
  *  **************************************************************************/
 package com.bridgelabz.util;
-
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.map.JsonMappingException;
-import org.codehaus.jackson.map.ObjectMapper;
-
 import com.bridgelabz.oopsprograms.AddressBookApplication;
 import com.bridgelabz.util.OopsUtility;
 
 public class AddressBook 
 {
-
 	static private List<Person> listOfPerson=new ArrayList<Person>();
 	Person person=null;
-
 	public void addPerson() throws JsonGenerationException, JsonMappingException, IOException
 	{
 		person=new Person();
-		// ObjectMapper objectMapper = new ObjectMapper();
 		System.out.println("Enter the firstname");
 		person.setFirstName(OopsUtility.userString());
 		System.out.println("Enter the lastname");
 		person.setLastName(OopsUtility.userString());
 		System.out.println("Enter the phone number");
 		person.setPhoneNumber(OopsUtility.userLong());
-
+		Address address=address(person);
+		person.setAddr(address);
+		listOfPerson.add(person);		
+	}
+	public Address address(Person person)
+	{
 		Address addr=new Address();//creating object of address class
 		System.out.println("Enter the street");
 		addr.setStreet(OopsUtility.userString());
@@ -46,11 +44,8 @@ public class AddressBook
 		addr.setState(OopsUtility.userString());
 		System.out.println("Enter the zip code");
 		addr.setZipCode(OopsUtility.userLong());
-		person.setAddr(addr);
-		listOfPerson.add(person);
-		
+		return addr;	
 	}
-
 	public void editPerson() throws JsonGenerationException, JsonMappingException, IOException {
 		System.out.println("Enter the details of the person whose details need to be changed");
 		System.out.println("Enter the first name");
@@ -58,33 +53,29 @@ public class AddressBook
 		System.out.println("Enter the last name");
 		String lName=OopsUtility.userString();
 		person=new Person();
-		
-		for(int i=0;i<listOfPerson.size();i++)
+	    Optional<Person> optional=listOfPerson.parallelStream()
+		.filter(person->fName.equals(person.getFirstName()) && lName.equals(person.getLastName())).findAny();
+		if(optional.isPresent())
 		{
-			person=listOfPerson.get(i);
-			if(fName.contains(person.getFirstName()))
-			{
-				if(lName.contains(person.getLastName()))
-				{
+			Person existingPerson=optional.get();
 					System.out.println("Choose which details you want to edit");
-					
 					int n=1;
 					while(n==1)
 					{   
-						System.out.println("1.Phone Number \n2. Address \n3.End  ");
+						System.out.println("1.Phone Number\n2.Address\n3.End  ");
 						int ch=OopsUtility.userInteger();
 						switch(ch)
 						{
 						case 1:   System.out.println("Enter the phone number to update");
-						         person.setPhoneNumber(OopsUtility.userLong());
+						         existingPerson.setPhoneNumber(OopsUtility.userLong());
 						         System.out.println("Phone number updated");						         
 						         break;
 
-						case 2: Address addr=person.getAddr();//to get that particular address
+						case 2: Address addr=existingPerson.getAddr();//to get that particular address
 						       int n1=1;
-						while(n1==1)
+						       while(n1==1)
 						{ 
-							System.out.println("Choose your option to edit in address\n 1. Street\n 2.City\n 3.State\n 4.Zipcode\n 5.Goto main method ");
+							System.out.println("Choose your option to edit in address\n1.Street\n2.City\n3.State\n4.Zipcode\n5.Goto main method ");
 							int choice=OopsUtility.userInteger();
 							switch(choice)
 							{
@@ -114,32 +105,15 @@ public class AddressBook
 							default: System.out.println("Enter correct choice");
   
 							}//end of inside switch
-							person.setAddr(addr);
-//
-//							
+							existingPerson.setAddr(addr);							
 						}
 						case 3: AddressBookApplication.main(null);
 						default: System.out.println("Choose among the choices");
 						} //end of outside switch
 
-
-						//System.out.println("1. Continue \n 2. Exit");
-						//n=OopsUtility.userInteger();
-
 					}//end of inside if
-
+	           	}//end of if
 				}//end of outside if
-
-			}//end of for loop
-		}//end of editPerson method
-
-
-
-
-
-
-	}
-
 	public static List<Person> getListOfPerson() {
 		return listOfPerson;
 	}
@@ -150,8 +124,6 @@ public class AddressBook
 
 	public void display() 
 	{
-		
-		
 		  for (Person per2 : listOfPerson) {
 	            System.out.println("First name : " + per2.getFirstName());
 	            System.out.println("Last name : " + per2.getLastName());
@@ -162,15 +134,12 @@ public class AddressBook
 	            System.out.println("City : " + addr.getCity());
 	            System.out.println("State : " + addr.getState());
 	            System.out.println("Zip Code : " + addr.getZipCode());
-	            System.out.println("--------------------------------------");
-		
+	            System.out.println("--------------------------------------");	
 	}
 	}
-
 	public void deletePerson() throws JsonGenerationException, JsonMappingException, IOException 
 	{
-		 ObjectMapper objectMapper=new ObjectMapper();
-		        System.out.println("Enter the first name of the person which has to be deleted");
+		 System.out.println("Enter the first name of the person which has to be deleted");
 		        String fName = OopsUtility.userString();
 		        System.out.println("Enter the last name of the person which has to be deleted");
 		        String lName = OopsUtility.userString();
@@ -182,43 +151,22 @@ public class AddressBook
 						{
 		                listOfPerson.remove(per);
 		                System.out.println("Person removed from the address book ");
-		                //String json = objectMapper.writeValueAsString(listOfPerson);
-		        		//OopsUtility.write1(json);
 		                break;
 		            }
 		            flag=1;
 		        }
 		        if (flag == 0) {
-		            System.out.println("Entered first name and last name does not exist in address book");
-		        }
-		  
-		
+		            System.out.println("Entered first name and last name does not exist in address book");        }	
 	}
-	
 	}
-	
 	public void sortByLastName()
 	{
 		Collections.sort(listOfPerson,(person1,person2)->person1.getLastName().compareTo(person2.getLastName()));
 		display();
-	}
-	
+	}	
 	public void sortByZipCode()
 	{
-		
 		Collections.sort(listOfPerson,(person1,person2)->person1.getAddr().getZipCode()>person2.getAddr().getZipCode()? 1
-				:person1.getAddr().getZipCode()<person2.getAddr().getZipCode() ? -1: 
-					person1.getAddr().getZipCode()==person2.getAddr().getZipCode() ?0 :-10);
-		
-		
-		
+				:person1.getAddr().getZipCode()<person2.getAddr().getZipCode() ? -1:0);	
 }
-	
-	
-	
-	
-	
-	
-	
-	
-	}
+}

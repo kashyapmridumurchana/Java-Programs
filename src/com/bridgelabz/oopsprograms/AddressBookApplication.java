@@ -19,7 +19,7 @@ public class AddressBookApplication
 
 	public static void main(String[] args) throws JsonGenerationException, JsonMappingException, IOException 
 	{
-		 AddressBookManager addressBookManager =null;
+		AddressBookManager addressBookManager =null;
 		System.out.println("..........ADDRESS BOOK APPLICATION..........");
 		do{
 		System.out.println("Enter choice");
