@@ -8,7 +8,7 @@
  *  @version 1.0																*
  *  @since   9.1.2018															*
  *  **************************************************************************/
-package com.bridgelabz.oopsprograms;
+package com.bridgelabz.util;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,10 +20,6 @@ import java.util.Map.Entry;
 import java.util.Set;
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
-import com.bridgelabz.util.Appointment;
-import com.bridgelabz.util.Doctor;
-import com.bridgelabz.util.OopsUtility;
-import com.bridgelabz.util.Patient;
 public class CliniqueManager
 {
 	static List<Doctor> doctors = new ArrayList<Doctor>();

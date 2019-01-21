@@ -16,7 +16,6 @@ public class EagerInitializationSingletonTest {
 		/*Below statement shows constructor not visible as constructor
 		 *  is private so accessible within the same class*/
 		
-		
 		//EagerInitializationSingleton e=new EagerInitializationSingleton();  
 
 	}

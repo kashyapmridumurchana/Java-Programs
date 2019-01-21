@@ -8,16 +8,11 @@
  *  @version 1.0																*
  *  @since   9.1.2018															*
  *  **************************************************************************/
-package com.bridgelabz.oopsprograms;
+package com.bridgelabz.util;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
-import com.bridgelabz.util.Doctor;
-import com.bridgelabz.util.OopsUtility;
-import com.bridgelabz.util.Patient;
-import com.bridgelabz.util.Person;
 
 public class Search {
 

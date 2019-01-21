@@ -334,12 +334,6 @@ public static void mergeSort(String array[],int low,int high)
 }
 
 
-
-
-
-
-
-
 //vending machine
 /**
  * @param money is the amount entered by the user

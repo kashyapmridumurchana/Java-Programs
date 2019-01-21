@@ -8,7 +8,7 @@
  *  @version 1.0																*
  *  @since   9.1.2018															*
  *  **************************************************************************/
-package com.bridgelabz.oopsprograms;
+package com.bridgelabz.util;
 
 public class Stock
 {

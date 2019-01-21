@@ -25,7 +25,7 @@ public class InventoryManagement
 {
     public static void main(String[] args) throws IOException {
 
-    	final String str = "/home/admin1/Desktop/Inventory.json";
+    	final String STR = "/home/admin1/Desktop/Inventory.json";
     	ObjectMapper objectMApper=new ObjectMapper();
         List<InventoryList> list2 = new ArrayList<InventoryList>();
         InventoryList inventoryList = new InventoryList();
@@ -38,7 +38,7 @@ public class InventoryManagement
             int choice = OopsUtility.userInteger();
             switch (choice) {
             case 1:
-                file = OopsUtility.readFile(str);
+                file = OopsUtility.readFile(STR);
                 try {
                     list2 = objectMApper.readValue(file, new TypeReference<List<InventoryList>>() {
                     });
@@ -49,7 +49,7 @@ public class InventoryManagement
                 break;
                
             case 2:
-                file = OopsUtility.readFile(str);
+                file = OopsUtility.readFile(STR);
                 try {
                     list2 = objectMApper.readValue(file, new TypeReference<List<InventoryList>>() {
                     });
@@ -82,13 +82,13 @@ public class InventoryManagement
                
                 System.out.println("Entered elements has been added to list");
                 String json = objectMApper.writeValueAsString(list2);
-                OopsUtility.write11(json,str);
+                OopsUtility.write11(json,STR);
                 System.out.println("Inventory list has been written on to file");
                 break;
                 
                 
             case 3:
-                file = OopsUtility.readFile(str);
+                file = OopsUtility.readFile(STR);
                 list2 =objectMApper.readValue
                         (file, new TypeReference<List<InventoryList>>() {
                 });

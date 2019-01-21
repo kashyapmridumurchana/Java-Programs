@@ -8,7 +8,7 @@
  *  @version 1.0																*
  *  @since   9.1.2018															*
  *  **************************************************************************/
-package com.bridgelabz.oopsprograms;
+package com.bridgelabz.util;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -19,8 +19,6 @@ import java.util.List;
 
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.map.JsonMappingException;
-
-import com.bridgelabz.util.OopsUtility;
 
 public class StockPortfolio 
 {

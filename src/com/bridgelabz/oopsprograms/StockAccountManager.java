@@ -13,12 +13,12 @@ package com.bridgelabz.oopsprograms;
 import java.io.IOException;
 
 import com.bridgelabz.util.OopsUtility;
+import com.bridgelabz.util.StockAccount;
 
 public class StockAccountManager {
 
 	public static void main(String[] args) throws IOException 
 	{
-		
 		int op=3;
 		while(op!=0)
 		{
@@ -29,10 +29,8 @@ public class StockAccountManager {
 			switch(ch)
 			{
 			case 1: StockAccount.createCustomer();
-			        
 			        break;
 			case 2: StockAccount.openAccount();
-			       
 			        break;
 			case 3:  System.exit(0);
 			       

@@ -8,17 +8,14 @@
  *  @version 1.0																*
  *  @since   9.1.2018															*
  *  **************************************************************************/
-package com.bridgelabz.oopsprograms;
+package com.bridgelabz.util;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.bridgelabz.util.LinkedList;
-import com.bridgelabz.util.OopsUtility;
-import com.bridgelabz.util.QueueLinkedList;
-import com.bridgelabz.util.StackLinkedList;
+import com.bridgelabz.oopsprograms.StockAccountManager;
 
 public class StockAccount {
 	//member declaration
@@ -141,6 +138,7 @@ public class StockAccount {
 					listOfStocks = OopsUtility.userReadValue(string, StockCustomer.class);
 					System.out.println("Account details are:");
 					for (StockCustomer stockCustomer : listOfStocks) {
+					
 						System.out.println("Stock name is " + stockCustomer.getStockName());
 						System.out.println("Number of share " + stockCustomer.getNoOfShare());
 						System.out.println("Share price is " + stockCustomer.getSharePrice());
@@ -149,12 +147,14 @@ public class StockAccount {
 						System.out.println("-------------------------------------------------");
 					}
 				} catch (Exception e) {
-					e.printStackTrace();
+					
 					System.out.println("Empty file");
 				}
 		}
 	}
 
+	
+	
 	
 	//sell stock
 	

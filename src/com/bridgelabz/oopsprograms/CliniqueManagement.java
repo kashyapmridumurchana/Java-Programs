@@ -12,6 +12,8 @@ package com.bridgelabz.oopsprograms;
 import java.io.IOException;
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.map.JsonMappingException;
+
+import com.bridgelabz.util.CliniqueManager;
 import com.bridgelabz.util.OopsUtility;
 public class CliniqueManagement
 {
