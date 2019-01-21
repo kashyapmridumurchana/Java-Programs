@@ -53,11 +53,7 @@ public class AddressBook
 		System.out.println("Enter the last name");
 		String lName=OopsUtility.userString();
 		person=new Person();
-	    Optional<Person> optional=listOfPerson.parallelStream()
-		.filter(person->fName.equals(person.getFirstName()) && lName.equals(person.getLastName())).findAny();
-		if(optional.isPresent())
-		{
-			Person existingPerson=optional.get();
+	   
 					System.out.println("Choose which details you want to edit");
 					int n=1;
 					while(n==1)
@@ -113,6 +109,10 @@ public class AddressBook
 
 					}//end of inside if
 	           	}//end of if
+		else
+		{
+			System.out.println("This person details doesnot exists");
+		}
 				}//end of outside if
 	public static List<Person> getListOfPerson() {
 		return listOfPerson;
